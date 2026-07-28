@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://mingos.cn/schemas/document-id-reservations.schema.json",
+  "title": "Ming Foundation Document ID Reservations",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "registry_id",
+    "status",
+    "canonical_repository",
+    "governing_record",
+    "reviewed_against_commit",
+    "reservations",
+    "occupied_assertions",
+    "next_unreserved_hint",
+    "summary"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "registry_id": {
+      "const": "MING-DOCUMENT-ID-RESERVATIONS-0001"
+    },
+    "canonical_repository": {
+      "const": "YuemingHub/Ming-Foundation"
+    },
+    "governing_record": {
+      "const": "GOV-0113"
+    },
+    "reviewed_against_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "reservations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "reservation_id",
+          "workstream",
+          "owner",
+          "source",
+          "state",
+          "reserved_ids",
+          "created_at",
+          "reviewed_against_commit",
+          "expires_on_main_change"
+        ],
+        "properties": {
+          "reservation_id": {
+            "type": "string",
+            "pattern": "^IDR-[0-9]{4}$"
+          },
+          "workstream": {
+            "type": "string",
+            "minLength": 1
+          },
+          "owner": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "object",
+            "required": [
+              "type"
+            ]
+          },
+          "state": {
+            "enum": [
+              "PlannedReservation",
+              "ReservedForOpenDraftPR",
+              "ReadyForSerialIntegration",
+              "Integrated",
+              "Released",
+              "ExpiredOnMainChange"
+            ]
+          },
+          "reserved_ids": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "created_at": {
+            "type": "string",
+            "format": "date"
+          },
+          "reviewed_against_commit": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "expires_on_main_change": {
+            "type": "boolean"
+          }
+        }
+      }
+    },
+    "occupied_assertions": {
+      "type": "array"
+    },
+    "next_unreserved_hint": {
+      "type": "object"
+    },
+    "summary": {
+      "type": "object"
+    }
+  }
+}

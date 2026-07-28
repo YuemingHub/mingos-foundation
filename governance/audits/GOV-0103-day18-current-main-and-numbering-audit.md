@@ -24,13 +24,21 @@ depends_on:
 
 # GOV-0103 — Day 18 Current-Main and Numbering Audit
 
-## Audited baseline
+## Integration provenance
 
 ```text
 Repository: YuemingHub/Ming-Foundation
-Current main: 394f494f00ebfccf38572e3846cf6b6e3f699abf
-Day 17 merge: 2a5dab9eccc998fdd634ecb7fd57f20ee6fe4934
+Package origin commit:    394f494f00ebfccf38572e3846cf6b6e3f699abf
+Integration base commit:  a0b8234567c211896085f0e1259b96bcb53effd1
+Day18 feature commit:     39b536e01a152de7597a6a86b95669e1814ade20
+Day18 merge commit:       f3905710db2304ab926c4ab31e10264931539f98
+Repair review main:       29485e67279d11401bb0f9f2b9afc78f0bdf67f4
+Day17 merge:              2a5dab9eccc998fdd634ecb7fd57f20ee6fe4934
 ```
+
+The package origin is preserved as historical provenance. It is not the final
+Day18 integration base. Day18 was rebuilt against the integration base after
+the Kernel identifier allocation had entered main.
 
 ## Findings
 

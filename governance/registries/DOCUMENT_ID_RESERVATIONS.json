@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0",
+  "registry_id": "MING-DOCUMENT-ID-RESERVATIONS-0001",
+  "title": "Ming Foundation Document ID Reservations",
+  "status": "Accepted operational registry",
+  "canonical_repository": "YuemingHub/Ming-Foundation",
+  "governing_record": "GOV-0113",
+  "reviewed_against_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+  "main_change_policy": "All non-integrated reservations expire for merge-readiness when main advances and require explicit re-audit.",
+  "reservations": [
+    {
+      "reservation_id": "IDR-0001",
+      "workstream": "Kernel Round 09 — Conformance and Test Specification Draft Collection",
+      "owner": "Ming Foundation Kernel Architecture",
+      "source": {
+        "type": "OpenDraftPullRequest",
+        "pull_request": 12,
+        "pull_request_url": "https://github.com/YuemingHub/Ming-Foundation/pull/12",
+        "head_commit_at_review": "614da9d1a5c8cb151b7da06158c2074406802e18",
+        "branch_name": null,
+        "branch_resolution_state": "MustConfirmBeforeMerge"
+      },
+      "state": "ProposedInReservedDraftBranch",
+      "branch": "docs/round-09-kernel-conformance-test-collection",
+      "reserved_ids": [
+        "KERNEL-0004",
+        "KERNEL-0005",
+        "REF-0045",
+        "REF-0046",
+        "REF-0047",
+        "REF-0048",
+        "REF-0049",
+        "REF-0050",
+        "REF-0051"
+      ],
+      "created_at": "2026-07-28",
+      "reviewed_against_commit": "280a68705d13bbb5beed3a64713575fad7cba189",
+      "expires_on_main_change": true,
+      "integration_evidence": null,
+      "notes": "PR #12 remains separate from this integration repair and must be re-audited before merge.",
+      "reserved_paths": {
+        "KERNEL-0004": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+        "KERNEL-0005": "standards/kernel/KERNEL-0005-test-specifications-derived-indexes.md",
+        "REF-0045": "reference/kernel/REF-0045-kernel-conformance-claim-applicability-matrix.md",
+        "REF-0046": "reference/kernel/REF-0046-kernel-evidence-assurance-class-matrix.md",
+        "REF-0047": "reference/kernel/REF-0047-kernel-requirement-test-catalog-crosswalk.md",
+        "REF-0048": "reference/kernel/REF-0048-kernel-exception-suspension-expiry-revocation-matrix.md",
+        "REF-0049": "reference/kernel/REF-0049-kernel-implementation-assessment-protocol.md",
+        "REF-0050": "reference/kernel/REF-0050-kernel-conformance-test-ambiguity-register.md",
+        "REF-0051": "reference/kernel/REF-0051-kernel-public-claim-mark-language-matrix.md"
+      }
+    }
+  ],
+  "occupied_assertions": [
+    {
+      "id": "REF-0035",
+      "path": "reference/REF-0035-restricted-nomination-and-cp2-preauthorization-guide.md",
+      "status": "Accepted",
+      "reason": "Day18 canonical guide"
+    },
+    {
+      "id": "KERNEL-0002",
+      "path": "standards/kernel/KERNEL-0002-canonical-object-data-model.md",
+      "status": "Draft",
+      "reason": "Kernel Round08 integrated on main"
+    },
+    {
+      "id": "KERNEL-0003",
+      "path": "standards/kernel/KERNEL-0003-lifecycle-state-machines.md",
+      "status": "Draft",
+      "reason": "Kernel Round08 integrated on main"
+    },
+    {
+      "id": "REF-0040",
+      "path": "reference/kernel/REF-0040-kernel-object-catalog-crosswalk.md",
+      "status": "Draft",
+      "reason": "Kernel Round08 integrated on main"
+    },
+    {
+      "id": "REF-0044",
+      "path": "reference/kernel/REF-0044-round08-object-lifecycle-review-protocol.md",
+      "status": "Draft",
+      "reason": "Kernel Round08 integrated on main"
+    }
+  ],
+  "next_unreserved_hint": {
+    "GOV": "GOV-0114",
+    "ADR": "ADR-0029",
+    "REF": "REF-0052",
+    "GOV-TPL": "GOV-TPL-0036",
+    "KERNEL": "KERNEL-0006",
+    "binding": false,
+    "note": "Hints are recalculated after every main change and are not reservations."
+  },
+  "summary": {
+    "active_reservations": 1,
+    "reserved_ids": 9,
+    "integrated_by_this_registry": 0,
+    "released_reservations": 0
+  }
+}

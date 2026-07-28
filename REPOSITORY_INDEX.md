@@ -122,6 +122,9 @@ This index lists the canonical entry points for Ming Foundation 1.0.
 | GOV-0110 | [Day 18 Restricted Nomination and CP2 Pre-Authorization Gate](governance/reviews/GOV-0110-day18-restricted-nomination-and-cp2-preauthorization-gate.md) | Accepted |
 | GOV-0111 | [Day 18 Status Recommendation](governance/reviews/GOV-0111-day18-status-recommendation.md) | Accepted |
 | GOV-0112 | [Day 18 Validation Record](governance/validation/GOV-0112-day18-validation-record.md) | Accepted |
+| GOV-0113 | [Parallel Workstream Integration and Document ID Reservation](governance/workflows/GOV-0113-parallel-workstream-integration-and-document-id-reservation.md) | Accepted |
+
+Machine registry: [DOCUMENT_ID_RESERVATIONS.json](governance/registries/DOCUMENT_ID_RESERVATIONS.json).
 | GOV-TPL-0005 | [RFC-0001 Review Checklist](governance/templates/gov-tpl-0005-rfc-0001-review-checklist.md) | Accepted |
 | GOV-TPL-0006 | [RFC-0002 Review Checklist](governance/templates/gov-tpl-0006-rfc-0002-review-checklist.md) | Accepted |
 | GOV-TPL-0007 | [RFC-0003 Review Checklist](governance/templates/gov-tpl-0007-rfc-0003-review-checklist.md) | Accepted |
