@@ -13,7 +13,7 @@ question:
 
 ## Current status
 
-This repository is at **Foundation 1.0 / Day 17 — Human Review Activation Readiness and Named Accountability**. Day 17 establishes privacy-preserving named-accountability infrastructure, a minimum small-team separation-of-duties topology, real nomination and approval workflows, an evidence-environment deployment plan, and a CP2 readiness gate while keeping all human activation blocked.
+This repository is at **Foundation 1.0 / Day 18 — Restricted Role Nomination and CP2 Pre-Authorization**. Day 18 establishes a Git-ignored restricted nomination boundary, four CP2 nomination slots with a three-person minimum, protocol and evidence-environment prerequisites, and an inactive conditional CP2 pre-authorization while CP2 and CP3 remain blocked.
 
 **Important:** “Ming Foundation” is currently the name of an open
 standards initiative and repository. It does not by itself claim to be a
@@ -36,6 +36,8 @@ See:
 - [`governance/status/GOV-0001-current-canonical-state.md`](governance/status/GOV-0001-current-canonical-state.md)
 - [`governance/sources/GOV-0002-source-registry.md`](governance/sources/GOV-0002-source-registry.md)
 - [`governance/workflows/GOV-0003-conversation-to-repository.md`](governance/workflows/GOV-0003-conversation-to-repository.md)
+- [`governance/workflows/GOV-0113-parallel-workstream-integration-and-document-id-reservation.md`](governance/workflows/GOV-0113-parallel-workstream-integration-and-document-id-reservation.md)
+- [`governance/registries/DOCUMENT_ID_RESERVATIONS.json`](governance/registries/DOCUMENT_ID_RESERVATIONS.json)
 
 Charter governance and validation:
 
