@@ -178,6 +178,7 @@ related:
 - GOV-0110
 - GOV-0111
 - GOV-0112
+- GOV-0113
 - ADR-0027
 - ADR-0028
 - REF-0035
@@ -222,7 +223,7 @@ The following facts are accepted:
 - **Canonical public repository:**
   `https://github.com/YuemingHub/Ming-Foundation`
 - **Repository visibility:** public
-- **Current repository stage:** Foundation 1.0 / Day 17 — Human Review Activation Readiness and Named Accountability
+- **Current repository stage:** Foundation 1.0 / Day 18 — Restricted Role Nomination and CP2 Pre-Authorization
 - **Current repository version:** `1.0.0-alpha.18`
 
 `mingos.cn` is the official public interface of MingOS. It communicates
@@ -325,6 +326,7 @@ decisions, and governance records.
 - Day 18 inactive conditional CP2 pre-authorization;
 - Day 18 twelve passed synthetic pre-authorization scenarios;
 - Day 18 gate retaining CP2 and CP3 at Blocked.
+- Day 18 and Kernel parallel-workstream integration repair with central document-ID reservation and one combined validation chain.
 
 ### In progress
 
@@ -438,6 +440,8 @@ Any update to this document MUST:
 - state what remains uncertain.
 
 ## 9. Next canonical work
+
+Before any further merge, parallel workstreams MUST use GOV-0113 and the central document-ID reservation registry. Only one workstream may be merge-ready at a time.
 
 After Day 18, the next canonical work is Restricted Nomination Execution and CP2 Activation Evidence:
 

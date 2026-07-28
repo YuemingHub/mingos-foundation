@@ -10,6 +10,8 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = [
     "validate_repository.py",
+    "validate_kernel_family.py",
+    "validate_id_reservations.py",
     "validate_audit_scope.py",
     "validate_requirements.py",
     "validate_release_state.py",

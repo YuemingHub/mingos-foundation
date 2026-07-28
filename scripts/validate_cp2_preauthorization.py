@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """Validate Day 18 conditional CP2 pre-authorization without activation."""
 
 from pathlib import Path
@@ -48,6 +48,17 @@ def main():
             errors.append(f"{item['control_id']}: fabricated verification evidence")
 
     decision = load("standards/review/CP2_PREAUTHORIZATION_DECISION.json")
+    expected_provenance = {
+        "package_origin_commit": "394f494f00ebfccf38572e3846cf6b6e3f699abf",
+        "integration_base_commit": "a0b8234567c211896085f0e1259b96bcb53effd1",
+        "feature_commit": "39b536e01a152de7597a6a86b95669e1814ade20",
+        "merge_commit": "f3905710db2304ab926c4ab31e10264931539f98",
+        "reviewed_against_current_main": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+    }
+    if decision.get("source_repository_commit_role") != "PackageOriginCommit":
+        errors.append("pre-authorization source-commit role mismatch")
+    if decision.get("integration_provenance") != expected_provenance:
+        errors.append("pre-authorization integration provenance mismatch")
     if decision["decision_state"] != "ConditionallyApprovedNotEffective":
         errors.append("pre-authorization decision state mismatch")
     if decision["effective"] is not False:
@@ -92,6 +103,10 @@ def main():
             errors.append(f"{key} must remain zero")
 
     gate = load("standards/review/DAY18_CP2_PREAUTHORIZATION_GATE.json")
+    if gate.get("source_repository_commit_role") != "PackageOriginCommit":
+        errors.append("Day18 gate source-commit role mismatch")
+    if gate.get("integration_provenance") != expected_provenance:
+        errors.append("Day18 gate integration provenance mismatch")
     if gate["overall_state"] != "RestrictedNominationInfrastructureReadyCP2PreauthorizationInactive":
         errors.append("Day18 gate state mismatch")
     if gate["summary"] != {"gate_items": 18, "pass": 11, "blocked": 7, "fail": 0}:
