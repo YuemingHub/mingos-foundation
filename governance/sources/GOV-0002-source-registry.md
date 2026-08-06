@@ -17,7 +17,7 @@ related:
 - GOV-0009
 status: Accepted
 title: Source Registry
-updated: 2026-07-12
+updated: 2026-08-06
 version: 1.0.0-alpha.18
 ---
 
@@ -50,7 +50,8 @@ handoff packages.
 
 | Source ID | Source                                                                                                   | Role                                                              | Authority                                                | Current state                                          | Handling rule                                                                                                       |
 |-----------|----------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|----------------------------------------------------------|--------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|
-| SRC-0001  | `YuemingHub/Ming-Foundation` default branch                                                              | Public knowledge repository for formalized project outcomes       | Canonical for published project knowledge and governance | Active                                                 | Accepted repository documents govern their stated scope                                                             |
+| SRC-0001  | `YuemingHub/mingos-foundation` default branch                                                              | Public knowledge repository for formalized project outcomes       | Canonical for published project knowledge and governance | Active                                                 | Accepted repository documents govern their stated scope                                                             |
+| SRC-0014  | | `YuemingHub/Ming-Foundation` historical repository path | Historical name for the Foundation repository | Historical / not current | Archived | Preserve for provenance; do not use as current canonical identifier
 | SRC-0002  | `https://mingos.cn`                                                                                      | Official MingOS public website                                    | Official public representation                           | Active                                                 | Public claims SHOULD be traceable to repository records                                                             |
 | SRC-0003  | Cross-window MingOS conversations                                                                        | Exploration, synthesis, critique, and drafting                    | Non-canonical source                                     | Active                                                 | Process through `GOV-0003` before repository adoption                                                               |
 | SRC-0004  | Codex, coding-agent, and developer conversations                                                         | Implementation analysis and delivery planning                     | Non-canonical source                                     | Active                                                 | Preserve technical evidence; convert material decisions into ADR, RFC, standard, project, or implementation records |
@@ -148,7 +149,7 @@ See `GOV-0021`.
 
 ## 10. Canonical audit versus external evidence
 
-`YuemingHub/Ming-Foundation` is the canonical repository.
+`YuemingHub/mingos-foundation` is the current canonical repository.
 
 Product repositories, website sources, domains, runtime reports, and code snapshots are external evidence sources. They may test implementation conformance, but they:
 
@@ -251,3 +252,10 @@ governance records.
 
 Private identity, qualification, conflict, signature, and acceptance records
 remain outside the public repository.
+## 11. Repository identity transition
+
+On 2026-08-06, the named human owner accepted
+`YuemingHub/mingos-foundation` as the current Foundation repository.
+`YuemingHub/Ming-Foundation` remains a historical identifier for provenance only.
+Existing source records and filenames are not silently rewritten; all new
+current references MUST use the canonical path above.
