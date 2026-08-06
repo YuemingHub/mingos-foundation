@@ -2,7 +2,7 @@
   "schema_version": "1.2",
   "generated_for": "Ming Foundation Day 7 scope correction",
   "base_commit": "e2d62543a31822fa7b31b8f6bf4363aa49894de1",
-  "canonical_repository": "YuemingHub/Ming-Foundation",
+  "canonical_repository": "YuemingHub/mingos-foundation",
   "canonical_repository_audit": "accepted",
   "external_implementation_evidence": "bounded and non-blocking",
   "canonical_repository_items": [
