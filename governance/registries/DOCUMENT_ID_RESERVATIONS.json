@@ -5,7 +5,7 @@
   "status": "Accepted operational registry",
   "canonical_repository": "YuemingHub/Ming-Foundation",
   "governing_record": "GOV-0113",
-  "reviewed_against_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+  "reviewed_against_commit": "280a68705d13bbb5beed3a64713575fad7cba189",
   "main_change_policy": "All non-integrated reservations expire for merge-readiness when main advances and require explicit re-audit.",
   "reservations": [
     {
@@ -13,14 +13,14 @@
       "workstream": "Kernel Round 09 — Conformance and Test Specification Draft Collection",
       "owner": "Ming Foundation Kernel Architecture",
       "source": {
-        "type": "OpenDraftPullRequest",
+        "type": "OpenPullRequest",
         "pull_request": 12,
         "pull_request_url": "https://github.com/YuemingHub/Ming-Foundation/pull/12",
-        "head_commit_at_review": "614da9d1a5c8cb151b7da06158c2074406802e18",
-        "branch_name": null,
-        "branch_resolution_state": "MustConfirmBeforeMerge"
+        "head_commit_at_review": "7d50d664dec46826c2cd2bf7f8c0f85cf913cf0d",
+        "branch_name": "docs/round-09-kernel-conformance-test-collection",
+        "branch_resolution_state": "Confirmed"
       },
-      "state": "ProposedInReservedDraftBranch",
+      "state": "ReadyForSerialIntegration",
       "branch": "docs/round-09-kernel-conformance-test-collection",
       "reserved_ids": [
         "KERNEL-0004",
@@ -36,8 +36,16 @@
       "created_at": "2026-07-28",
       "reviewed_against_commit": "280a68705d13bbb5beed3a64713575fad7cba189",
       "expires_on_main_change": true,
-      "integration_evidence": null,
-      "notes": "PR #12 remains separate from this integration repair and must be re-audited before merge.",
+      "integration_evidence": {
+        "review_date": "2026-08-06",
+        "reviewed_head": "7d50d664dec46826c2cd2bf7f8c0f85cf913cf0d",
+        "base_commit": "280a68705d13bbb5beed3a64713575fad7cba189",
+        "mergeable": true,
+        "repository_validation": "success",
+        "validate_repository": "success",
+        "review_scope": "Current-main reconciliation, reservation-state correction, selective-adoption/conformance boundary, public-claim wording and repository validation."
+      },
+      "notes": "Re-audited against current main on 2026-08-06. The reviewed head precedes this registry-only readiness transition commit. Any subsequent substantive branch change or main advance expires readiness and requires another audit.",
       "reserved_paths": {
         "KERNEL-0004": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
         "KERNEL-0005": "standards/kernel/KERNEL-0005-test-specifications-derived-indexes.md",
