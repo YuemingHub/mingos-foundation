@@ -3,6 +3,10 @@
 All notable repository-level changes are documented here.
 ## [Unreleased]
 
+### Changed
+
+- Updated the current canonical repository identifier to `YuemingHub/mingos-foundation` after the 2026-08-06 named source-review decision.
+- Preserved `YuemingHub/Ming-Foundation` as a historical identifier; historical records and filenames are not rewritten.
 ### Added
 
 - Proposed core-document lifecycle and one-document-per-round workflow (`GOV-0081`).
