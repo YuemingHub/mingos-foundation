@@ -10,13 +10,29 @@ import subprocess
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "governance/registries/DOCUMENT_ID_RESERVATIONS.json"
 EXPECTED_REPOSITORY = "YuemingHub/Ming-Foundation"
-EXPECTED_REVIEW_COMMIT = "29485e67279d11401bb0f9f2b9afc78f0bdf67f4"
 OPEN_STATES = {
     "PlannedReservation",
     "ReservedForOpenDraftPR",
     "ReadyForSerialIntegration",
     "ExpiredOnMainChange",
 }
+ALLOWED_STATES = OPEN_STATES | {"Integrated", "Released"}
+POST_REVIEW_TRANSITION_PATHS = {
+    "governance/registries/DOCUMENT_ID_RESERVATIONS.json",
+    "scripts/validate_id_reservations.py",
+}
+
+
+def git_output(*args: str) -> str | None:
+    try:
+        return subprocess.check_output(
+            ["git", *args],
+            cwd=ROOT,
+            text=True,
+            stderr=subprocess.DEVNULL,
+        ).strip()
+    except subprocess.CalledProcessError:
+        return None
 
 
 def frontmatter_id(path: Path) -> str | None:
@@ -33,14 +49,42 @@ def frontmatter_id(path: Path) -> str | None:
 
 
 def current_branch() -> str | None:
+    return git_output("rev-parse", "--abbrev-ref", "HEAD")
+
+
+def current_main_commit() -> str | None:
+    for ref in ("origin/main", "main"):
+        commit = git_output("rev-parse", "--verify", ref)
+        if commit:
+            return commit
+    return None
+
+
+def is_ancestor(ancestor: str, descendant: str = "HEAD") -> bool:
     try:
-        return subprocess.check_output(
-            ["git", "rev-parse", "--abbrev-ref", "HEAD"],
+        subprocess.run(
+            ["git", "merge-base", "--is-ancestor", ancestor, descendant],
             cwd=ROOT,
-            text=True,
-        ).strip()
+            check=True,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+        return True
     except subprocess.CalledProcessError:
-        return None
+        return False
+
+
+def changed_paths_since(commit: str) -> set[str]:
+    output = git_output("diff", "--name-only", f"{commit}..HEAD")
+    if not output:
+        return set()
+    return {line.strip() for line in output.splitlines() if line.strip()}
+
+
+def valid_commit(value: object) -> bool:
+    return isinstance(value, str) and len(value) == 40 and all(
+        character in "0123456789abcdef" for character in value.lower()
+    )
 
 
 def main() -> int:
@@ -50,8 +94,16 @@ def main() -> int:
         errors.append("canonical repository mismatch")
     if data.get("governing_record") != "GOV-0113":
         errors.append("governing record mismatch")
-    if data.get("reviewed_against_commit") != EXPECTED_REVIEW_COMMIT:
-        errors.append("registry review commit mismatch")
+
+    registry_review = data.get("reviewed_against_commit")
+    if not valid_commit(registry_review):
+        errors.append("registry review commit invalid")
+    current_main = current_main_commit()
+    if current_main and registry_review != current_main:
+        errors.append(
+            f"registry review commit mismatch: expected current main {current_main}, "
+            f"found {registry_review}"
+        )
 
     occupied: dict[str, str] = {}
     duplicates: list[str] = []
@@ -91,12 +143,17 @@ def main() -> int:
         if name in reservation_names:
             errors.append(f"duplicate reservation ID {name}")
         reservation_names.add(name)
+
+        state = reservation.get("state")
+        if state not in ALLOWED_STATES:
+            errors.append(f"{name} uses undefined reservation state {state}")
+
         reservation_review = reservation.get("reviewed_against_commit")
-        registry_review = data.get("reviewed_against_commit")
-        if not reservation_review or not isinstance(reservation_review, str) or len(reservation_review) != 40:
+        if not valid_commit(reservation_review):
             errors.append(f"{name} reviewed-against commit invalid")
-        elif reservation_review not in {registry_review, "280a68705d13bbb5beed3a64713575fad7cba189"}:
-            errors.append(f"{name} reviewed-against commit out of expected range")
+        elif registry_review and reservation_review != registry_review:
+            errors.append(f"{name} reviewed-against commit differs from registry baseline")
+
         source = reservation.get("source", {})
         if (
             not source.get("pull_request")
@@ -104,11 +161,11 @@ def main() -> int:
             and not source.get("governing_record")
         ):
             errors.append(f"{name} missing source PR, branch, or governing record")
+
         for doc_id in reservation.get("reserved_ids", []):
             if doc_id in reservation_ids:
                 errors.append(f"ID {doc_id} reserved more than once")
             reservation_ids.add(doc_id)
-            state = reservation.get("state")
             reserved_paths = reservation.get("reserved_paths", {})
             expected_path = reserved_paths.get(doc_id)
             if state in OPEN_STATES:
@@ -142,13 +199,35 @@ def main() -> int:
     else:
         if set(pr12.get("reserved_ids", [])) != expected_pr12:
             errors.append("PR #12 reserved-ID set mismatch")
-        if pr12.get("state") not in OPEN_STATES | {"ProposedInReservedDraftBranch"}:
-            errors.append("PR #12 must remain in an open reservation state")
-        if (
-            pr12.get("source", {}).get("head_commit_at_review")
-            != "614da9d1a5c8cb151b7da06158c2074406802e18"
-        ):
-            errors.append("PR #12 reviewed head mismatch")
+        if pr12.get("state") not in OPEN_STATES:
+            errors.append("PR #12 must remain in a defined open reservation state")
+
+        source = pr12.get("source", {})
+        reviewed_head = source.get("head_commit_at_review")
+        if not valid_commit(reviewed_head):
+            errors.append("PR #12 reviewed head invalid")
+        elif not is_ancestor(reviewed_head):
+            errors.append("PR #12 reviewed head is not an ancestor of the checked tree")
+        else:
+            unexpected = changed_paths_since(reviewed_head) - POST_REVIEW_TRANSITION_PATHS
+            if unexpected:
+                errors.append(
+                    "PR #12 has substantive changes after reviewed head: "
+                    + ", ".join(sorted(unexpected))
+                )
+
+        if source.get("branch_name") != "docs/round-09-kernel-conformance-test-collection":
+            errors.append("PR #12 branch name mismatch")
+        if pr12.get("state") == "ReadyForSerialIntegration":
+            evidence = pr12.get("integration_evidence") or {}
+            if evidence.get("base_commit") != registry_review:
+                errors.append("PR #12 readiness evidence base mismatch")
+            if evidence.get("reviewed_head") != reviewed_head:
+                errors.append("PR #12 readiness evidence head mismatch")
+            if evidence.get("repository_validation") != "success":
+                errors.append("PR #12 repository validation evidence missing")
+            if evidence.get("validate_repository") != "success":
+                errors.append("PR #12 validate-repository evidence missing")
 
     expected_paths = {
         "REF-0035": "reference/REF-0035-restricted-nomination-and-cp2-preauthorization-guide.md",
@@ -195,8 +274,8 @@ def main() -> int:
 
     print(
         "Document-ID reservation validation passed: one active PR reservation, "
-        "nine unique reserved IDs, occupied paths verified, and non-binding "
-        "next-ID hints remain free."
+        "nine unique reserved IDs, current-main review baseline, reviewed-head "
+        "ancestry, occupied paths, and non-binding next-ID hints verified."
     )
     return 0
 
