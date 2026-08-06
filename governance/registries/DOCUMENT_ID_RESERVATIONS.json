@@ -3,7 +3,7 @@
   "registry_id": "MING-DOCUMENT-ID-RESERVATIONS-0001",
   "title": "Ming Foundation Document ID Reservations",
   "status": "Accepted operational registry",
-  "canonical_repository": "YuemingHub/Ming-Foundation",
+  "canonical_repository": "YuemingHub/mingos-foundation",
   "governing_record": "GOV-0113",
   "reviewed_against_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
   "main_change_policy": "All non-integrated reservations expire for merge-readiness when main advances and require explicit re-audit.",
@@ -15,7 +15,7 @@
       "source": {
         "type": "OpenDraftPullRequest",
         "pull_request": 12,
-        "pull_request_url": "https://github.com/YuemingHub/Ming-Foundation/pull/12",
+        "pull_request_url": "https://github.com/YuemingHub/mingos-foundation/pull/12",
         "head_commit_at_review": "614da9d1a5c8cb151b7da06158c2074406802e18",
         "branch_name": null,
         "branch_resolution_state": "MustConfirmBeforeMerge"
