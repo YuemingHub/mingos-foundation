@@ -2,7 +2,6 @@
 
 This index lists the canonical entry points for Ming Foundation 1.0.
 
-
 - Current canonical repository: `YuemingHub/mingos-foundation`
 - Historical repository path: `YuemingHub/Ming-Foundation` (preserved in historical records only)
 
@@ -184,6 +183,8 @@ Machine registry: [DOCUMENT_ID_RESERVATIONS.json](governance/registries/DOCUMENT
 | KERNEL-0001 | [MingOS Kernel Core Operational Contract](standards/kernel/KERNEL-0001-core-operational-contract.md) | Draft |
 | KERNEL-0002 | [MingOS Kernel Canonical Object and Data Model](standards/kernel/KERNEL-0002-canonical-object-data-model.md) | Draft |
 | KERNEL-0003 | [MingOS Kernel Lifecycle and State Machines](standards/kernel/KERNEL-0003-lifecycle-state-machines.md) | Draft |
+| KERNEL-0004 | [MingOS Kernel Conformance Requirements and Evidence Model](standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md) | Draft |
+| KERNEL-0005 | [MingOS Kernel Test Specifications and Derived Indexes](standards/kernel/KERNEL-0005-test-specifications-derived-indexes.md) | Draft |
 | RFC-0001 | [Subject Speaker and Contestability Protocol](standards/rfc/RFC-0001-subject-speaker-and-contestability.md)                                      | Proposed |
 | RFC-0002 | [Consent and Data Rights Lifecycle Protocol](standards/rfc/RFC-0002-consent-and-data-rights-lifecycle.md)                                        | Proposed |
 | RFC-0003 | [Safety Escalation Human Handoff Appeal and Incident Protocol](standards/rfc/RFC-0003-safety-escalation-handoff-appeal-and-incident.md)          | Proposed |
@@ -286,6 +287,13 @@ Machine registry: [DOCUMENT_ID_RESERVATIONS.json](governance/registries/DOCUMENT
 | REF-0042 | [Kernel Access Privacy Retention and Audit Boundary Matrix](reference/kernel/REF-0042-kernel-access-privacy-retention-audit-matrix.md) | Draft |
 | REF-0043 | [Kernel Object and Lifecycle Ambiguity Review Register](reference/kernel/REF-0043-kernel-object-lifecycle-ambiguity-register.md) | Draft |
 | REF-0044 | [Round 08 Object and Lifecycle Review Protocol](reference/kernel/REF-0044-round08-object-lifecycle-review-protocol.md) | Draft |
+| REF-0045 | [Kernel Conformance Claim Unit and Applicability Matrix](reference/kernel/REF-0045-kernel-conformance-claim-applicability-matrix.md) | Draft |
+| REF-0046 | [Kernel Evidence and Assurance Class Matrix](reference/kernel/REF-0046-kernel-evidence-assurance-class-matrix.md) | Draft |
+| REF-0047 | [Kernel Requirement Test Catalog and Coverage Crosswalk](reference/kernel/REF-0047-kernel-requirement-test-catalog-crosswalk.md) | Draft |
+| REF-0048 | [Kernel Exception Suspension Expiry and Revocation Matrix](reference/kernel/REF-0048-kernel-exception-suspension-expiry-revocation-matrix.md) | Draft |
+| REF-0049 | [Kernel Implementation Assessment Protocol](reference/kernel/REF-0049-kernel-implementation-assessment-protocol.md) | Draft |
+| REF-0050 | [Kernel Conformance and Test Ambiguity Register](reference/kernel/REF-0050-kernel-conformance-test-ambiguity-register.md) | Draft |
+| REF-0051 | [Kernel Public Claim and Mark Language Matrix](reference/kernel/REF-0051-kernel-public-claim-mark-language-matrix.md) | Draft |
 
 - [Core Terms](reference/glossary/core-terms.md)
 - [System Map](architecture/system-map.mmd)

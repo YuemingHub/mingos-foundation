@@ -2,7 +2,7 @@
 id: KERNEL-0001
 title: MingOS Kernel Core Operational Contract
 status: Draft
-version: 0.2.2-draft.4
+version: 0.2.3-draft.5
 layer: Layer 2 — Standards
 owner: Ming Foundation Kernel Architecture
 created: 2026-07-15
@@ -10,7 +10,7 @@ updated: 2026-07-15
 language: en
 canonical_language: en
 translation_status: original
-decision_base_commit: f3905710db2304ab926c4ab31e10264931539f98
+decision_base_commit: 29485e67279d11401bb0f9f2b9afc78f0bdf67f4
 related:
   - MF-0004
   - MF-0005
@@ -32,6 +32,8 @@ related:
   - KERNEL-0000
   - KERNEL-0002
   - KERNEL-0003
+  - KERNEL-0004
+  - KERNEL-0005
   - REF-0031
   - REF-0032
   - REF-0033
@@ -76,15 +78,17 @@ KERNEL-0004 and KERNEL-0005 do not yet exist. Product conformance cannot be asse
 | 0.2.0-draft.2 | 2026-07-15 | Exact KCR source and verification mapping | Draft |
 | 0.2.1-draft.3 | 2026-07-15 | Initial Round 08 references | Draft |
 | 0.2.2-draft.4 | 2026-07-15 | Correct Round 08 versions and state/process boundary | Draft |
+| 0.2.3-draft.5 | 2026-07-15 | Integrate Draft conformance and test references | Draft |
 
 ## 7. Current boundary
 
 ```text
-KERNEL-0000: Draft / 0.4.0-draft.4
-KERNEL-0001: Draft / 0.2.2-draft.4
+KERNEL-0000: Draft / 0.5.0-draft.5
+KERNEL-0001: Draft / 0.2.3-draft.5
 KERNEL-0002: Draft / 0.2.0-draft.2
 KERNEL-0003: Draft / 0.2.0-draft.2
-KERNEL-0004..0005: not created
+KERNEL-0004: Draft / 0.1.0-draft.1
+KERNEL-0005: Draft / 0.1.0-draft.1
 Review: PreparedNotExecuted
 Overall: NoCurrentKernelConformanceClaim
 ```

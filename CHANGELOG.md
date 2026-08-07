@@ -20,6 +20,7 @@ All notable repository-level changes are documented here.
 - Proposed MingOS Kernel specification-family scope and authority decision (`ADR-0026`) with family allocation, authority, conformance, role, traceability, and machine-readable boundary artifacts (`REF-0026` through `REF-0030`).
 - Draft MingOS Kernel family index and core operational contract (`KERNEL-0000`, `KERNEL-0001`) with requirement crosswalk, open-ambiguity register, review protocol, provisional vocabulary, machine index, and repository validators (`REF-0031` through `REF-0034`).
 - Draft Kernel canonical object/data model and lifecycle/state machines (`KERNEL-0002`, `KERNEL-0003`) with object, transition, access, ambiguity, review, machine-index and validation artifacts (`REF-0040` through `REF-0044`).
+- Draft Kernel conformance requirements and test specifications (`KERNEL-0004`, `KERNEL-0005`) with claim, evidence, assessment, exception, public-language and test-catalog artifacts (`REF-0045` through `REF-0051`).
 - Day18/Kernel integration repair with central document-ID reservation (`GOV-0113`), combined validation entry points, and corrected Day18 provenance.
 
 ### Status boundary

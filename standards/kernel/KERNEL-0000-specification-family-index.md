@@ -2,7 +2,7 @@
 id: KERNEL-0000
 title: MingOS Kernel Specification Family Index and Lifecycle
 status: Draft
-version: 0.4.0-draft.4
+version: 0.5.0-draft.5
 layer: Layer 2 — Standards
 owner: Ming Foundation Kernel Architecture
 created: 2026-07-15
@@ -10,7 +10,7 @@ updated: 2026-07-15
 language: en
 canonical_language: en
 translation_status: original
-decision_base_commit: f3905710db2304ab926c4ab31e10264931539f98
+decision_base_commit: 29485e67279d11401bb0f9f2b9afc78f0bdf67f4
 related:
   - ADR-0005
   - ADR-0026
@@ -18,6 +18,8 @@ related:
   - KERNEL-0001
   - KERNEL-0002
   - KERNEL-0003
+  - KERNEL-0004
+  - KERNEL-0005
   - REF-0031
   - REF-0032
   - REF-0033
@@ -55,13 +57,14 @@ This Draft does not create certification, public marks, implementation conforman
 ## 4. Family version set
 
 ```text
-family_version: kernel-family/0.4.0-draft.4
+family_version: kernel-family/0.5.0-draft.5
 ADR-0026: Proposed / 0.2.0
-KERNEL-0000: Draft / 0.4.0-draft.4
-KERNEL-0001: Draft / 0.2.2-draft.4
+KERNEL-0000: Draft / 0.5.0-draft.5
+KERNEL-0001: Draft / 0.2.3-draft.5
 KERNEL-0002: Draft / 0.2.0-draft.2
 KERNEL-0003: Draft / 0.2.0-draft.2
-KERNEL-0004..0005: ReservedNotCreated
+KERNEL-0004: Draft / 0.1.0-draft.1
+KERNEL-0005: Draft / 0.1.0-draft.1
 claim: NoCurrentKernelConformanceClaim
 ```
 
@@ -115,3 +118,4 @@ Cross-language equality, Profile applicability, emergency exceptions, concurrent
 | 0.2.0-draft.2 | 2026-07-15 | MOS completeness and exact KCR traceability | Draft |
 | 0.3.0-draft.3 | 2026-07-15 | Initial Round 08 family set | Draft |
 | 0.4.0-draft.4 | 2026-07-15 | Correct family versions, KDO/KLS traceability and state/process separation | Draft |
+| 0.5.0-draft.5 | 2026-07-15 | Add Draft conformance and test documents without authorizing claims | Draft |

@@ -1,0 +1,4036 @@
+{
+  "schema": "mingos.kernel-test-specifications.v0.1",
+  "status": "Draft",
+  "version": "0.1.0-draft.1",
+  "decision_base_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+  "family_id": "kernel-family/0.5.0-draft.5",
+  "governance_requirements": [
+    {
+      "id": "KTG-0001",
+      "domain": "TestIdentity",
+      "level": "MUST",
+      "text": "Every test specification MUST have stable identity, version, requirement references and change history.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0011–0018",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12 and §17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0002",
+      "domain": "TestNeutrality",
+      "level": "MUST",
+      "text": "A test MUST describe observable behavior and evidence without requiring one vendor, model, database or UI.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0011–0018",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12 and §17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0003",
+      "domain": "PositiveNegative",
+      "level": "MUST",
+      "text": "Mandatory behavior requires positive and negative coverage where meaningful.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0011–0018",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12 and §17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0004",
+      "domain": "ProhibitionAdversarial",
+      "level": "MUST",
+      "text": "MUST NOT and SHOULD NOT requirements require adversarial or misuse coverage.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0011–0018",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12 and §17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0005",
+      "domain": "Counterexample",
+      "level": "MUST",
+      "text": "Tests MUST preserve counterexamples and Inconclusive outcomes.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0011–0018",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12 and §17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0006",
+      "domain": "Preconditions",
+      "level": "MUST",
+      "text": "Every execution MUST record preconditions, environment and applicable Profile.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0011–0018",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12 and §17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0007",
+      "domain": "DataClass",
+      "level": "MUST",
+      "text": "Every execution MUST identify synthetic, internal, restricted personal or other governed evidence class.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0011–0018",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12 and §17"
+        }
+      ],
+      "verification_methods": [
+        "EvidenceEnvironmentInspection",
+        "SensitiveDataMisuseScenario"
+      ],
+      "evidence_types": [
+        "EvidenceHandlingPlan",
+        "SecurityOrPrivacyFinding"
+      ]
+    },
+    {
+      "id": "KTG-0008",
+      "domain": "NoRealDataDefault",
+      "level": "MUST NOT",
+      "text": "A test specification MUST NOT require real identifiable affected-person data when synthetic or de-identified evidence is sufficient.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0011–0018",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12 and §17"
+        }
+      ],
+      "verification_methods": [
+        "EvidenceEnvironmentInspection",
+        "SensitiveDataMisuseScenario"
+      ],
+      "evidence_types": [
+        "EvidenceHandlingPlan",
+        "SecurityOrPrivacyFinding"
+      ]
+    },
+    {
+      "id": "KTG-0009",
+      "domain": "ExpectedOutcome",
+      "level": "MUST",
+      "text": "Expected outcomes MUST distinguish system behavior, record state, user-visible behavior and evidence.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0011–0018",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12 and §17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0010",
+      "domain": "FailureMeaning",
+      "level": "MUST",
+      "text": "Failure MUST identify violated expectation, affected scope and required containment.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0011–0018",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12 and §17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0011",
+      "domain": "BlockedMeaning",
+      "level": "MUST",
+      "text": "Blocked MUST identify missing dependency, owner and next condition.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0011–0018",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12 and §17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0012",
+      "domain": "InconclusiveMeaning",
+      "level": "MUST",
+      "text": "Inconclusive MUST preserve uncertainty and MUST NOT be counted as Pass.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0011–0018",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12 and §17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0013",
+      "domain": "InvalidatedMeaning",
+      "level": "MUST",
+      "text": "A result becomes Invalidated when material test, implementation, environment or source changes break comparability.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0011–0018",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12 and §17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0014",
+      "domain": "Expiry",
+      "level": "MUST",
+      "text": "Time-sensitive test evidence MUST expire or be re-run.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0011–0018",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12 and §17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0015",
+      "domain": "StateMachineCoverage",
+      "level": "MUST",
+      "text": "Each object state machine MUST test allowed, forbidden, expiry, appeal and concurrency behavior where applicable.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0014–0026",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 and §6–11"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4–12"
+        }
+      ],
+      "verification_methods": [
+        "StateMachineCoverageInspection",
+        "InvalidTransitionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "TransitionExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0016",
+      "domain": "ProcessStateSeparation",
+      "level": "MUST",
+      "text": "Tests MUST detect process stages incorrectly stored as object states.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0014–0026",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 and §6–11"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4–12"
+        }
+      ],
+      "verification_methods": [
+        "StateMachineCoverageInspection",
+        "InvalidTransitionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "TransitionExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0017",
+      "domain": "LineageCoverage",
+      "level": "MUST",
+      "text": "Derived records and decisions MUST be traceable to source and transformation history.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0014–0026",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 and §6–11"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4–12"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0018",
+      "domain": "CorrectionPropagation",
+      "level": "MUST",
+      "text": "Correction tests MUST inspect active, derived, indexed, shared and future-use effects.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0014–0026",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 and §6–11"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4–12"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0019",
+      "domain": "RightsCompletion",
+      "level": "MUST",
+      "text": "Rights-request tests MUST inspect primary, derived, shared and backup completion or bounded exception.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0014–0026",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 and §6–11"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4–12"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0020",
+      "domain": "HandoffEvidence",
+      "level": "MUST",
+      "text": "Handoff tests MUST distinguish initiation, acknowledgment, acceptance, failure and closure.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0014–0026",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 and §6–11"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4–12"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0021",
+      "domain": "HumanAccountability",
+      "level": "MUST",
+      "text": "High-impact tests MUST demonstrate actual human authority, information and stop capacity.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0014–0026",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 and §6–11"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4–12"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0022",
+      "domain": "AffectedPersonUsability",
+      "level": "MUST",
+      "text": "Applicable tests MUST assess whether notice, correction, refusal and appeal are usable.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0014–0026",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 and §6–11"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4–12"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0023",
+      "domain": "Accessibility",
+      "level": "MUST",
+      "text": "Applicable tests MUST include language, disability, literacy, bandwidth and private-contact constraints.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0014–0026",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 and §6–11"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4–12"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0024",
+      "domain": "OperatorAsRisk",
+      "level": "MUST",
+      "text": "Safety and representative tests MUST include operator or representative as possible source of harm.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0014–0026",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 and §6–11"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4–12"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0025",
+      "domain": "ResourceFreshness",
+      "level": "MUST",
+      "text": "Resource tests MUST include stale, disputed, inaccessible and unavailable conditions.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0014–0026",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 and §6–11"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4–12"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0026",
+      "domain": "ClaimAudit",
+      "level": "MUST",
+      "text": "Public-claim tests MUST compare exact wording to current evidence and status.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0031–0042",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12–17"
+        }
+      ],
+      "verification_methods": [
+        "ClaimLanguageAudit",
+        "SelfCertificationNegativeScenario"
+      ],
+      "evidence_types": [
+        "ClaimAudit",
+        "ReviewDecision"
+      ]
+    },
+    {
+      "id": "KTG-0027",
+      "domain": "NoSelfCertification",
+      "level": "MUST NOT",
+      "text": "A passing self-run test suite MUST NOT be represented as independent certification.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0031–0042",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12–17"
+        }
+      ],
+      "verification_methods": [
+        "ClaimLanguageAudit",
+        "SelfCertificationNegativeScenario"
+      ],
+      "evidence_types": [
+        "ClaimAudit",
+        "ReviewDecision"
+      ]
+    },
+    {
+      "id": "KTG-0028",
+      "domain": "ExecutionSeparation",
+      "level": "MUST",
+      "text": "Test specification, execution, review and conformance decision MUST remain distinct records.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0031–0042",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12–17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0029",
+      "domain": "Reproducibility",
+      "level": "SHOULD",
+      "text": "Automated and controlled tests SHOULD record enough environment detail for bounded reproduction.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0031–0042",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12–17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0030",
+      "domain": "Security",
+      "level": "MUST",
+      "text": "Test infrastructure and artifacts MUST protect secrets, personal data and restricted evidence.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0031–0042",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12–17"
+        }
+      ],
+      "verification_methods": [
+        "EvidenceEnvironmentInspection",
+        "SensitiveDataMisuseScenario"
+      ],
+      "evidence_types": [
+        "EvidenceHandlingPlan",
+        "SecurityOrPrivacyFinding"
+      ]
+    },
+    {
+      "id": "KTG-0031",
+      "domain": "Regression",
+      "level": "MUST",
+      "text": "Material changes require targeted regression and affected-claim review.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0031–0042",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12–17"
+        }
+      ],
+      "verification_methods": [
+        "TestSpecificationInspection",
+        "NegativeOrBoundaryExecutionScenario"
+      ],
+      "evidence_types": [
+        "TestSpecification",
+        "ExecutionRecord"
+      ]
+    },
+    {
+      "id": "KTG-0032",
+      "domain": "NoCurrentExecutionClaim",
+      "level": "MUST NOT",
+      "text": "Publishing KERNEL-0005 or its derived catalog MUST NOT imply that any test was executed.",
+      "source_treatment": "TestGovernanceOperationalizationOfDraftConformanceModel",
+      "source_refs": [
+        {
+          "source_id": "KERNEL-0004",
+          "status": "Draft",
+          "version": "0.1.0-draft.1",
+          "path": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
+          "locator": "§4 KCF-0031–0042",
+          "source_role": "CollectionLocalDraft",
+          "baseline_type": "CollectionLocalDraft"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§12–17"
+        }
+      ],
+      "verification_methods": [
+        "ClaimLanguageAudit",
+        "SelfCertificationNegativeScenario"
+      ],
+      "evidence_types": [
+        "ClaimAudit",
+        "ReviewDecision"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "id": "KTEST-0001",
+      "requirement_id": "KCR-0001",
+      "requirement_family": "KCR",
+      "title": "KCR-0001 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "BoundaryRecord",
+        "RoleAssignmentRecord"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0002",
+      "requirement_id": "KCR-0002",
+      "requirement_family": "KCR",
+      "title": "KCR-0002 verification specification",
+      "test_type": "LineageAndInspection",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "VersionSetDeclaration",
+        "SourceStatusSnapshot"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0003",
+      "requirement_id": "KCR-0003",
+      "requirement_family": "KCR",
+      "title": "KCR-0003 verification specification",
+      "test_type": "LineageAndInspection",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "SourceBaseline",
+        "ConflictRecord"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0004",
+      "requirement_id": "KCR-0004",
+      "requirement_family": "KCR",
+      "title": "KCR-0004 verification specification",
+      "test_type": "ScenarioAndUsability",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "AffectedPersonRegister",
+        "ImpactAssessment"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0005",
+      "requirement_id": "KCR-0005",
+      "requirement_family": "KCR",
+      "title": "KCR-0005 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "RoleAssignmentRecords",
+        "ConflictChecks"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0006",
+      "requirement_id": "KCR-0006",
+      "requirement_family": "KCR",
+      "title": "KCR-0006 verification specification",
+      "test_type": "ScenarioAndUsability",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "AuthorityEvidence",
+        "ScopeExpiryRecord"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0007",
+      "requirement_id": "KCR-0007",
+      "requirement_family": "KCR",
+      "title": "KCR-0007 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "PurposeRecord",
+        "OperationTrace"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0008",
+      "requirement_id": "KCR-0008",
+      "requirement_family": "KCR",
+      "title": "KCR-0008 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "AuthorityBasisRecord",
+        "RevocationTrace"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0009",
+      "requirement_id": "KCR-0009",
+      "requirement_family": "KCR",
+      "title": "KCR-0009 verification specification",
+      "test_type": "ScenarioAndUsability",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "InteractionTrace",
+        "AdverseOutcomeReview"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0010",
+      "requirement_id": "KCR-0010",
+      "requirement_family": "KCR",
+      "title": "KCR-0010 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "RightsRequestRecord",
+        "UpdateTrace"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0011",
+      "requirement_id": "KCR-0011",
+      "requirement_family": "KCR",
+      "title": "KCR-0011 verification specification",
+      "test_type": "AccessAndDataFlow",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "DataInventory",
+        "AccessAudit"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0012",
+      "requirement_id": "KCR-0012",
+      "requirement_family": "KCR",
+      "title": "KCR-0012 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "KnowledgeItemRecords",
+        "StatusHistory"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0013",
+      "requirement_id": "KCR-0013",
+      "requirement_family": "KCR",
+      "title": "KCR-0013 verification specification",
+      "test_type": "LineageAndInspection",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "ProvenanceGraph",
+        "TransformationHistory"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0014",
+      "requirement_id": "KCR-0014",
+      "requirement_family": "KCR",
+      "title": "KCR-0014 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "InferenceRecord",
+        "UnknownRecord"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0015",
+      "requirement_id": "KCR-0015",
+      "requirement_family": "KCR",
+      "title": "KCR-0015 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "DissentRecord",
+        "SupersessionHistory"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0016",
+      "requirement_id": "KCR-0016",
+      "requirement_family": "KCR",
+      "title": "KCR-0016 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "ObservationRecord",
+        "AdviceDecisionTrace"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0017",
+      "requirement_id": "KCR-0017",
+      "requirement_family": "KCR",
+      "title": "KCR-0017 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "RelationshipRecord",
+        "EventTimeline"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0018",
+      "requirement_id": "KCR-0018",
+      "requirement_family": "KCR",
+      "title": "KCR-0018 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "ActionProposal",
+        "UserChoiceRecord"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0019",
+      "requirement_id": "KCR-0019",
+      "requirement_family": "KCR",
+      "title": "KCR-0019 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "ActionPlan",
+        "RollbackRecord"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0020",
+      "requirement_id": "KCR-0020",
+      "requirement_family": "KCR",
+      "title": "KCR-0020 verification specification",
+      "test_type": "ScenarioAndUsability",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "ImpactAssessment",
+        "ReviewAppealPlan"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0021",
+      "requirement_id": "KCR-0021",
+      "requirement_family": "KCR",
+      "title": "KCR-0021 verification specification",
+      "test_type": "NegativeAndAdversarial",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "MessageTrace",
+        "CommercialConflictReview"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0022",
+      "requirement_id": "KCR-0022",
+      "requirement_family": "KCR",
+      "title": "KCR-0022 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "RiskSignal",
+        "RiskAssessment"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0023",
+      "requirement_id": "KCR-0023",
+      "requirement_family": "KCR",
+      "title": "KCR-0023 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "CapabilityStatusRecord",
+        "AvailabilityEvidence"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0024",
+      "requirement_id": "KCR-0024",
+      "requirement_family": "KCR",
+      "title": "KCR-0024 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "HandoffRecord",
+        "AcceptanceEvidence"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0025",
+      "requirement_id": "KCR-0025",
+      "requirement_family": "KCR",
+      "title": "KCR-0025 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "IncidentRecord",
+        "AppealRecord"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0026",
+      "requirement_id": "KCR-0026",
+      "requirement_family": "KCR",
+      "title": "KCR-0026 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "ProtectiveActionRecord",
+        "IndependentReview"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0027",
+      "requirement_id": "KCR-0027",
+      "requirement_family": "KCR",
+      "title": "KCR-0027 verification specification",
+      "test_type": "AccessAndDataFlow",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "MemoryRecord",
+        "PropagationEvidence"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0028",
+      "requirement_id": "KCR-0028",
+      "requirement_family": "KCR",
+      "title": "KCR-0028 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "RetentionProfile",
+        "CompletionEvidence"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0029",
+      "requirement_id": "KCR-0029",
+      "requirement_family": "KCR",
+      "title": "KCR-0029 verification specification",
+      "test_type": "NegativeAndAdversarial",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "ProfileHistory",
+        "ExpiryEvidence"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0030",
+      "requirement_id": "KCR-0030",
+      "requirement_family": "KCR",
+      "title": "KCR-0030 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "SecondaryUseRecord",
+        "AuthorityEvidence"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0031",
+      "requirement_id": "KCR-0031",
+      "requirement_family": "KCR",
+      "title": "KCR-0031 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "ComponentManifest",
+        "GeneratedContentTrace"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0032",
+      "requirement_id": "KCR-0032",
+      "requirement_family": "KCR",
+      "title": "KCR-0032 verification specification",
+      "test_type": "ScenarioAndUsability",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "AccountableRoleRecord",
+        "StopAuthorityEvidence"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0033",
+      "requirement_id": "KCR-0033",
+      "requirement_family": "KCR",
+      "title": "KCR-0033 verification specification",
+      "test_type": "ScenarioAndUsability",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "ParticipationRecord",
+        "AccessibilityEvidence"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0034",
+      "requirement_id": "KCR-0034",
+      "requirement_family": "KCR",
+      "title": "KCR-0034 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "FeedbackRecord",
+        "RevisionTrace"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0035",
+      "requirement_id": "KCR-0035",
+      "requirement_family": "KCR",
+      "title": "KCR-0035 verification specification",
+      "test_type": "LineageAndInspection",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "AuditEvent",
+        "UnknownRegister"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0036",
+      "requirement_id": "KCR-0036",
+      "requirement_family": "KCR",
+      "title": "KCR-0036 verification specification",
+      "test_type": "NegativeAndAdversarial",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "ClaimRecord",
+        "BoundaryStatement"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0037",
+      "requirement_id": "KDO-0001",
+      "requirement_family": "KDO",
+      "title": "KDO-0001 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0038",
+      "requirement_id": "KDO-0002",
+      "requirement_family": "KDO",
+      "title": "KDO-0002 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0039",
+      "requirement_id": "KDO-0003",
+      "requirement_family": "KDO",
+      "title": "KDO-0003 verification specification",
+      "test_type": "NegativeAndAdversarial",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0040",
+      "requirement_id": "KDO-0004",
+      "requirement_family": "KDO",
+      "title": "KDO-0004 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0041",
+      "requirement_id": "KDO-0005",
+      "requirement_family": "KDO",
+      "title": "KDO-0005 verification specification",
+      "test_type": "ScenarioAndUsability",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0042",
+      "requirement_id": "KDO-0006",
+      "requirement_family": "KDO",
+      "title": "KDO-0006 verification specification",
+      "test_type": "LineageAndInspection",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0043",
+      "requirement_id": "KDO-0007",
+      "requirement_family": "KDO",
+      "title": "KDO-0007 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0044",
+      "requirement_id": "KDO-0008",
+      "requirement_family": "KDO",
+      "title": "KDO-0008 verification specification",
+      "test_type": "ScenarioAndUsability",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0045",
+      "requirement_id": "KDO-0009",
+      "requirement_family": "KDO",
+      "title": "KDO-0009 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0046",
+      "requirement_id": "KDO-0010",
+      "requirement_family": "KDO",
+      "title": "KDO-0010 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0047",
+      "requirement_id": "KDO-0011",
+      "requirement_family": "KDO",
+      "title": "KDO-0011 verification specification",
+      "test_type": "ScenarioAndUsability",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0048",
+      "requirement_id": "KDO-0012",
+      "requirement_family": "KDO",
+      "title": "KDO-0012 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0049",
+      "requirement_id": "KDO-0013",
+      "requirement_family": "KDO",
+      "title": "KDO-0013 verification specification",
+      "test_type": "LineageAndInspection",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0050",
+      "requirement_id": "KDO-0014",
+      "requirement_family": "KDO",
+      "title": "KDO-0014 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0051",
+      "requirement_id": "KDO-0015",
+      "requirement_family": "KDO",
+      "title": "KDO-0015 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0052",
+      "requirement_id": "KDO-0016",
+      "requirement_family": "KDO",
+      "title": "KDO-0016 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0053",
+      "requirement_id": "KDO-0017",
+      "requirement_family": "KDO",
+      "title": "KDO-0017 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0054",
+      "requirement_id": "KDO-0018",
+      "requirement_family": "KDO",
+      "title": "KDO-0018 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0055",
+      "requirement_id": "KDO-0019",
+      "requirement_family": "KDO",
+      "title": "KDO-0019 verification specification",
+      "test_type": "AccessAndDataFlow",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0056",
+      "requirement_id": "KDO-0020",
+      "requirement_family": "KDO",
+      "title": "KDO-0020 verification specification",
+      "test_type": "AccessAndDataFlow",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0057",
+      "requirement_id": "KDO-0021",
+      "requirement_family": "KDO",
+      "title": "KDO-0021 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0058",
+      "requirement_id": "KDO-0022",
+      "requirement_family": "KDO",
+      "title": "KDO-0022 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0059",
+      "requirement_id": "KDO-0023",
+      "requirement_family": "KDO",
+      "title": "KDO-0023 verification specification",
+      "test_type": "NegativeAndAdversarial",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0060",
+      "requirement_id": "KDO-0024",
+      "requirement_family": "KDO",
+      "title": "KDO-0024 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0061",
+      "requirement_id": "KDO-0025",
+      "requirement_family": "KDO",
+      "title": "KDO-0025 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0062",
+      "requirement_id": "KDO-0026",
+      "requirement_family": "KDO",
+      "title": "KDO-0026 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0063",
+      "requirement_id": "KDO-0027",
+      "requirement_family": "KDO",
+      "title": "KDO-0027 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0064",
+      "requirement_id": "KDO-0028",
+      "requirement_family": "KDO",
+      "title": "KDO-0028 verification specification",
+      "test_type": "LineageAndInspection",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0065",
+      "requirement_id": "KDO-0029",
+      "requirement_family": "KDO",
+      "title": "KDO-0029 verification specification",
+      "test_type": "LineageAndInspection",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0066",
+      "requirement_id": "KDO-0030",
+      "requirement_family": "KDO",
+      "title": "KDO-0030 verification specification",
+      "test_type": "AccessAndDataFlow",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0067",
+      "requirement_id": "KDO-0031",
+      "requirement_family": "KDO",
+      "title": "KDO-0031 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0068",
+      "requirement_id": "KDO-0032",
+      "requirement_family": "KDO",
+      "title": "KDO-0032 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0069",
+      "requirement_id": "KDO-0033",
+      "requirement_family": "KDO",
+      "title": "KDO-0033 verification specification",
+      "test_type": "NegativeAndAdversarial",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0070",
+      "requirement_id": "KDO-0034",
+      "requirement_family": "KDO",
+      "title": "KDO-0034 verification specification",
+      "test_type": "NegativeAndAdversarial",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0071",
+      "requirement_id": "KDO-0035",
+      "requirement_family": "KDO",
+      "title": "KDO-0035 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0072",
+      "requirement_id": "KDO-0036",
+      "requirement_family": "KDO",
+      "title": "KDO-0036 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0073",
+      "requirement_id": "KLS-0001",
+      "requirement_family": "KLS",
+      "title": "KLS-0001 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0074",
+      "requirement_id": "KLS-0002",
+      "requirement_family": "KLS",
+      "title": "KLS-0002 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0075",
+      "requirement_id": "KLS-0003",
+      "requirement_family": "KLS",
+      "title": "KLS-0003 verification specification",
+      "test_type": "LineageAndInspection",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0076",
+      "requirement_id": "KLS-0004",
+      "requirement_family": "KLS",
+      "title": "KLS-0004 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0077",
+      "requirement_id": "KLS-0005",
+      "requirement_family": "KLS",
+      "title": "KLS-0005 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0078",
+      "requirement_id": "KLS-0006",
+      "requirement_family": "KLS",
+      "title": "KLS-0006 verification specification",
+      "test_type": "NegativeAndAdversarial",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0079",
+      "requirement_id": "KLS-0007",
+      "requirement_family": "KLS",
+      "title": "KLS-0007 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0080",
+      "requirement_id": "KLS-0008",
+      "requirement_family": "KLS",
+      "title": "KLS-0008 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0081",
+      "requirement_id": "KLS-0009",
+      "requirement_family": "KLS",
+      "title": "KLS-0009 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0082",
+      "requirement_id": "KLS-0010",
+      "requirement_family": "KLS",
+      "title": "KLS-0010 verification specification",
+      "test_type": "ScenarioAndUsability",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0083",
+      "requirement_id": "KLS-0011",
+      "requirement_family": "KLS",
+      "title": "KLS-0011 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0084",
+      "requirement_id": "KLS-0012",
+      "requirement_family": "KLS",
+      "title": "KLS-0012 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0085",
+      "requirement_id": "KLS-0013",
+      "requirement_family": "KLS",
+      "title": "KLS-0013 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0086",
+      "requirement_id": "KLS-0014",
+      "requirement_family": "KLS",
+      "title": "KLS-0014 verification specification",
+      "test_type": "NegativeAndAdversarial",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0087",
+      "requirement_id": "KLS-0015",
+      "requirement_family": "KLS",
+      "title": "KLS-0015 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0088",
+      "requirement_id": "KLS-0016",
+      "requirement_family": "KLS",
+      "title": "KLS-0016 verification specification",
+      "test_type": "ScenarioAndUsability",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0089",
+      "requirement_id": "KLS-0017",
+      "requirement_family": "KLS",
+      "title": "KLS-0017 verification specification",
+      "test_type": "ScenarioAndUsability",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0090",
+      "requirement_id": "KLS-0018",
+      "requirement_family": "KLS",
+      "title": "KLS-0018 verification specification",
+      "test_type": "ScenarioAndUsability",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0091",
+      "requirement_id": "KLS-0019",
+      "requirement_family": "KLS",
+      "title": "KLS-0019 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0092",
+      "requirement_id": "KLS-0020",
+      "requirement_family": "KLS",
+      "title": "KLS-0020 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0093",
+      "requirement_id": "KLS-0021",
+      "requirement_family": "KLS",
+      "title": "KLS-0021 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0094",
+      "requirement_id": "KLS-0022",
+      "requirement_family": "KLS",
+      "title": "KLS-0022 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0095",
+      "requirement_id": "KLS-0023",
+      "requirement_family": "KLS",
+      "title": "KLS-0023 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0096",
+      "requirement_id": "KLS-0024",
+      "requirement_family": "KLS",
+      "title": "KLS-0024 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0097",
+      "requirement_id": "KLS-0025",
+      "requirement_family": "KLS",
+      "title": "KLS-0025 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0098",
+      "requirement_id": "KLS-0026",
+      "requirement_family": "KLS",
+      "title": "KLS-0026 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0099",
+      "requirement_id": "KLS-0027",
+      "requirement_family": "KLS",
+      "title": "KLS-0027 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "NegativeAdversarial",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Prohibited behavior is blocked and cannot create an authorized state.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0100",
+      "requirement_id": "KLS-0028",
+      "requirement_family": "KLS",
+      "title": "KLS-0028 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0101",
+      "requirement_id": "KLS-0029",
+      "requirement_family": "KLS",
+      "title": "KLS-0029 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0102",
+      "requirement_id": "KLS-0030",
+      "requirement_family": "KLS",
+      "title": "KLS-0030 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0103",
+      "requirement_id": "KLS-0031",
+      "requirement_family": "KLS",
+      "title": "KLS-0031 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0104",
+      "requirement_id": "KLS-0032",
+      "requirement_family": "KLS",
+      "title": "KLS-0032 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0105",
+      "requirement_id": "KLS-0033",
+      "requirement_family": "KLS",
+      "title": "KLS-0033 verification specification",
+      "test_type": "StateAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KTEST-0106",
+      "requirement_id": "KLS-0034",
+      "requirement_family": "KLS",
+      "title": "KLS-0034 verification specification",
+      "test_type": "StructuralAndScenario",
+      "required_polarity": "PositiveAndNegativeWhereMeaningful",
+      "preconditions": [
+        "Declared implementation boundary",
+        "Exact family/Profile version set",
+        "Governed test environment",
+        "No current conformance assumption"
+      ],
+      "procedure": [
+        "Construct a bounded case matching the requirement scope.",
+        "Execute permitted behavior and record state, user-visible behavior and evidence.",
+        "Execute a negative, boundary or misuse case where meaningful.",
+        "Inspect provenance, affected-person impact, authority, audit and downstream effects."
+      ],
+      "expected_outcome": "Required behavior is traceable; failure or uncertainty remains visible and cannot be counted as Pass.",
+      "evidence_types": [
+        "GovernedRecord",
+        "ReviewFinding"
+      ],
+      "execution_status": "NotExecuted"
+    }
+  ],
+  "scenario_suites": [
+    {
+      "id": "KSC-0001",
+      "name": "ThirdPartyStatement",
+      "boundary": "A parent or professional statement remains attributed and contestable.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0002",
+      "name": "RefusalWithoutPenalty",
+      "boundary": "Silence, disagreement or withdrawal is not agreement or adverse identity evidence.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0003",
+      "name": "RepresentativeConflict",
+      "boundary": "A representative who may be the harm source cannot authorize and close the action.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0004",
+      "name": "CorrectionPropagation",
+      "boundary": "Correction updates active, derived, indexed and future uses while retaining lineage.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0005",
+      "name": "SourceLoss",
+      "boundary": "A derived conclusion without lineage becomes restricted or invalid.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0006",
+      "name": "UncertainAdvice",
+      "boundary": "Material uncertainty slows, narrows or escalates advice.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0007",
+      "name": "HiddenPersuasion",
+      "boundary": "Anxiety, shame, urgency and dependency are not used for consent, purchase or retention.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0008",
+      "name": "UnavailableHandoff",
+      "boundary": "A generated resource or sent message is not accepted service.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0009",
+      "name": "EmergencyTemporaryAction",
+      "boundary": "Protective action is necessary, proportionate, time-bounded and reviewable.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0010",
+      "name": "DeletionWithBackup",
+      "boundary": "Deletion addresses primary, derived, shared and backup behavior.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0011",
+      "name": "RiskProfileExpiry",
+      "boundary": "Temporary risk state does not become permanent identity.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0012",
+      "name": "SecondaryUse",
+      "boundary": "Sensitive data cannot silently enter analytics, training or marketing.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0013",
+      "name": "AIDisclosure",
+      "boundary": "AI role, limitations and provider/version remain visible.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0014",
+      "name": "HumanAccountability",
+      "boundary": "Named human has actual information, authority and stop capacity.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0015",
+      "name": "ParticipationImpossible",
+      "boundary": "Unsafe or inaccessible participation receives explicit handling.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0016",
+      "name": "InvalidTransition",
+      "boundary": "Undefined object transition is rejected.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0017",
+      "name": "ProcessStageConfusion",
+      "boundary": "Process stage is not stored as every object state.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0018",
+      "name": "StaleResource",
+      "boundary": "Expired or disputed resource stops current presentation.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0019",
+      "name": "IncidentAppeal",
+      "boundary": "Incident and appeal preserve independent review and reopening.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0020",
+      "name": "ClaimExpiry",
+      "boundary": "Expired or changed evidence suspends the claim.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0021",
+      "name": "CrossLanguage",
+      "boundary": "Translated labels preserve source status and distinctions.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0022",
+      "name": "Accessibility",
+      "boundary": "Rights remain usable across language, disability and bandwidth.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0023",
+      "name": "OperatorAsRisk",
+      "boundary": "System does not automatically side with the operator.",
+      "execution_status": "NotExecuted"
+    },
+    {
+      "id": "KSC-0024",
+      "name": "PublicClaim",
+      "boundary": "Draft, Planned, Available and conforming language are not conflated.",
+      "execution_status": "NotExecuted"
+    }
+  ],
+  "result_states": [
+    "NotExecuted",
+    "Pass",
+    "Fail",
+    "Blocked",
+    "Inconclusive",
+    "NotApplicable",
+    "Invalidated",
+    "Expired"
+  ],
+  "execution_summary": {
+    "specification_count": 106,
+    "scenario_suite_count": 24,
+    "executed_count": 0,
+    "pass_count": 0,
+    "fail_count": 0
+  },
+  "integrity": {
+    "governance_requirement_count": 32,
+    "test_count": 106,
+    "scenario_suite_count": 24,
+    "executed_count": 0,
+    "source_baseline_count": 7,
+    "governance_requirements_with_complete_traceability": 32
+  },
+  "source_baseline": {
+    "R9SRC-KERNEL-0000": {
+      "source_id": "KERNEL-0000",
+      "status": "Draft",
+      "version": "0.4.0-draft.4",
+      "path": "standards/kernel/KERNEL-0000-specification-family-index.md",
+      "baseline_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+      "blob_sha": "1c85cf82347d9006f6bdf52192b3a948d16fc271",
+      "source_role": "Round08MergedDraft"
+    },
+    "R9SRC-KERNEL-0001": {
+      "source_id": "KERNEL-0001",
+      "status": "Draft",
+      "version": "0.2.2-draft.4",
+      "path": "standards/kernel/KERNEL-0001-core-operational-contract.md",
+      "baseline_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+      "blob_sha": "972a13e487da01ce2ab59077232547b938ef7942",
+      "source_role": "Round08MergedDraft"
+    },
+    "R9SRC-KERNEL-0002": {
+      "source_id": "KERNEL-0002",
+      "status": "Draft",
+      "version": "0.2.0-draft.2",
+      "path": "standards/kernel/KERNEL-0002-canonical-object-data-model.md",
+      "baseline_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+      "blob_sha": "f926bfc318bd4df861eb078f7485cfcb58f240dd",
+      "source_role": "Round08MergedDraft"
+    },
+    "R9SRC-KERNEL-0003": {
+      "source_id": "KERNEL-0003",
+      "status": "Draft",
+      "version": "0.2.0-draft.2",
+      "path": "standards/kernel/KERNEL-0003-lifecycle-state-machines.md",
+      "baseline_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+      "blob_sha": "d42fa308c6ad4904a4aa3bc67ee99f128c73a2dc",
+      "source_role": "Round08MergedDraft"
+    },
+    "R9SRC-MOS-0000": {
+      "source_id": "MOS-0000",
+      "status": "Draft",
+      "version": "1.0.0-alpha.11",
+      "path": "standards/mos/MOS-0000-standard-process.md",
+      "baseline_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+      "blob_sha": "8dab1e6a846e7af0fd2260a6afb21ab8026a6110",
+      "source_role": "DraftStandardsProcess"
+    },
+    "R9SRC-REF-0028": {
+      "source_id": "REF-0028",
+      "status": "Draft",
+      "version": "0.2.0-draft.1",
+      "path": "reference/kernel/REF-0028-kernel-conformance-replaceability-claim-boundary.md",
+      "baseline_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+      "blob_sha": "57bff35b297e4be1697c91225c098d9eae6fa48e",
+      "source_role": "DraftConformanceBoundary"
+    },
+    "R9SRC-RFC-0005": {
+      "source_id": "RFC-0005",
+      "status": "Proposed",
+      "version": "0.1.0",
+      "path": "standards/rfc/RFC-0005-public-claim-charter-sync-and-capability-status.md",
+      "baseline_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+      "blob_sha": "61da3f762705997d397ec9d1e0c55b6b7fa8c6d4",
+      "source_role": "ProposedPublicClaimProtocol"
+    }
+  },
+  "source_text_authoritative": true
+}

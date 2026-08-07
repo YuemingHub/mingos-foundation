@@ -10,7 +10,7 @@
     "source_text_authoritative": true
   },
   "family": {
-    "id": "kernel-family/0.4.0-draft.4",
+    "id": "kernel-family/0.5.0-draft.5",
     "decision": {
       "id": "ADR-0026",
       "status": "Proposed",
@@ -20,12 +20,12 @@
       {
         "id": "KERNEL-0000",
         "status": "Draft",
-        "version": "0.4.0-draft.4"
+        "version": "0.5.0-draft.5"
       },
       {
         "id": "KERNEL-0001",
         "status": "Draft",
-        "version": "0.2.2-draft.4"
+        "version": "0.2.3-draft.5"
       },
       {
         "id": "KERNEL-0002",
@@ -36,12 +36,19 @@
         "id": "KERNEL-0003",
         "status": "Draft",
         "version": "0.2.0-draft.2"
+      },
+      {
+        "id": "KERNEL-0004",
+        "status": "Draft",
+        "version": "0.1.0-draft.1"
+      },
+      {
+        "id": "KERNEL-0005",
+        "status": "Draft",
+        "version": "0.1.0-draft.1"
       }
     ],
-    "reserved_not_created": [
-      "KERNEL-0004",
-      "KERNEL-0005"
-    ]
+    "reserved_not_created": []
   },
   "allowed_normative_levels": [
     "MUST",
@@ -2046,8 +2053,8 @@
   },
   "conformance": {
     "current_claim": "NoCurrentKernelConformanceClaim",
-    "conformance_requirements_document_exists": false,
-    "test_specification_exists": false,
+    "conformance_requirements_document_exists": true,
+    "test_specification_exists": true,
     "product_assessment_count": 0
   },
   "integrity": {
@@ -2055,8 +2062,8 @@
     "ambiguity_count": 30,
     "vocabulary_count": 30,
     "external_source_count": 20,
-    "created_kernel_document_count": 4,
-    "reserved_not_created_count": 2,
+    "created_kernel_document_count": 6,
+    "reserved_not_created_count": 0,
     "implementation_conformance_claim": false
   },
   "round08_model": "reference/kernel/mingos-kernel-object-lifecycle-model.json"

@@ -1,0 +1,1581 @@
+{
+  "schema": "mingos.kernel-conformance-model.v0.1",
+  "status": "Draft",
+  "version": "0.1.0-draft.1",
+  "decision_base_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+  "family_id": "kernel-family/0.5.0-draft.5",
+  "requirements": [
+    {
+      "id": "KCF-0001",
+      "domain": "DeclaredBoundary",
+      "level": "MUST",
+      "text": "An assessment MUST identify one bounded implementation, version, governed surfaces, organization and accountable human role.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§4–6 and §9"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0001–0003 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0002",
+      "domain": "ExactVersionSet",
+      "level": "MUST",
+      "text": "An assessment MUST identify the exact Kernel family, RFC and Profile versions and statuses used.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§4–6 and §9"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0001–0003 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0003",
+      "domain": "ClaimUnit",
+      "level": "MUST",
+      "text": "A claim MUST name one assessable boundary and MUST NOT silently extend to a company, ecosystem or unrelated product.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§4–6 and §9"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0001–0003 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        }
+      ],
+      "verification_methods": [
+        "ClaimRecordInspection",
+        "OverclaimNegativeScenario"
+      ],
+      "evidence_types": [
+        "ClaimRecord",
+        "PublicClaimAudit"
+      ]
+    },
+    {
+      "id": "KCF-0004",
+      "domain": "ProfileIdentification",
+      "level": "MUST",
+      "text": "A claim MUST identify an approved conformance Profile and applicability rules.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§4–6 and §9"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0001–0003 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0005",
+      "domain": "RequirementApplicability",
+      "level": "MUST",
+      "text": "Every Profile requirement MUST be classified as Mandatory, ConditionalTriggered, ConditionalNotTriggered, ProhibitedBehavior or NotApplicableWithJustification.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§4–6 and §9"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0001–0003 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0006",
+      "domain": "MandatoryCoverage",
+      "level": "MUST",
+      "text": "Every Mandatory and triggered Conditional requirement MUST have current evidence and test results.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§4–6 and §9"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0001–0003 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0007",
+      "domain": "ProhibitionCoverage",
+      "level": "MUST",
+      "text": "Every prohibited behavior MUST have negative or adversarial coverage.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§4–6 and §9"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0001–0003 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0008",
+      "domain": "ConditionalTrigger",
+      "level": "MUST",
+      "text": "A conditional requirement MUST record trigger evidence and decision owner.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§4–6 and §9"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0001–0003 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0009",
+      "domain": "NotApplicableJustification",
+      "level": "MUST",
+      "text": "NotApplicableWithJustification MUST identify scope, evidence, reviewer, expiry and change consequences.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§4–6 and §9"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0001–0003 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0010",
+      "domain": "SourceStatusVisibility",
+      "level": "MUST",
+      "text": "Draft, Proposed and Candidate source status MUST remain visible in assessment and public wording.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§4–6 and §9"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0001–0003 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0011",
+      "domain": "EvidenceSnapshot",
+      "level": "MUST",
+      "text": "An assessment MUST freeze an evidence snapshot with identities, dates, owners, access controls and integrity metadata.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§5, §8–9"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§7, §12–17"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0035–0036"
+        }
+      ],
+      "verification_methods": [
+        "EvidenceTraceInspection",
+        "StaleOrMissingEvidenceScenario"
+      ],
+      "evidence_types": [
+        "EvidenceSnapshot",
+        "TestExecutionTrace"
+      ]
+    },
+    {
+      "id": "KCF-0012",
+      "domain": "EvidenceFreshness",
+      "level": "MUST",
+      "text": "Evidence MUST have a review or expiry condition appropriate to the requirement and context.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§5, §8–9"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§7, §12–17"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0035–0036"
+        }
+      ],
+      "verification_methods": [
+        "EvidenceTraceInspection",
+        "StaleOrMissingEvidenceScenario"
+      ],
+      "evidence_types": [
+        "EvidenceSnapshot",
+        "TestExecutionTrace"
+      ]
+    },
+    {
+      "id": "KCF-0013",
+      "domain": "VerificationMatch",
+      "level": "MUST",
+      "text": "Evidence MUST correspond to an allowed verification method or record an approved alternative.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§5, §8–9"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§7, §12–17"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0035–0036"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0014",
+      "domain": "TestTraceability",
+      "level": "MUST",
+      "text": "Each assessed requirement MUST map to governed test specifications.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§5, §8–9"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§7, §12–17"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0035–0036"
+        }
+      ],
+      "verification_methods": [
+        "EvidenceTraceInspection",
+        "StaleOrMissingEvidenceScenario"
+      ],
+      "evidence_types": [
+        "EvidenceSnapshot",
+        "TestExecutionTrace"
+      ]
+    },
+    {
+      "id": "KCF-0015",
+      "domain": "ExecutionTraceability",
+      "level": "MUST",
+      "text": "Each test execution MUST identify test version, implementation version, environment, data class, executor, result and evidence.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§5, §8–9"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§7, §12–17"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0035–0036"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0016",
+      "domain": "ResultIdentity",
+      "level": "MUST",
+      "text": "Pass, Fail, Blocked, Inconclusive, NotApplicable, Invalidated and Expired MUST remain distinct.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§5, §8–9"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§7, §12–17"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0035–0036"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0017",
+      "domain": "SpecNotExecution",
+      "level": "MUST NOT",
+      "text": "A test specification, validator, checklist or passing repository workflow MUST NOT be represented as executed product evidence.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§5, §8–9"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§7, §12–17"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0035–0036"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0018",
+      "domain": "RepositoryNotProduct",
+      "level": "MUST NOT",
+      "text": "Repository integrity MUST NOT be represented as product, service, professional or organizational conformance.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0000",
+          "locator": "§5, §8–9"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§7, §12–17"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0035–0036"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0019",
+      "domain": "ReviewClassCoverage",
+      "level": "MUST",
+      "text": "An assessment MUST identify completed, incomplete and deferred review classes.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0010, KCR-0020, KCR-0025 and KCR-0032–0035"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 KDO-0016, KDO-0021 and KDO-0026–0030"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4 KLS-0009–0013 and KLS-0021–0031"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§6–7 and §13–31"
+        }
+      ],
+      "verification_methods": [
+        "ReviewRecordInspection",
+        "ConflictOrDissentScenario"
+      ],
+      "evidence_types": [
+        "ReviewRecord",
+        "ConflictAndDissentRegister"
+      ]
+    },
+    {
+      "id": "KCF-0020",
+      "domain": "AffectedPersonReview",
+      "level": "MUST",
+      "text": "Requirements materially affecting people MUST identify applicable affected-person review and unresolved limitations.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0010, KCR-0020, KCR-0025 and KCR-0032–0035"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 KDO-0016, KDO-0021 and KDO-0026–0030"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4 KLS-0009–0013 and KLS-0021–0031"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§6–7 and §13–31"
+        }
+      ],
+      "verification_methods": [
+        "ReviewRecordInspection",
+        "ConflictOrDissentScenario"
+      ],
+      "evidence_types": [
+        "ReviewRecord",
+        "ConflictAndDissentRegister"
+      ]
+    },
+    {
+      "id": "KCF-0021",
+      "domain": "HumanAccountability",
+      "level": "MUST",
+      "text": "High-impact evidence and decisions MUST identify a human and organization with actual authority, information and stop capacity.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0010, KCR-0020, KCR-0025 and KCR-0032–0035"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 KDO-0016, KDO-0021 and KDO-0026–0030"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4 KLS-0009–0013 and KLS-0021–0031"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§6–7 and §13–31"
+        }
+      ],
+      "verification_methods": [
+        "ReviewRecordInspection",
+        "ConflictOrDissentScenario"
+      ],
+      "evidence_types": [
+        "ReviewRecord",
+        "ConflictAndDissentRegister"
+      ]
+    },
+    {
+      "id": "KCF-0022",
+      "domain": "IndependentReview",
+      "level": "SHOULD",
+      "text": "High-impact or conflict-prone claims SHOULD receive independent or conflict-free review.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0010, KCR-0020, KCR-0025 and KCR-0032–0035"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 KDO-0016, KDO-0021 and KDO-0026–0030"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4 KLS-0009–0013 and KLS-0021–0031"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§6–7 and §13–31"
+        }
+      ],
+      "verification_methods": [
+        "ReviewRecordInspection",
+        "ConflictOrDissentScenario"
+      ],
+      "evidence_types": [
+        "ReviewRecord",
+        "ConflictAndDissentRegister"
+      ]
+    },
+    {
+      "id": "KCF-0023",
+      "domain": "ConflictDisclosure",
+      "level": "MUST",
+      "text": "Commercial, authorship, operational and reviewer conflicts MUST be recorded and mitigated.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0010, KCR-0020, KCR-0025 and KCR-0032–0035"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 KDO-0016, KDO-0021 and KDO-0026–0030"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4 KLS-0009–0013 and KLS-0021–0031"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§6–7 and §13–31"
+        }
+      ],
+      "verification_methods": [
+        "ReviewRecordInspection",
+        "ConflictOrDissentScenario"
+      ],
+      "evidence_types": [
+        "ReviewRecord",
+        "ConflictAndDissentRegister"
+      ]
+    },
+    {
+      "id": "KCF-0024",
+      "domain": "MinorityAndDissent",
+      "level": "MUST",
+      "text": "Minority findings, counterexamples and unresolved dissent MUST remain traceable.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0010, KCR-0020, KCR-0025 and KCR-0032–0035"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 KDO-0016, KDO-0021 and KDO-0026–0030"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4 KLS-0009–0013 and KLS-0021–0031"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§6–7 and §13–31"
+        }
+      ],
+      "verification_methods": [
+        "ReviewRecordInspection",
+        "ConflictOrDissentScenario"
+      ],
+      "evidence_types": [
+        "ReviewRecord",
+        "ConflictAndDissentRegister"
+      ]
+    },
+    {
+      "id": "KCF-0025",
+      "domain": "IncidentHistory",
+      "level": "MUST",
+      "text": "Relevant incidents, near misses, false positives, false negatives and remediation status MUST be included.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0010, KCR-0020, KCR-0025 and KCR-0032–0035"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 KDO-0016, KDO-0021 and KDO-0026–0030"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4 KLS-0009–0013 and KLS-0021–0031"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§6–7 and §13–31"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0026",
+      "domain": "FailureCoverage",
+      "level": "MUST",
+      "text": "Assessment evidence MUST include failures and counterexamples, not only successful demonstrations.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0010, KCR-0020, KCR-0025 and KCR-0032–0035"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 KDO-0016, KDO-0021 and KDO-0026–0030"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4 KLS-0009–0013 and KLS-0021–0031"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§6–7 and §13–31"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0027",
+      "domain": "ExceptionRecord",
+      "level": "MUST",
+      "text": "Every exception MUST identify requirement, authority, scope, reason, evidence, safeguards, owner, review/expiry and appeal.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0010, KCR-0020, KCR-0025 and KCR-0032–0035"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 KDO-0016, KDO-0021 and KDO-0026–0030"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4 KLS-0009–0013 and KLS-0021–0031"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§6–7 and §13–31"
+        }
+      ],
+      "verification_methods": [
+        "GovernanceStateInspection",
+        "ExpiredOrOverbroadExceptionScenario"
+      ],
+      "evidence_types": [
+        "ExceptionRecord",
+        "SuspensionOrRevocationDecision"
+      ]
+    },
+    {
+      "id": "KCF-0028",
+      "domain": "NonWaivableBoundary",
+      "level": "MUST NOT",
+      "text": "An exception MUST NOT waive source integrity, honest capability claims, affected-person dignity, hidden-coercion prohibitions or the no-premature-claim boundary.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0010, KCR-0020, KCR-0025 and KCR-0032–0035"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 KDO-0016, KDO-0021 and KDO-0026–0030"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4 KLS-0009–0013 and KLS-0021–0031"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§6–7 and §13–31"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0029",
+      "domain": "ExceptionExpiry",
+      "level": "MUST",
+      "text": "Expired, revoked or out-of-scope exceptions MUST stop authorizing assessment or operation.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0010, KCR-0020, KCR-0025 and KCR-0032–0035"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 KDO-0016, KDO-0021 and KDO-0026–0030"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4 KLS-0009–0013 and KLS-0021–0031"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§6–7 and §13–31"
+        }
+      ],
+      "verification_methods": [
+        "GovernanceStateInspection",
+        "ExpiredOrOverbroadExceptionScenario"
+      ],
+      "evidence_types": [
+        "ExceptionRecord",
+        "SuspensionOrRevocationDecision"
+      ]
+    },
+    {
+      "id": "KCF-0030",
+      "domain": "Remediation",
+      "level": "MUST",
+      "text": "A failed material requirement MUST have containment, remediation, owner, target state and re-test conditions.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0010, KCR-0020, KCR-0025 and KCR-0032–0035"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0002",
+          "locator": "§4 KDO-0016, KDO-0021 and KDO-0026–0030"
+        },
+        {
+          "baseline_ref": "R9SRC-KERNEL-0003",
+          "locator": "§4 KLS-0009–0013 and KLS-0021–0031"
+        },
+        {
+          "baseline_ref": "R9SRC-MOS-0000",
+          "locator": "§6–7 and §13–31"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0031",
+      "domain": "Suspension",
+      "level": "MUST",
+      "text": "Credible serious harm, deceptive claims, evidence loss or material scope change MUST support immediate claim suspension.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0023, KCR-0025, KCR-0030 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        }
+      ],
+      "verification_methods": [
+        "GovernanceStateInspection",
+        "ExpiredOrOverbroadExceptionScenario"
+      ],
+      "evidence_types": [
+        "ExceptionRecord",
+        "SuspensionOrRevocationDecision"
+      ]
+    },
+    {
+      "id": "KCF-0032",
+      "domain": "Revocation",
+      "level": "MUST",
+      "text": "A claim MUST be revocable when evidence is invalid, scope is misrepresented, review is compromised or remediation fails.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0023, KCR-0025, KCR-0030 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        }
+      ],
+      "verification_methods": [
+        "GovernanceStateInspection",
+        "ExpiredOrOverbroadExceptionScenario"
+      ],
+      "evidence_types": [
+        "ExceptionRecord",
+        "SuspensionOrRevocationDecision"
+      ]
+    },
+    {
+      "id": "KCF-0033",
+      "domain": "ClaimExpiry",
+      "level": "MUST",
+      "text": "Every claim MUST carry expiry or mandatory re-review conditions.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0023, KCR-0025, KCR-0030 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        }
+      ],
+      "verification_methods": [
+        "ClaimRecordInspection",
+        "OverclaimNegativeScenario"
+      ],
+      "evidence_types": [
+        "ClaimRecord",
+        "PublicClaimAudit"
+      ]
+    },
+    {
+      "id": "KCF-0034",
+      "domain": "ChangeInvalidation",
+      "level": "MUST",
+      "text": "Material changes to requirements, implementation, model, data flow, service availability, staffing or jurisdiction MUST invalidate or narrow affected evidence.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0023, KCR-0025, KCR-0030 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0035",
+      "domain": "Migration",
+      "level": "MUST",
+      "text": "A new family or Profile version MUST define claim migration, coexistence and public supersession.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0023, KCR-0025, KCR-0030 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0036",
+      "domain": "PublicClaimExactness",
+      "level": "MUST",
+      "text": "Public wording MUST identify boundary, Profile, family version, assessment state, evidence date, expiry and limitations.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0023, KCR-0025, KCR-0030 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        }
+      ],
+      "verification_methods": [
+        "ClaimRecordInspection",
+        "OverclaimNegativeScenario"
+      ],
+      "evidence_types": [
+        "ClaimRecord",
+        "PublicClaimAudit"
+      ]
+    },
+    {
+      "id": "KCF-0037",
+      "domain": "ScopeNoSpillover",
+      "level": "MUST NOT",
+      "text": "Evidence for one boundary, domain, language, jurisdiction or population MUST NOT silently support another.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0023, KCR-0025, KCR-0030 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        }
+      ],
+      "verification_methods": [
+        "ClaimRecordInspection",
+        "OverclaimNegativeScenario"
+      ],
+      "evidence_types": [
+        "ClaimRecord",
+        "PublicClaimAudit"
+      ]
+    },
+    {
+      "id": "KCF-0038",
+      "domain": "NoComponentInheritance",
+      "level": "MUST NOT",
+      "text": "A conforming component MUST NOT make its host product or organization conforming by inheritance.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0023, KCR-0025, KCR-0030 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0039",
+      "domain": "NoPrematureClaim",
+      "level": "MUST NOT",
+      "text": "No conforming, certified, approved or equivalent claim may be made while governing documents are Draft or evidence/review is incomplete.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0023, KCR-0025, KCR-0030 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        }
+      ],
+      "verification_methods": [
+        "ClaimRecordInspection",
+        "OverclaimNegativeScenario"
+      ],
+      "evidence_types": [
+        "ClaimRecord",
+        "PublicClaimAudit"
+      ]
+    },
+    {
+      "id": "KCF-0040",
+      "domain": "NoBadgeWithoutAuthority",
+      "level": "MUST NOT",
+      "text": "No badge, seal or mark implying MingOS approval may be used without a separately accepted governance decision.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0023, KCR-0025, KCR-0030 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        }
+      ],
+      "verification_methods": [
+        "ClaimRecordInspection",
+        "OverclaimNegativeScenario"
+      ],
+      "evidence_types": [
+        "ClaimRecord",
+        "PublicClaimAudit"
+      ]
+    },
+    {
+      "id": "KCF-0041",
+      "domain": "ContinuousReassessment",
+      "level": "MUST",
+      "text": "Operational claims MUST define monitoring, incident intake, correction, suspension and periodic reassessment.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0023, KCR-0025, KCR-0030 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        }
+      ],
+      "verification_methods": [
+        "AssessmentRecordInspection",
+        "BoundaryOrFailureScenario"
+      ],
+      "evidence_types": [
+        "AssessmentRecord",
+        "ReviewFinding"
+      ]
+    },
+    {
+      "id": "KCF-0042",
+      "domain": "EvidenceProtection",
+      "level": "MUST",
+      "text": "Assessment evidence MUST be minimized, purpose-limited, access-controlled, retention-governed and protected from unrelated training or marketing use.",
+      "source_treatment": "NewConformanceProposalDerivedFromDraftKernelAndProcess",
+      "source_refs": [
+        {
+          "baseline_ref": "R9SRC-KERNEL-0001",
+          "locator": "§4 KCR-0023, KCR-0025, KCR-0030 and KCR-0036"
+        },
+        {
+          "baseline_ref": "R9SRC-REF-0028",
+          "locator": "§1–7"
+        },
+        {
+          "baseline_ref": "R9SRC-RFC-0005",
+          "locator": "§2–10"
+        }
+      ],
+      "verification_methods": [
+        "EvidenceTraceInspection",
+        "StaleOrMissingEvidenceScenario"
+      ],
+      "evidence_types": [
+        "EvidenceSnapshot",
+        "TestExecutionTrace"
+      ]
+    }
+  ],
+  "applicability_values": [
+    "Mandatory",
+    "ConditionalTriggered",
+    "ConditionalNotTriggered",
+    "ProhibitedBehavior",
+    "NotApplicableWithJustification"
+  ],
+  "assessment_states": [
+    "NotAssessed",
+    "AssessmentPlanned",
+    "EvidenceCollection",
+    "ReviewPending",
+    "EvidenceIncomplete",
+    "MeetsSpecifiedProfile",
+    "DoesNotMeet",
+    "Suspended",
+    "Expired",
+    "Withdrawn"
+  ],
+  "evidence_classes": [
+    {
+      "id": "KEC-01",
+      "name": "StructuralStatic",
+      "meaning": "Repository, schema, configuration and source inspection",
+      "limitation": "Does not prove runtime or human outcomes"
+    },
+    {
+      "id": "KEC-02",
+      "name": "SyntheticScenario",
+      "meaning": "Synthetic positive, negative and counterexample execution",
+      "limitation": "No real-person acceptance claim"
+    },
+    {
+      "id": "KEC-03",
+      "name": "ControlledImplementation",
+      "meaning": "Bounded implementation test",
+      "limitation": "Not broad production evidence"
+    },
+    {
+      "id": "KEC-04",
+      "name": "OperationalTrace",
+      "meaning": "Governed runtime, incident or service evidence",
+      "limitation": "Requires privacy and freshness review"
+    },
+    {
+      "id": "KEC-05",
+      "name": "AffectedPersonReview",
+      "meaning": "Voluntary affected-person usability and impact evidence",
+      "limitation": "Cannot be replaced by internal opinion"
+    },
+    {
+      "id": "KEC-06",
+      "name": "DomainProfessionalReview",
+      "meaning": "Qualified domain review",
+      "limitation": "Does not imply affected-person or legal acceptance"
+    },
+    {
+      "id": "KEC-07",
+      "name": "IndependentAssurance",
+      "meaning": "Conflict-free independent review",
+      "limitation": "Scope and independence explicit"
+    },
+    {
+      "id": "KEC-08",
+      "name": "LongitudinalIncident",
+      "meaning": "Longitudinal outcomes, failures and remediation",
+      "limitation": "Requires time and confounder limits"
+    }
+  ],
+  "review_classes": [
+    "Architecture",
+    "AgencyEthics",
+    "PrivacyConsent",
+    "Safety",
+    "AffectedPerson",
+    "Accessibility",
+    "DomainProfessional",
+    "JurisdictionLegal",
+    "Security",
+    "Implementation",
+    "CommercialConflict",
+    "Translation"
+  ],
+  "current_authorization": {
+    "profile_count": 0,
+    "assessment_count": 0,
+    "claim_count": 0,
+    "badge_count": 0,
+    "current_claim": "NoCurrentKernelConformanceClaim"
+  },
+  "ambiguities": [
+    {
+      "id": "KCA-C001",
+      "area": "Profile authority",
+      "issue": "Who approves a Profile and under which gate?",
+      "risk": "Critical",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C002",
+      "area": "Partial conformance",
+      "issue": "Whether partial claims are useful or misleading.",
+      "risk": "Critical",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C003",
+      "area": "Independent assessor",
+      "issue": "Required independence and competence.",
+      "risk": "Critical",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C004",
+      "area": "Affected-person evidence",
+      "issue": "Which requirements require direct review.",
+      "risk": "Critical",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C005",
+      "area": "Evidence freshness",
+      "issue": "How expiry varies by context.",
+      "risk": "High",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C006",
+      "area": "Operational evidence",
+      "issue": "Minimum runtime and diversity.",
+      "risk": "Critical",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C007",
+      "area": "AI nondeterminism",
+      "issue": "How sampling/model change affects results.",
+      "risk": "High",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C008",
+      "area": "Exception authority",
+      "issue": "Which requirements are non-waivable.",
+      "risk": "Critical",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C009",
+      "area": "Public mark",
+      "issue": "Whether MingOS should ever issue a badge.",
+      "risk": "Critical",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C010",
+      "area": "Claim portability",
+      "issue": "Transfer across versions/languages/deployments.",
+      "risk": "Critical",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C011",
+      "area": "Small-team review",
+      "issue": "Independent review in founder-led teams.",
+      "risk": "Critical",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C012",
+      "area": "Incident threshold",
+      "issue": "Which incidents suspend claims.",
+      "risk": "Critical",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C013",
+      "area": "Jurisdiction",
+      "issue": "How legal/professional Profiles modify assessment.",
+      "risk": "Critical",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C014",
+      "area": "Open-source evidence",
+      "issue": "What can be public safely.",
+      "risk": "High",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C015",
+      "area": "Longitudinal outcomes",
+      "issue": "Avoiding causal overclaim.",
+      "risk": "High",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C016",
+      "area": "Test reproducibility",
+      "issue": "Bounded reproducibility for nondeterminism.",
+      "risk": "High",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C017",
+      "area": "Accessibility",
+      "issue": "Required usability evidence.",
+      "risk": "Critical",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C018",
+      "area": "Component inheritance",
+      "issue": "Components support but do not confer host claims.",
+      "risk": "High",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C019",
+      "area": "Claim wording",
+      "issue": "Equivalent translations of conforming/certified.",
+      "risk": "High",
+      "status": "Open"
+    },
+    {
+      "id": "KCA-C020",
+      "area": "Governance capture",
+      "issue": "Controlling commercial pressure.",
+      "risk": "Critical",
+      "status": "Open"
+    }
+  ],
+  "integrity": {
+    "requirement_count": 42,
+    "evidence_class_count": 8,
+    "ambiguity_count": 20,
+    "current_claim_count": 0,
+    "source_baseline_count": 7,
+    "requirements_with_complete_traceability": 42
+  },
+  "source_baseline": {
+    "R9SRC-KERNEL-0000": {
+      "source_id": "KERNEL-0000",
+      "status": "Draft",
+      "version": "0.4.0-draft.4",
+      "path": "standards/kernel/KERNEL-0000-specification-family-index.md",
+      "baseline_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+      "blob_sha": "1c85cf82347d9006f6bdf52192b3a948d16fc271",
+      "source_role": "Round08MergedDraft"
+    },
+    "R9SRC-KERNEL-0001": {
+      "source_id": "KERNEL-0001",
+      "status": "Draft",
+      "version": "0.2.2-draft.4",
+      "path": "standards/kernel/KERNEL-0001-core-operational-contract.md",
+      "baseline_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+      "blob_sha": "972a13e487da01ce2ab59077232547b938ef7942",
+      "source_role": "Round08MergedDraft"
+    },
+    "R9SRC-KERNEL-0002": {
+      "source_id": "KERNEL-0002",
+      "status": "Draft",
+      "version": "0.2.0-draft.2",
+      "path": "standards/kernel/KERNEL-0002-canonical-object-data-model.md",
+      "baseline_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+      "blob_sha": "f926bfc318bd4df861eb078f7485cfcb58f240dd",
+      "source_role": "Round08MergedDraft"
+    },
+    "R9SRC-KERNEL-0003": {
+      "source_id": "KERNEL-0003",
+      "status": "Draft",
+      "version": "0.2.0-draft.2",
+      "path": "standards/kernel/KERNEL-0003-lifecycle-state-machines.md",
+      "baseline_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+      "blob_sha": "d42fa308c6ad4904a4aa3bc67ee99f128c73a2dc",
+      "source_role": "Round08MergedDraft"
+    },
+    "R9SRC-MOS-0000": {
+      "source_id": "MOS-0000",
+      "status": "Draft",
+      "version": "1.0.0-alpha.11",
+      "path": "standards/mos/MOS-0000-standard-process.md",
+      "baseline_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+      "blob_sha": "8dab1e6a846e7af0fd2260a6afb21ab8026a6110",
+      "source_role": "DraftStandardsProcess"
+    },
+    "R9SRC-REF-0028": {
+      "source_id": "REF-0028",
+      "status": "Draft",
+      "version": "0.2.0-draft.1",
+      "path": "reference/kernel/REF-0028-kernel-conformance-replaceability-claim-boundary.md",
+      "baseline_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+      "blob_sha": "57bff35b297e4be1697c91225c098d9eae6fa48e",
+      "source_role": "DraftConformanceBoundary"
+    },
+    "R9SRC-RFC-0005": {
+      "source_id": "RFC-0005",
+      "status": "Proposed",
+      "version": "0.1.0",
+      "path": "standards/rfc/RFC-0005-public-claim-charter-sync-and-capability-status.md",
+      "baseline_commit": "29485e67279d11401bb0f9f2b9afc78f0bdf67f4",
+      "blob_sha": "61da3f762705997d397ec9d1e0c55b6b7fa8c6d4",
+      "source_role": "ProposedPublicClaimProtocol"
+    }
+  },
+  "source_text_authoritative": true
+}
