@@ -199,8 +199,11 @@ def main() -> int:
     else:
         if set(pr12.get("reserved_ids", [])) != expected_pr12:
             errors.append("PR #12 reserved-ID set mismatch")
-        if pr12.get("state") not in OPEN_STATES:
-            errors.append("PR #12 must remain in a defined open reservation state")
+        if pr12.get("state") not in OPEN_STATES | {"Integrated"}:
+            errors.append(
+                "PR #12 must remain in a defined open state before merge "
+                "or become Integrated after merge"
+            )
 
         source = pr12.get("source", {})
         reviewed_head = source.get("head_commit_at_review")
