@@ -266,8 +266,30 @@ def main() -> int:
         errors.append("next-number hints must be non-binding")
 
     summary = data.get("summary", {})
-    if summary.get("active_reservations") != 1 or summary.get("reserved_ids") != 9:
-        errors.append("reservation summary mismatch")
+    expected_summary = {
+        "active_reservations": sum(
+            1 for reservation in reservations if reservation.get("state") in OPEN_STATES
+        ),
+        "reserved_ids": sum(
+            len(reservation.get("reserved_ids", []))
+            for reservation in reservations
+            if reservation.get("state") in OPEN_STATES
+        ),
+        "integrated_by_this_registry": sum(
+            len(reservation.get("reserved_ids", []))
+            for reservation in reservations
+            if reservation.get("state") == "Integrated"
+        ),
+        "released_reservations": sum(
+            1 for reservation in reservations if reservation.get("state") == "Released"
+        ),
+    }
+    for key, expected in expected_summary.items():
+        if summary.get(key) != expected:
+            errors.append(
+                f"reservation summary mismatch for {key}: "
+                f"expected {expected}, found {summary.get(key)}"
+            )
 
     if errors:
         print("Document-ID reservation validation failed:")
@@ -276,9 +298,12 @@ def main() -> int:
         return 1
 
     print(
-        "Document-ID reservation validation passed: one active PR reservation, "
-        "nine unique reserved IDs, current-main review baseline, reviewed-head "
-        "ancestry, occupied paths, and non-binding next-ID hints verified."
+        "Document-ID reservation validation passed: "
+        f"{expected_summary['active_reservations']} active reservations, "
+        f"{expected_summary['reserved_ids']} reserved IDs, "
+        f"{expected_summary['integrated_by_this_registry']} integrated IDs, "
+        "current-main review baseline, reviewed-head ancestry, occupied paths, "
+        "and non-binding next-ID hints verified."
     )
     return 0
 
