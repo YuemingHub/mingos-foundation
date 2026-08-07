@@ -9,7 +9,7 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "governance/registries/DOCUMENT_ID_RESERVATIONS.json"
-EXPECTED_REPOSITORY = "YuemingHub/Ming-Foundation"
+EXPECTED_REPOSITORY = "YuemingHub/mingos-foundation"
 OPEN_STATES = {
     "PlannedReservation",
     "ReservedForOpenDraftPR",
@@ -37,9 +37,12 @@ def git_output(*args: str) -> str | None:
 
 def frontmatter_id(path: Path) -> str | None:
     text = path.read_text(encoding="utf-8-sig")
-    if not text.startswith("---\n"):
+    if not text.startswith("---
+"):
         return None
-    end = text.find("\n---\n", 4)
+    end = text.find("
+---
+", 4)
     if end < 0:
         return None
     for line in text[4:end].splitlines():
@@ -113,7 +116,7 @@ def main() -> int:
         doc_id = frontmatter_id(path)
         if not doc_id:
             continue
-        relative = str(path.relative_to(ROOT)).replace("\\", "/")
+        relative = str(path.relative_to(ROOT)).replace("\", "/")
         if doc_id in occupied:
             duplicates.append(doc_id)
         occupied[doc_id] = relative
