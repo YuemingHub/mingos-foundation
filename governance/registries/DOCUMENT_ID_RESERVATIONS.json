@@ -5,7 +5,7 @@
   "status": "Accepted operational registry",
   "canonical_repository": "YuemingHub/mingos-foundation",
   "governing_record": "GOV-0113",
-  "reviewed_against_commit": "33bd982a2d790d4a540c6c7d3303ee383fa7b09d",
+  "reviewed_against_commit": "ec3e2c4570241224f3cd576926a9c869cab985bb",
   "main_change_policy": "All non-integrated reservations expire for merge-readiness when main advances and require explicit re-audit.",
   "reservations": [
     {
@@ -13,14 +13,15 @@
       "workstream": "Kernel Round 09 — Conformance and Test Specification Draft Collection",
       "owner": "Ming Foundation Kernel Architecture",
       "source": {
-        "type": "OpenPullRequest",
+        "type": "MergedPullRequest",
         "pull_request": 12,
         "pull_request_url": "https://github.com/YuemingHub/mingos-foundation/pull/12",
         "head_commit_at_review": "e9112d32ab2d52a1f4baf882b027228add4a24a7",
         "branch_name": "docs/round-09-kernel-conformance-test-collection",
-        "branch_resolution_state": "Confirmed"
+        "branch_resolution_state": "Merged",
+        "merge_commit": "ec3e2c4570241224f3cd576926a9c869cab985bb"
       },
-      "state": "ReadyForSerialIntegration",
+      "state": "Integrated",
       "branch": "docs/round-09-kernel-conformance-test-collection",
       "reserved_ids": [
         "KERNEL-0004",
@@ -34,8 +35,8 @@
         "REF-0051"
       ],
       "created_at": "2026-07-28",
-      "reviewed_against_commit": "33bd982a2d790d4a540c6c7d3303ee383fa7b09d",
-      "expires_on_main_change": true,
+      "reviewed_against_commit": "ec3e2c4570241224f3cd576926a9c869cab985bb",
+      "expires_on_main_change": false,
       "integration_evidence": {
         "review_date": "2026-08-06",
         "reviewed_head": "e9112d32ab2d52a1f4baf882b027228add4a24a7",
@@ -43,9 +44,11 @@
         "mergeable": true,
         "repository_validation": "success",
         "validate_repository": "success",
-        "review_scope": "Post-PR #15 serial re-audit; canonical-repository baseline merge; reservation lifecycle; Draft-only Kernel status; selective risk-proportionate adoption boundary; machine-index integrity; zero execution and zero conformance claims."
+        "review_scope": "Post-PR #15 serial re-audit; canonical-repository baseline merge; reservation lifecycle; Draft-only Kernel status; selective risk-proportionate adoption boundary; machine-index integrity; zero execution and zero conformance claims.",
+        "merge_commit": "ec3e2c4570241224f3cd576926a9c869cab985bb",
+        "integration_status": "Integrated"
       },
-      "notes": "Re-audited after canonical repository identity PR #15 merged into main. The reviewed head includes main@33bd982 and precedes this registry-only readiness transition commit. Any subsequent substantive branch change or main advance expires readiness and requires another audit.",
+      "notes": "PR #12 merged after final review. The nine reserved IDs are integrated on main at merge commit ec3e2c4570241224f3cd576926a9c869cab985bb; Draft document status and NoCurrentKernelConformanceClaim remain unchanged.",
       "reserved_paths": {
         "KERNEL-0004": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
         "KERNEL-0005": "standards/kernel/KERNEL-0005-test-specifications-derived-indexes.md",
@@ -101,9 +104,9 @@
     "note": "Hints are recalculated after every main change and are not reservations."
   },
   "summary": {
-    "active_reservations": 1,
+    "active_reservations": 0,
     "reserved_ids": 9,
-    "integrated_by_this_registry": 0,
+    "integrated_by_this_registry": 9,
     "released_reservations": 0
   }
 }
