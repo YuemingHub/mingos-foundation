@@ -2,6 +2,9 @@
 
 This index lists the canonical entry points for Ming Foundation 1.0.
 
+- Current canonical repository: `YuemingHub/mingos-foundation`
+- Historical repository path: `YuemingHub/Ming-Foundation` (preserved in historical records only)
+
 ## Current State and Governance
 
 | ID           | Document                                                                                                                                                   | Status   |

@@ -198,7 +198,7 @@ related:
 - GOV-TPL-0028
 status: Accepted
 title: Current Canonical State
-updated: 2026-07-14
+updated: 2026-08-06
 version: 1.0.0-alpha.18
 ---
 
@@ -221,7 +221,9 @@ The following facts are accepted:
 
 - **Official website:** `https://mingos.cn`
 - **Canonical public repository:**
-  `https://github.com/YuemingHub/Ming-Foundation`
+  `https://github.com/YuemingHub/mingos-foundation`
+- **Historical repository path:**
+  `https://github.com/YuemingHub/Ming-Foundation` (retained for provenance; not the current canonical identifier)
 - **Repository visibility:** public
 - **Current repository stage:** Foundation 1.0 / Day 18 — Restricted Role Nomination and CP2 Pre-Authorization
 - **Current repository version:** `1.0.0-alpha.18`
@@ -230,10 +232,14 @@ The following facts are accepted:
 the project to users, contributors, researchers, partners, and the wider
 public.
 
-`YuemingHub/Ming-Foundation` is the canonical public knowledge
+`YuemingHub/mingos-foundation` is the canonical public knowledge
 repository for the formalized outcomes of MingOS discussions,
 architecture work, standards work, research synthesis, project
 decisions, and governance records.
+
+The former path `YuemingHub/Ming-Foundation` remains a historical repository identifier.
+Existing historical records are not rewritten; all new current references
+MUST use `YuemingHub/mingos-foundation`.
 
 ## 3. Current project state
 
@@ -327,6 +333,7 @@ decisions, and governance records.
 - Day 18 twelve passed synthetic pre-authorization scenarios;
 - Day 18 gate retaining CP2 and CP3 at Blocked.
 - Day 18 and Kernel parallel-workstream integration repair with central document-ID reservation and one combined validation chain.
+- 2026-08-06 human source-review decision accepting `YuemingHub/mingos-foundation` as the current Foundation repository while preserving `YuemingHub/Ming-Foundation` as historical provenance.
 
 ### In progress
 
@@ -366,7 +373,7 @@ appeared in discussion:
 When sources conflict, use this order:
 
 1.  Accepted or Stable documents merged into the default branch of
-    `YuemingHub/Ming-Foundation`;
+    `YuemingHub/mingos-foundation`;
 2.  accepted ADRs and recorded governance decisions in the repository;
 3.  Draft, Proposed, Candidate, or Experimental documents in the
     repository;
