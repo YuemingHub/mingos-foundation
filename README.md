@@ -23,7 +23,9 @@ legally registered foundation.
 
 - **Official MingOS website:** [`mingos.cn`](https://mingos.cn)
 - **Canonical public repository:**
-  [`YuemingHub/Ming-Foundation`](https://github.com/YuemingHub/Ming-Foundation)
+  [`YuemingHub/mingos-foundation`](https://github.com/YuemingHub/mingos-foundation)
+- **Historical repository path:**
+  `YuemingHub/Ming-Foundation` (preserved for provenance; not the current canonical identifier)
 
 Conversation windows, coding-agent sessions, and ZIP handoff packages
 are working or transfer sources. Project-relevant outcomes become formal

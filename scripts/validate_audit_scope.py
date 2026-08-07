@@ -20,7 +20,7 @@ REQUIRED = {
         "explicit user scope",
     ],
     "governance/status/GOV-0001-current-canonical-state.md": [
-        "https://github.com/YuemingHub/Ming-Foundation",
+        "https://github.com/YuemingHub/mingos-foundation",
         "external implementation evidence",
         "do not enter another repository without explicit user instruction",
     ],
@@ -70,7 +70,7 @@ def main() -> int:
         errors.append("missing scoped Day 7 backlog")
     else:
         data = json.loads(backlog_path.read_text(encoding="utf-8"))
-        if data.get("canonical_repository") != "YuemingHub/Ming-Foundation":
+        if data.get("canonical_repository") != "YuemingHub/mingos-foundation":
             errors.append("backlog canonical_repository is incorrect")
         if data.get("canonical_repository_audit") != "accepted":
             errors.append("canonical repository audit must remain accepted")

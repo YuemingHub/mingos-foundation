@@ -8,7 +8,7 @@ import json
 
 ROOT = Path(__file__).resolve().parents[1]
 REGISTRY = ROOT / "governance/registries/DOCUMENT_ID_RESERVATIONS.json"
-EXPECTED_REPOSITORY = "YuemingHub/Ming-Foundation"
+EXPECTED_REPOSITORY = "YuemingHub/mingos-foundation"
 EXPECTED_REVIEW_COMMIT = "29485e67279d11401bb0f9f2b9afc78f0bdf67f4"
 OPEN_STATES = {
     "PlannedReservation",
