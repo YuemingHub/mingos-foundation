@@ -5,7 +5,7 @@
   "status": "Accepted operational registry",
   "canonical_repository": "YuemingHub/mingos-foundation",
   "governing_record": "GOV-0113",
-  "reviewed_against_commit": "280a68705d13bbb5beed3a64713575fad7cba189",
+  "reviewed_against_commit": "33bd982a2d790d4a540c6c7d3303ee383fa7b09d",
   "main_change_policy": "All non-integrated reservations expire for merge-readiness when main advances and require explicit re-audit.",
   "reservations": [
     {
@@ -16,7 +16,7 @@
         "type": "OpenPullRequest",
         "pull_request": 12,
         "pull_request_url": "https://github.com/YuemingHub/mingos-foundation/pull/12",
-        "head_commit_at_review": "7d50d664dec46826c2cd2bf7f8c0f85cf913cf0d",
+        "head_commit_at_review": "e9112d32ab2d52a1f4baf882b027228add4a24a7",
         "branch_name": "docs/round-09-kernel-conformance-test-collection",
         "branch_resolution_state": "Confirmed"
       },
@@ -34,18 +34,18 @@
         "REF-0051"
       ],
       "created_at": "2026-07-28",
-      "reviewed_against_commit": "280a68705d13bbb5beed3a64713575fad7cba189",
+      "reviewed_against_commit": "33bd982a2d790d4a540c6c7d3303ee383fa7b09d",
       "expires_on_main_change": true,
       "integration_evidence": {
         "review_date": "2026-08-06",
-        "reviewed_head": "7d50d664dec46826c2cd2bf7f8c0f85cf913cf0d",
-        "base_commit": "280a68705d13bbb5beed3a64713575fad7cba189",
+        "reviewed_head": "e9112d32ab2d52a1f4baf882b027228add4a24a7",
+        "base_commit": "33bd982a2d790d4a540c6c7d3303ee383fa7b09d",
         "mergeable": true,
         "repository_validation": "success",
         "validate_repository": "success",
-        "review_scope": "Current-main reconciliation, reservation-state correction, selective-adoption/conformance boundary, public-claim wording and repository validation."
+        "review_scope": "Post-PR #15 serial re-audit; canonical-repository baseline merge; reservation lifecycle; Draft-only Kernel status; selective risk-proportionate adoption boundary; machine-index integrity; zero execution and zero conformance claims."
       },
-      "notes": "Re-audited against current main on 2026-08-06. The reviewed head precedes this registry-only readiness transition commit. Any subsequent substantive branch change or main advance expires readiness and requires another audit.",
+      "notes": "Re-audited after canonical repository identity PR #15 merged into main. The reviewed head includes main@33bd982 and precedes this registry-only readiness transition commit. Any subsequent substantive branch change or main advance expires readiness and requires another audit.",
       "reserved_paths": {
         "KERNEL-0004": "standards/kernel/KERNEL-0004-conformance-requirements-evidence-model.md",
         "KERNEL-0005": "standards/kernel/KERNEL-0005-test-specifications-derived-indexes.md",
