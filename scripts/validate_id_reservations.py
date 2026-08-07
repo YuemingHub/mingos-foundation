@@ -37,12 +37,9 @@ def git_output(*args: str) -> str | None:
 
 def frontmatter_id(path: Path) -> str | None:
     text = path.read_text(encoding="utf-8-sig")
-    if not text.startswith("---
-"):
+    if not text.startswith("---\n"):
         return None
-    end = text.find("
----
-", 4)
+    end = text.find("\n---\n", 4)
     if end < 0:
         return None
     for line in text[4:end].splitlines():
@@ -116,7 +113,7 @@ def main() -> int:
         doc_id = frontmatter_id(path)
         if not doc_id:
             continue
-        relative = str(path.relative_to(ROOT)).replace("\", "/")
+        relative = str(path.relative_to(ROOT)).replace("\\", "/")
         if doc_id in occupied:
             duplicates.append(doc_id)
         occupied[doc_id] = relative
