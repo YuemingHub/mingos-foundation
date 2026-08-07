@@ -3,7 +3,7 @@
   "registry_id": "MING-DOCUMENT-ID-RESERVATIONS-0001",
   "title": "Ming Foundation Document ID Reservations",
   "status": "Accepted operational registry",
-  "canonical_repository": "YuemingHub/Ming-Foundation",
+  "canonical_repository": "YuemingHub/mingos-foundation",
   "governing_record": "GOV-0113",
   "reviewed_against_commit": "280a68705d13bbb5beed3a64713575fad7cba189",
   "main_change_policy": "All non-integrated reservations expire for merge-readiness when main advances and require explicit re-audit.",
@@ -15,7 +15,7 @@
       "source": {
         "type": "OpenPullRequest",
         "pull_request": 12,
-        "pull_request_url": "https://github.com/YuemingHub/Ming-Foundation/pull/12",
+        "pull_request_url": "https://github.com/YuemingHub/mingos-foundation/pull/12",
         "head_commit_at_review": "7d50d664dec46826c2cd2bf7f8c0f85cf913cf0d",
         "branch_name": "docs/round-09-kernel-conformance-test-collection",
         "branch_resolution_state": "Confirmed"
