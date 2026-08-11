@@ -77,7 +77,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p "$HOME"
-          python scripts/aaop_loopx_consumer_pilot_v3.py \
+          python scripts/aaop_loopx_consumer_pilot_v4.py \
             --aaop-revision "$AAOP_REVISION" \
             --loopx-revision "$LOOPX_REVISION" \
             --loopx-version "$LOOPX_VERSION" \
