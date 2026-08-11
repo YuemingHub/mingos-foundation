@@ -58,12 +58,19 @@ def main() -> int:
         "--no-follow-up",
     )
     need(onboarding_done.get("changed") is True, f"onboarding writeback failed: {onboarding_done}")
-    _, onboarding_refresh = lx(root, env, registry, runtime, "refresh-state", "--goal-id", GOAL, "--no-global-sync")
+    _, onboarding_refresh = lx(root, env, registry, runtime, "refresh-state", "--goal-id", GOAL, "--agent-id", BUILDER, "--no-global-sync")
     need(onboarding_refresh.get("ok") is True, f"onboarding refresh failed: {onboarding_refresh}")
 '''
     if old not in text:
         raise AssertionError("expected first-connect block not found")
     text = text.replace(old, new)
+
+    # Once the goal is multi-agent, every state writeback must carry the actor.
+    # LoopX intentionally disables text inference for refresh-state.
+    text = text.replace(
+        '"refresh-state", "--goal-id", GOAL, "--no-global-sync"',
+        '"refresh-state", "--goal-id", GOAL, "--agent-id", BUILDER, "--no-global-sync"',
+    )
 
     old_receipt = '"first_connect_fail_closed": {"should_run": precheck.get("should_run"), "status_health_ok": precheck.get("status_health_ok"), "status": precheck.get("status")},'
     new_receipt = '"first_connect_control": {"should_run": precheck.get("should_run"), "status": precheck.get("status"), "selected_action_kind": onboarding.get("action_kind"), "bounded_check_completed": True},'
@@ -72,7 +79,7 @@ def main() -> int:
     text = text.replace(old_receipt, new_receipt)
 
     TARGET.write_text(text, encoding="utf-8")
-    print("Prepared AAOP/LoopX pilot: explicit onboarding frontier + official bounded scan-path.")
+    print("Prepared AAOP/LoopX pilot: explicit onboarding frontier + scoped scan + actor-bound refresh.")
     return 0
 
 
