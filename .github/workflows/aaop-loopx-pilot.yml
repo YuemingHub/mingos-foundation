@@ -1,0 +1,92 @@
+name: AAOP LoopX Consumer Pilot
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  loopx-consumer-pilot:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'agent/aaop-loopx-pilot-20260811'
+    runs-on: ubuntu-latest
+    env:
+      AAOP_REVISION: 0250ea7a9fe1a43a3f2e54bc8916cea6b2a744a5
+      LOOPX_REVISION: 1a7cc56a4c0873be0dc2cb55a32394cb31f78b48
+      LOOPX_VERSION: 0.4.3
+    steps:
+      - name: Checkout consumer candidate
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+
+      - name: Verify Python runtime
+        shell: bash
+        run: |
+          set -euo pipefail
+          python --version
+          python - <<'PY'
+          import sys
+          assert sys.version_info >= (3, 11), sys.version
+          PY
+
+      - name: Fetch exact AAOP and LoopX revisions
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$RUNNER_TEMP/aaop-loopx-pilot"
+          rm -rf "$work"
+          mkdir -p "$work"
+          git clone --quiet https://github.com/YuemingHub/Adaptive-Agent-Orchestration-Protocol.git "$work/aaop"
+          git -C "$work/aaop" checkout --quiet "$AAOP_REVISION"
+          test "$(git -C "$work/aaop" rev-parse HEAD)" = "$AAOP_REVISION"
+
+          git clone --quiet https://github.com/huangruiteng/loopx.git "$work/loopx"
+          git -C "$work/loopx" checkout --quiet "$LOOPX_REVISION"
+          test "$(git -C "$work/loopx" rev-parse HEAD)" = "$LOOPX_REVISION"
+          test -z "$(git -C "$work/loopx" status --porcelain)"
+
+      - name: Re-qualify reviewed LoopX upstream
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$RUNNER_TEMP/aaop-loopx-pilot"
+          python "$work/aaop/scripts/qualify_loopx_upstream.py" \
+            --checkout "$work/loopx" \
+            --json | tee "$RUNNER_TEMP/loopx-upstream-qualification.json"
+
+      - name: Install exact LoopX revision for consumer pilot
+        shell: bash
+        run: |
+          set -euo pipefail
+          work="$RUNNER_TEMP/aaop-loopx-pilot"
+          python -m pip install --disable-pip-version-check --no-deps "$work/loopx"
+          loopx --version
+          python - <<'PY'
+          import importlib.metadata
+          assert importlib.metadata.version('loopx') == '0.4.3'
+          PY
+
+      - name: Run real consumer execution-continuity pilot
+        shell: bash
+        env:
+          HOME: ${{ runner.temp }}/aaop-loopx-home
+        run: |
+          set -euo pipefail
+          mkdir -p "$HOME"
+          python scripts/aaop_loopx_consumer_pilot.py \
+            --aaop-revision "$AAOP_REVISION" \
+            --loopx-revision "$LOOPX_REVISION" \
+            --loopx-version "$LOOPX_VERSION" \
+            | tee "$RUNNER_TEMP/aaop-loopx-consumer-receipt.json"
+
+      - name: Verify Foundation remains healthy after LoopX rollback
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/validate_all.py
+          git ls-files .loopx .codex/goals .local | tee "$RUNNER_TEMP/tracked-loopx-state.txt"
+          test ! -s "$RUNNER_TEMP/tracked-loopx-state.txt"
+          test -f experiments/aaop-loopx-pilot/runtime-marker.txt
+          test -f experiments/aaop-loopx-pilot/pilot-receipt.json
+          cat experiments/aaop-loopx-pilot/pilot-receipt.json
