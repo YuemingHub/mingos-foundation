@@ -72,14 +72,79 @@ def main() -> int:
         '"refresh-state", "--goal-id", GOAL, "--agent-id", BUILDER, "--no-global-sync"',
     )
 
+    # Preserve a non-empty frontier when the validated builder slice is accounted.
+    # An earlier pilot correctly proved that --no-follow-up + empty frontier yields
+    # terminal_no_followup and rejects spend. Here the reviewer successor is created
+    # before builder completion and linked explicitly, so a successful post-validation
+    # spend can be tested without inventing work after closure.
+    old_delivery_handoff = '''    _, done = lx(
+        root, env, registry, runtime,
+        "todo", "complete", "--goal-id", GOAL, "--todo-id", todo,
+        "--claimed-by", BUILDER, "--agent-id", BUILDER,
+        "--evidence", "scripts/validate_repository.py exit=0 and marker readback passed",
+        "--no-follow-up",
+    )
+    need(done.get("changed") is True, f"validated todo completion failed: {done}")
+    _, refreshed = lx(root, env, registry, runtime, "refresh-state", "--goal-id", GOAL, "--agent-id", BUILDER, "--no-global-sync")
+    need(refreshed.get("ok") is True, f"refresh-state failed: {refreshed}")
+    _, spent = lx(root, env, registry, runtime, "quota", "spend-slot", "--goal-id", GOAL, "--agent-id", BUILDER, "--slots", "1", "--source", "controller", "--execute", "--scan-path", ".gitignore")
+    need(spent.get("ok") is True, f"validated writeback could not spend one slot: {spent}")
+
+    # Handoff to a separate bounded reviewer; prior builder cannot steal claimed review work.
+    review_text = "Review the bounded marker/evidence without taking ownership of the AAOP Journey."
+    _, review_added = lx(root, env, registry, runtime, "todo", "add", "--goal-id", GOAL, "--role", "agent", "--text", review_text)
+    review_todo = str(review_added.get("todo_id") or "")
+    need(review_todo.startswith("todo_"), f"review todo add failed: {review_added}")
+    _, review_claim = lx(root, env, registry, runtime, "todo", "claim", "--goal-id", GOAL, "--todo-id", review_todo, "--claimed-by", REVIEWER, "--agent-id", REVIEWER)
+    need(review_claim.get("changed") is True, f"review claim failed: {review_claim}")
+'''
+    new_delivery_handoff = '''    # Create the next bounded responsibility before closing the builder slice so
+    # the execution frontier remains explicit and non-terminal during accounting.
+    review_text = "Review the bounded marker/evidence without taking ownership of the AAOP Journey."
+    _, review_added = lx(root, env, registry, runtime, "todo", "add", "--goal-id", GOAL, "--role", "agent", "--text", review_text)
+    review_todo = str(review_added.get("todo_id") or "")
+    need(review_todo.startswith("todo_"), f"review todo add failed: {review_added}")
+
+    _, done = lx(
+        root, env, registry, runtime,
+        "todo", "complete", "--goal-id", GOAL, "--todo-id", todo,
+        "--claimed-by", BUILDER, "--agent-id", BUILDER,
+        "--evidence", "scripts/validate_repository.py exit=0 and marker readback passed",
+        "--successor-todo-id", review_todo,
+    )
+    need(done.get("changed") is True, f"validated todo completion failed: {done}")
+    _, refreshed = lx(root, env, registry, runtime, "refresh-state", "--goal-id", GOAL, "--agent-id", BUILDER, "--no-global-sync")
+    need(refreshed.get("ok") is True, f"refresh-state failed: {refreshed}")
+    _, spent = lx(
+        root, env, registry, runtime,
+        "quota", "spend-slot", "--goal-id", GOAL, "--agent-id", BUILDER,
+        "--slots", "1", "--source", "controller", "--runtime-profile", "generic_cli",
+        "--execute", "--scan-path", ".gitignore",
+    )
+    need(spent.get("ok") is True and spent.get("appended") is True, f"validated non-terminal writeback could not spend one slot: {spent}")
+
+    # Handoff to a separate bounded reviewer; prior builder cannot steal claimed review work.
+    _, review_claim = lx(root, env, registry, runtime, "todo", "claim", "--goal-id", GOAL, "--todo-id", review_todo, "--claimed-by", REVIEWER, "--agent-id", REVIEWER)
+    need(review_claim.get("changed") is True, f"review claim failed: {review_claim}")
+'''
+    if old_delivery_handoff not in text:
+        raise AssertionError("expected builder delivery/handoff block not found")
+    text = text.replace(old_delivery_handoff, new_delivery_handoff)
+
     old_receipt = '"first_connect_fail_closed": {"should_run": precheck.get("should_run"), "status_health_ok": precheck.get("status_health_ok"), "status": precheck.get("status")},'
     new_receipt = '"first_connect_control": {"should_run": precheck.get("should_run"), "status": precheck.get("status"), "selected_action_kind": onboarding.get("action_kind"), "bounded_check_completed": True},'
     if old_receipt not in text:
         raise AssertionError("expected first-connect receipt field not found")
     text = text.replace(old_receipt, new_receipt)
 
+    old_handoff_receipt = '"handoff": {"builder": BUILDER, "reviewer": REVIEWER, "silent_takeover_blocked": True},'
+    new_handoff_receipt = '"validated_accounting": {"builder_spend_ok": spent.get("ok"), "builder_spend_appended": spent.get("appended"), "successor_todo_id": review_todo},\n        "handoff": {"builder": BUILDER, "reviewer": REVIEWER, "silent_takeover_blocked": True},'
+    if old_handoff_receipt not in text:
+        raise AssertionError("expected handoff receipt field not found")
+    text = text.replace(old_handoff_receipt, new_handoff_receipt)
+
     TARGET.write_text(text, encoding="utf-8")
-    print("Prepared AAOP/LoopX pilot: explicit onboarding frontier + scoped scan + actor-bound refresh.")
+    print("Prepared AAOP/LoopX pilot: onboarding frontier + scoped scan + actor-bound refresh + explicit reviewer successor.")
     return 0
 
 
