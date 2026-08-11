@@ -55,17 +55,20 @@ jobs:
             --checkout "$work/loopx" \
             --json | tee "$RUNNER_TEMP/loopx-upstream-qualification.json"
 
-      - name: Install exact LoopX revision for consumer pilot
+      - name: Install exact LoopX revision in isolated venv
         shell: bash
         run: |
           set -euo pipefail
           work="$RUNNER_TEMP/aaop-loopx-pilot"
-          python -m pip install --disable-pip-version-check --no-deps "$work/loopx"
-          loopx --version
-          python - <<'PY'
+          venv="$RUNNER_TEMP/loopx-venv"
+          python -m venv "$venv"
+          "$venv/bin/python" -m pip install --disable-pip-version-check --no-deps "$work/loopx"
+          "$venv/bin/loopx" --version
+          "$venv/bin/python" - <<'PY'
           import importlib.metadata
           assert importlib.metadata.version('loopx') == '0.4.3'
           PY
+          echo "$venv/bin" >> "$GITHUB_PATH"
 
       - name: Run real consumer execution-continuity pilot
         shell: bash
