@@ -66,7 +66,6 @@ def main() -> int:
     text = text.replace(old, new)
 
     # Once the goal is multi-agent, every state writeback must carry the actor.
-    # LoopX intentionally disables text inference for refresh-state.
     text = text.replace(
         '"refresh-state", "--goal-id", GOAL, "--no-global-sync"',
         '"refresh-state", "--goal-id", GOAL, "--agent-id", BUILDER, "--no-global-sync"',
@@ -131,6 +130,20 @@ def main() -> int:
         raise AssertionError("expected builder delivery/handoff block not found")
     text = text.replace(old_delivery_handoff, new_delivery_handoff)
 
+    # The verified generic_cli contract uses backoff_waiting_for_user for a real
+    # user_gate. It keeps should_run=false, emits no automatic turn, and carries
+    # explicit unchanged-poll stop limits. Accept that precise gate contract rather
+    # than guessing alternate scheduler action names.
+    old_scheduler_assert = '    need(scheduler_action in {"backoff_until_state_change", "wait_until_state_change", "stop"}, f"quiet state lacks bounded scheduler decision: {q2}")'
+    new_scheduler_assert = '''    need(scheduler_action == "backoff_waiting_for_user", f"human gate did not produce the verified backoff contract: {q2}")
+    need(q2.get("state") == "operator_gate" and q2.get("decision") == "skip", f"human gate did not block delivery: {q2}")
+    need((q2.get("plan_summary") or {}).get("next_automatic_turn") is None, f"human gate still exposed an automatic turn: {q2}")
+    unchanged_poll = (q2.get("scheduler_hint") or {}).get("unchanged_poll") or {}
+    need(bool(unchanged_poll.get("after_limits")), f"human gate lacks unchanged-poll stop policy: {q2}")'''
+    if old_scheduler_assert not in text:
+        raise AssertionError("expected scheduler assertion not found")
+    text = text.replace(old_scheduler_assert, new_scheduler_assert)
+
     old_receipt = '"first_connect_fail_closed": {"should_run": precheck.get("should_run"), "status_health_ok": precheck.get("status_health_ok"), "status": precheck.get("status")},'
     new_receipt = '"first_connect_control": {"should_run": precheck.get("should_run"), "status": precheck.get("status"), "selected_action_kind": onboarding.get("action_kind"), "bounded_check_completed": True},'
     if old_receipt not in text:
@@ -143,8 +156,14 @@ def main() -> int:
         raise AssertionError("expected handoff receipt field not found")
     text = text.replace(old_handoff_receipt, new_handoff_receipt)
 
+    old_gate_receipt = '"human_gate": {"probe_should_run": [q1.get("should_run"), q2.get("should_run")], "state_unchanged": True, "scheduler_action": scheduler_action},'
+    new_gate_receipt = '"human_gate": {"probe_should_run": [q1.get("should_run"), q2.get("should_run")], "state_unchanged": True, "scheduler_action": scheduler_action, "next_automatic_turn": (q2.get("plan_summary") or {}).get("next_automatic_turn"), "unchanged_poll_after_limits": unchanged_poll.get("after_limits")},'
+    if old_gate_receipt not in text:
+        raise AssertionError("expected gate receipt field not found")
+    text = text.replace(old_gate_receipt, new_gate_receipt)
+
     TARGET.write_text(text, encoding="utf-8")
-    print("Prepared AAOP/LoopX pilot: onboarding frontier + scoped scan + actor-bound refresh + explicit reviewer successor.")
+    print("Prepared AAOP/LoopX pilot: onboarding, scoped scan, actor-bound refresh, successor spend, and verified user-gate backoff.")
     return 0
 
 
