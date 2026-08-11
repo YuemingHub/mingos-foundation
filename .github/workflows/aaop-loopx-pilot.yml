@@ -74,7 +74,8 @@ jobs:
         run: |
           set -euo pipefail
           python scripts/prepare_aaop_loopx_pilot.py
-          grep -n -E -- 'scan-path|onboarding_connection_validation|first_connect_control' scripts/aaop_loopx_consumer_pilot_v4.py
+          python scripts/prepare_aaop_loopx_recovery.py
+          grep -n -E -- 'scan-path|onboarding_connection_validation|first_connect_control|recovered_status' scripts/aaop_loopx_consumer_pilot_v4.py
 
       - name: Run real consumer execution-continuity pilot
         shell: bash
