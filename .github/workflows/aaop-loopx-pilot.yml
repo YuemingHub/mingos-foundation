@@ -74,7 +74,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p "$HOME"
-          python scripts/aaop_loopx_consumer_pilot.py \
+          python scripts/aaop_loopx_consumer_pilot_v2.py \
             --aaop-revision "$AAOP_REVISION" \
             --loopx-revision "$LOOPX_REVISION" \
             --loopx-version "$LOOPX_VERSION" \
@@ -84,7 +84,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          python scripts/validate_all.py
+          python scripts/validate_repository.py
           git ls-files .loopx .codex/goals .local | tee "$RUNNER_TEMP/tracked-loopx-state.txt"
           test ! -s "$RUNNER_TEMP/tracked-loopx-state.txt"
           test -f experiments/aaop-loopx-pilot/runtime-marker.txt
