@@ -34,6 +34,11 @@ cases/raw/
 *.sqlite
 *.db
 
+# AAOP / LoopX local control-plane pilot state (never tracked)
+.loopx/
+.codex/goals/
+.local/
+
 # Temporary
 tmp/
 .temp/
