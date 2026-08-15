@@ -5,7 +5,7 @@
   "status": "Accepted operational registry",
   "canonical_repository": "YuemingHub/mingos-foundation",
   "governing_record": "GOV-0113",
-  "reviewed_against_commit": "ec3e2c4570241224f3cd576926a9c869cab985bb",
+  "reviewed_against_commit": "7eb33ffc806db1da2fde488a617860ca34b76c0e",
   "main_change_policy": "All non-integrated reservations expire for merge-readiness when main advances and require explicit re-audit.",
   "reservations": [
     {
@@ -35,7 +35,7 @@
         "REF-0051"
       ],
       "created_at": "2026-07-28",
-      "reviewed_against_commit": "ec3e2c4570241224f3cd576926a9c869cab985bb",
+      "reviewed_against_commit": "7eb33ffc806db1da2fde488a617860ca34b76c0e",
       "expires_on_main_change": false,
       "integration_evidence": {
         "review_date": "2026-08-06",
@@ -60,6 +60,35 @@
         "REF-0050": "reference/kernel/REF-0050-kernel-conformance-test-ambiguity-register.md",
         "REF-0051": "reference/kernel/REF-0051-kernel-public-claim-mark-language-matrix.md"
       }
+    },
+    {
+      "reservation_id": "IDR-0002",
+      "workstream": "Three-Repository Reality Rebase — Authority Model, Drift Audit, and Family-Space Re-Audit",
+      "owner": "Ming Foundation Architecture",
+      "source": {
+        "type": "OpenDraftPullRequest",
+        "pull_request_url": "https://github.com/YuemingHub/mingos-foundation/pull/",
+        "branch_name": "260815-refactor-foundation-reality-rebase",
+        "governing_record": "GOV-0114"
+      },
+      "state": "ReservedForOpenDraftPR",
+      "branch": "260815-refactor-foundation-reality-rebase",
+      "reserved_ids": [
+        "ADR-0029",
+        "GOV-0114",
+        "GOV-0115",
+        "REF-0052"
+      ],
+      "created_at": "2026-08-15",
+      "reviewed_against_commit": "7eb33ffc806db1da2fde488a617860ca34b76c0e",
+      "expires_on_main_change": true,
+      "reserved_paths": {
+        "ADR-0029": "governance/decisions/ADR-0029-three-class-authority-model-and-canonical-bridge.md",
+        "GOV-0114": "governance/audits/GOV-0114-three-repository-reality-rebase-drift-audit.md",
+        "GOV-0115": "governance/validation/GOV-0115-current-family-space-re-audit.md",
+        "REF-0052": "reference/REF-0052-adoption-bridge-and-authority-guide.md"
+      },
+      "notes": "Reality rebase batch. GOV-0114 drift audit, ADR-0029 authority model and canonical bridge, GOV-0115 Issue #17 current Family-Space re-audit addendum, REF-0052 adoption guide. Registry review baseline moved to current main 7eb33ff..."
     }
   ],
   "occupied_assertions": [
@@ -95,17 +124,17 @@
     }
   ],
   "next_unreserved_hint": {
-    "GOV": "GOV-0114",
-    "ADR": "ADR-0029",
-    "REF": "REF-0052",
+    "GOV": "GOV-0116",
+    "ADR": "ADR-0030",
+    "REF": "REF-0053",
     "GOV-TPL": "GOV-TPL-0036",
     "KERNEL": "KERNEL-0006",
     "binding": false,
     "note": "Hints are recalculated after every main change and are not reservations."
   },
   "summary": {
-    "active_reservations": 0,
-    "reserved_ids": 0,
+    "active_reservations": 1,
+    "reserved_ids": 4,
     "integrated_by_this_registry": 9,
     "released_reservations": 0
   }

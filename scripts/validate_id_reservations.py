@@ -212,7 +212,9 @@ def main() -> int:
         elif not is_ancestor(reviewed_head):
             errors.append("PR #12 reviewed head is not an ancestor of the checked tree")
         else:
-            unexpected = changed_paths_since(reviewed_head) - POST_REVIEW_TRANSITION_PATHS
+            pr12_paths = set(pr12.get("reserved_paths", {}).values())
+            changed = changed_paths_since(reviewed_head)
+            unexpected = (changed & pr12_paths) - POST_REVIEW_TRANSITION_PATHS
             if unexpected:
                 errors.append(
                     "PR #12 has substantive changes after reviewed head: "

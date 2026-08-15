@@ -11,7 +11,7 @@
   "canonical_repository": "YuemingHub/Ming-Foundation",
   "source_repository_commit": "c149953217e466570da3fa58157eb66616514d6b",
   "generated_at": "2026-07-12",
-  "registry_version": "1.0.0-alpha.18",
+  "registry_version": "1.0.0-alpha.19",
   "baseline": {
     "state": "CurrentCompleteDerivedIndex",
     "record": "GOV-0056",

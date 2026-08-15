@@ -5,35 +5,57 @@ All notable repository-level changes are documented here.
 
 ### Changed
 
-- Updated the current canonical repository identifier to `YuemingHub/mingos-foundation` after the 2026-08-06 named source-review decision.
-- Synchronized the active document-ID reservation registry and validator with the accepted current repository identity.
-- Preserved `YuemingHub/Ming-Foundation` as a historical identifier; historical records and filenames are not rewritten.
+- Re-based the Foundation operating model to evidence-led evolution:
+  `GOV-0114` three-repository reality-rebase drift audit, `ADR-0029`
+  three-class authority model and canonical bridge rule, and `GOV-0115`
+  current Family-Space re-audit (Issue #17). Family-Space is the real
+  construction front; MingOS extracts proven cross-space capabilities;
+  Foundation is the principle/calibration layer.
+- Demoted CP2 from default next queue to an inactive retained capability:
+  Day 16–18 nomination and pre-authorization work remains historical
+  provenance; CP2 remains `Blocked / NotExecuted`; no activation is
+  authorized by this change.
+- Added machine-readable authority manifest
+  (`governance/registries/AUTHORITY_MANIFEST.json`) with three classes
+  (`hard_invariant | adaptive_default | product_owned_choice`), canonical
+  bridge rule, semantic-compatibility contract, and explicit non-claims.
+- Added `scripts/validate_authority_manifest.py` to the validation suite.
+- Moved the document-ID reservation registry review baseline to current
+  main `7eb33ffc806db1da2fde488a617860ca34b76c0e` and reserved the reality
+  rebase batch IDs (ADR-0029, GOV-0114, GOV-0115, REF-0052).
+- Advanced repository version to `1.0.0-alpha.19` (stage: Reality Rebase —
+  Evidence-Led Evolution).
+
 ### Added
 
-- Proposed core-document lifecycle and one-document-per-round workflow (`GOV-0081`).
-- Proposed canonical-language and translation-governance decision (`ADR-0021`).
-- Draft core-text consolidation and iteration roadmap (`GOV-0082`).
-- Draft Chinese MingOS core thought, culture, and philosophy compendium (`MF-0005`).
-- Draft historical principles, terminology, and source mapping collection (`REF-0010` through `REF-0014`).
-- Candidate Chinese paired migration of the Charter of Life (`MF-0006`) with bilingual mapping, normative-force, ambiguity, and affected-person review artifacts (`REF-0015` through `REF-0018`).
-- Candidate Chinese paired migration of the MingOS Charter (`PROJECT-MINGOS-0003`) with bilingual, normative-force, commitment-contract, ambiguity, and review artifacts (`REF-0021` through `REF-0025`).
-- Proposed MingOS Kernel specification-family scope and authority decision (`ADR-0026`) with family allocation, authority, conformance, role, traceability, and machine-readable boundary artifacts (`REF-0026` through `REF-0030`).
-- Draft MingOS Kernel family index and core operational contract (`KERNEL-0000`, `KERNEL-0001`) with requirement crosswalk, open-ambiguity register, review protocol, provisional vocabulary, machine index, and repository validators (`REF-0031` through `REF-0034`).
-- Draft Kernel canonical object/data model and lifecycle/state machines (`KERNEL-0002`, `KERNEL-0003`) with object, transition, access, ambiguity, review, machine-index and validation artifacts (`REF-0040` through `REF-0044`).
-- Draft Kernel conformance requirements and test specifications (`KERNEL-0004`, `KERNEL-0005`) with claim, evidence, assessment, exception, public-language and test-catalog artifacts (`REF-0045` through `REF-0051`).
-- Day18/Kernel integration repair with central document-ID reservation (`GOV-0113`), combined validation entry points, and corrected Day18 provenance.
+- `ADR-0029` — Three-Class Authority Model and Canonical Bridge Rule.
+- `GOV-0114` — Three-Repository Reality Rebase Drift Audit.
+- `GOV-0115` — Current Family-Space Re-Audit Against GOV-0009.
+- `REF-0052` — Adoption Bridge and Authority Guide.
+- `AUTHORITY_MANIFEST.json` — machine-readable authority manifest.
+
+### Preserved (not rewritten)
+
+- `MF-0004` Life Charter and `PROJECT-MINGOS-0002` MingOS Charter root
+  principles remain untouched and current.
+- `GOV-0009` remains the Accepted historical Family OS audit; GOV-0115 is
+  the current addendum.
+- `ROADMAP.md` historical phase plan retained as provenance, superseded as
+  the driving model by the evidence-led model.
 
 ### Status boundary
 
-- Operational baseline is Foundation 1.0 / Day 18 — Restricted Role Nomination and CP2 Pre-Authorization.
-- Repository version is `1.0.0-alpha.18`.
+- Operational baseline is Foundation 1.0 / Reality Rebase — Evidence-Led
+  Evolution (Day 18 history retained; CP2 blocked and inactive).
+- Repository version is `1.0.0-alpha.19`.
 - Both Charters remain Candidate.
 - RFCs and Profiles retain their current statuses.
-- Human-use affected-person review remains unauthorized; CP0/CP1 synthetic work does not establish product or Kernel conformance.
+- Human-use affected-person review remains unauthorized; CP0/CP1 synthetic
+  work does not establish product or Kernel conformance.
 
 
 
-## [1.0.0-alpha.18] - 2026-07-15
+## [1.0.0-alpha.19] - 2026-08-15
 
 ### Added
 
