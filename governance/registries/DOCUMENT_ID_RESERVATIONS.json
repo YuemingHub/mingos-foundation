@@ -5,8 +5,8 @@
   "status": "Accepted operational registry",
   "canonical_repository": "YuemingHub/mingos-foundation",
   "governing_record": "GOV-0113",
-  "reviewed_against_commit": "7eb33ffc806db1da2fde488a617860ca34b76c0e",
-  "main_change_policy": "All non-integrated reservations expire for merge-readiness when main advances and require explicit re-audit.",
+  "reviewed_against_commit": "e54399e18d4a107156b98dc2ce4d7f0e38598e98",
+  "main_change_policy": "Only non-integrated reservations with expires_on_main_change=true expire for merge-readiness when main advances; Integrated/Released reservations retain their historical review baseline.",
   "reservations": [
     {
       "reservation_id": "IDR-0001",
@@ -66,12 +66,16 @@
       "workstream": "Three-Repository Reality Rebase — Authority Model, Drift Audit, and Family-Space Re-Audit",
       "owner": "Ming Foundation Architecture",
       "source": {
-        "type": "OpenDraftPullRequest",
-        "pull_request_url": "https://github.com/YuemingHub/mingos-foundation/pull/",
+        "type": "MergedPullRequest",
+        "pull_request": 20,
+        "pull_request_url": "https://github.com/YuemingHub/mingos-foundation/pull/20",
+        "head_commit_at_review": "0233bc47a5c99fcd8713abe28f5c0969348a9905",
         "branch_name": "260815-refactor-foundation-reality-rebase",
+        "branch_resolution_state": "Merged",
+        "merge_commit": "e54399e18d4a107156b98dc2ce4d7f0e38598e98",
         "governing_record": "GOV-0114"
       },
-      "state": "ReservedForOpenDraftPR",
+      "state": "Integrated",
       "branch": "260815-refactor-foundation-reality-rebase",
       "reserved_ids": [
         "ADR-0029",
@@ -81,14 +85,25 @@
       ],
       "created_at": "2026-08-15",
       "reviewed_against_commit": "7eb33ffc806db1da2fde488a617860ca34b76c0e",
-      "expires_on_main_change": true,
+      "expires_on_main_change": false,
+      "integration_evidence": {
+        "review_date": "2026-08-15",
+        "reviewed_head": "0233bc47a5c99fcd8713abe28f5c0969348a9905",
+        "base_commit": "7eb33ffc806db1da2fde488a617860ca34b76c0e",
+        "mergeable": true,
+        "repository_validation": "success",
+        "validate_repository": "success",
+        "merge_commit": "e54399e18d4a107156b98dc2ce4d7f0e38598e98",
+        "integration_status": "Integrated",
+        "review_scope": "Reality Rebase operating-model convergence; authority/status separation; machine-readable adoption contract; Family-Space point-in-time re-audit; no Foundation conformance or CP2 activation claim."
+      },
       "reserved_paths": {
         "ADR-0029": "governance/decisions/ADR-0029-three-class-authority-model-and-canonical-bridge.md",
         "GOV-0114": "governance/audits/GOV-0114-three-repository-reality-rebase-drift-audit.md",
         "GOV-0115": "governance/validation/GOV-0115-current-family-space-re-audit.md",
         "REF-0052": "reference/REF-0052-adoption-bridge-and-authority-guide.md"
       },
-      "notes": "Reality rebase batch. GOV-0114 drift audit, ADR-0029 authority model and canonical bridge, GOV-0115 Issue #17 current Family-Space re-audit addendum, REF-0052 adoption guide. Registry review baseline moved to current main 7eb33ff..."
+      "notes": "PR #20 merged after final owner review and two green validation workflows. The four reserved IDs are integrated on main at e54399e18d4a107156b98dc2ce4d7f0e38598e98; ADR-0029 and AUTHORITY_MANIFEST remain Proposed and no conformance/activation claim is implied."
     }
   ],
   "occupied_assertions": [
@@ -133,9 +148,9 @@
     "note": "Hints are recalculated after every main change and are not reservations."
   },
   "summary": {
-    "active_reservations": 1,
-    "reserved_ids": 4,
-    "integrated_by_this_registry": 9,
+    "active_reservations": 0,
+    "reserved_ids": 0,
+    "integrated_by_this_registry": 13,
     "released_reservations": 0
   }
 }
