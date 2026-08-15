@@ -126,8 +126,12 @@ This index lists the canonical entry points for Ming Foundation 1.0.
 | GOV-0111 | [Day 18 Status Recommendation](governance/reviews/GOV-0111-day18-status-recommendation.md) | Accepted |
 | GOV-0112 | [Day 18 Validation Record](governance/validation/GOV-0112-day18-validation-record.md) | Accepted |
 | GOV-0113 | [Parallel Workstream Integration and Document ID Reservation](governance/workflows/GOV-0113-parallel-workstream-integration-and-document-id-reservation.md) | Accepted |
+| GOV-0114 | [Three-Repository Reality Rebase Drift Audit](governance/audits/GOV-0114-three-repository-reality-rebase-drift-audit.md) | Accepted |
+| GOV-0115 | [Current Family-Space Re-Audit Against GOV-0009](governance/validation/GOV-0115-current-family-space-re-audit.md) | Accepted |
 
 Machine registry: [DOCUMENT_ID_RESERVATIONS.json](governance/registries/DOCUMENT_ID_RESERVATIONS.json).
+
+Authority manifest: [AUTHORITY_MANIFEST.json](governance/registries/AUTHORITY_MANIFEST.json) (governed by ADR-0029).
 | GOV-TPL-0005 | [RFC-0001 Review Checklist](governance/templates/gov-tpl-0005-rfc-0001-review-checklist.md) | Accepted |
 | GOV-TPL-0006 | [RFC-0002 Review Checklist](governance/templates/gov-tpl-0006-rfc-0002-review-checklist.md) | Accepted |
 | GOV-TPL-0007 | [RFC-0003 Review Checklist](governance/templates/gov-tpl-0007-rfc-0003-review-checklist.md) | Accepted |
@@ -223,6 +227,7 @@ Machine registry: [DOCUMENT_ID_RESERVATIONS.json](governance/registries/DOCUMENT
 | ADR-0025 | [Retain CP2 and CP3 Blocked Until Named Accountability](governance/decisions/ADR-0025-retain-cp2-cp3-blocked-until-named-accountability.md) | Accepted |
 | ADR-0027 | [Keep Restricted Nomination Records Outside the Public Repository](governance/decisions/ADR-0027-keep-restricted-nomination-records-outside-public-repository.md) | Accepted |
 | ADR-0028 | [Record Conditional CP2 Pre-Authorization Without Activation](governance/decisions/ADR-0028-record-conditional-cp2-preauthorization-without-activation.md) | Accepted |
+| ADR-0029 | [Three-Class Authority Model and Canonical Bridge Rule](governance/decisions/ADR-0029-three-class-authority-model-and-canonical-bridge.md) | Proposed |
 | ADR-0026 | [Define MingOS Kernel as a Governed Specification Family](governance/decisions/ADR-0026-define-mingos-kernel-specification-family.md) | Proposed |
 
 ## Profiles
@@ -294,6 +299,7 @@ Machine registry: [DOCUMENT_ID_RESERVATIONS.json](governance/registries/DOCUMENT
 | REF-0049 | [Kernel Implementation Assessment Protocol](reference/kernel/REF-0049-kernel-implementation-assessment-protocol.md) | Draft |
 | REF-0050 | [Kernel Conformance and Test Ambiguity Register](reference/kernel/REF-0050-kernel-conformance-test-ambiguity-register.md) | Draft |
 | REF-0051 | [Kernel Public Claim and Mark Language Matrix](reference/kernel/REF-0051-kernel-public-claim-mark-language-matrix.md) | Draft |
+| REF-0052 | [Adoption Bridge and Authority Guide](reference/REF-0052-adoption-bridge-and-authority-guide.md) | Proposed |
 
 - [Core Terms](reference/glossary/core-terms.md)
 - [System Map](architecture/system-map.mmd)

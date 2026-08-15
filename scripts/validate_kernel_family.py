@@ -257,8 +257,10 @@ def main() -> int:
     else:
         stage = stage_match.group(1)
         version = version_match.group(1)
-        if "Foundation 1.0 / Day 18" not in stage or "1.0.0-alpha.18" not in version:
-            errors.append("day18 boundary")
+        if "Reality Rebase" not in stage or "Evidence-Led" not in stage:
+            errors.append("reality-rebase stage boundary")
+        if version not in {"1.0.0-alpha.19"}:
+            errors.append("version boundary")
         if stage not in readme or version not in readme:
             errors.append("README/canonical-state mismatch")
 

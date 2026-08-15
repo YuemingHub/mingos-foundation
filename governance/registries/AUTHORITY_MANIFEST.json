@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0",
+  "manifest_id": "MING-AUTHORITY-MANIFEST-0001",
+  "title": "Ming Foundation Authority Manifest",
+  "status": "Accepted operational registry",
+  "canonical_repository": "YuemingHub/mingos-foundation",
+  "governing_record": "ADR-0029",
+  "audit_evidence": "GOV-0114",
+  "reviewed_against_commit": "7eb33ffc806db1da2fde488a617860ca34b76c0e",
+  "purpose": "Machine-readable three-class authority model and canonical bridge rule. Semantics for cross-repository compatibility; not a conformance or certification claim.",
+  "canonical_bridge": {
+    "foundation": "defines what must never be violated",
+    "mingos": "defines how authority, evidence, memory, context and correction travel across spaces",
+    "products": "decide how to help within those boundaries"
+  },
+  "forbidden_upgrade": "a product field -> a MingOS object -> a Foundation rule",
+  "no_action_is_legal": true,
+  "cp2_authorization_state": "Blocked",
+  "cp2_execution_state": "NotExecuted",
+  "cp2_default_queue": false,
+  "classes": {
+    "hard_invariant": {
+      "owner": "Foundation",
+      "binding": "only when trigger/evidence is present",
+      "non_negotiable": true,
+      "items": [
+        "life_safety_and_violence_abuse_protection",
+        "consent",
+        "privacy",
+        "coercion_boundary",
+        "correction",
+        "contestability",
+        "reversibility",
+        "evidence_provenance_not_silently_upgraded",
+        "unsupported_inference_not_presented_as_fact",
+        "professional_authority_boundary",
+        "ai_does_not_acquire_final_authority_over_identity_meaning_life_direction",
+        "legacy_model_category_cannot_prescribe_or_prohibit_by_itself",
+        "protective_guard_requires_current_independent_evidence_owner"
+      ],
+      "note": "An ordinary product preference must not be dressed up as a hard invariant."
+    },
+    "adaptive_default": {
+      "owner": "MingOS",
+      "binding": "guides ordinary cross-space interaction; does not prescribe a product outcome",
+      "non_negotiable": false,
+      "items": [
+        "understanding_before_advice",
+        "observation_evidence_before_interpretation",
+        "fact_report_feeling_interpretation_inference_unknown_correction_separation",
+        "preserve_uncertainty",
+        "new_evidence_or_correction_can_retire_older_interpretation",
+        "ordinary_interaction_may_end_with_no_action",
+        "action_remains_optional_and_rejectable_in_ordinary_scenes",
+        "pacing_adapts_to_current_evidence_and_intent"
+      ],
+      "note": "Foundation acknowledges this layer but must not promote every adaptive default into a permanent Foundation rule."
+    },
+    "product_owned_choice": {
+      "owner": "downstream product",
+      "binding": "product decision authority",
+      "non_negotiable": false,
+      "items": [
+        "exact_wording",
+        "tone",
+        "ui",
+        "response_length",
+        "ask_reflect_explain_pause_action",
+        "action_cadence",
+        "model_provider",
+        "prompt_topology",
+        "agent_topology",
+        "family_profile",
+        "navigation",
+        "family_specific_read_model",
+        "today_wojia_huixiang_mine_concrete_implementation"
+      ],
+      "note": "These do not automatically become MingOS Core primitives or Foundation rules because the current implementation works."
+    }
+  },
+  "semantic_compatibility_contract": {
+    "foundation": [
+      "hard_invariant_version"
+    ],
+    "mingos": [
+      "adopted_foundation_version",
+      "runtime_semantics_version"
+    ],
+    "product": [
+      "compatible_foundation_version",
+      "compatible_mingos_semantics",
+      "product_policy_version"
+    ],
+    "rule": "Upstream work is triggered only when a semantic boundary changes, not by implementation churn.",
+    "no_shared_sha_requirement": true
+  },
+  "non_claims": [
+    "Foundation conformance",
+    "Family-Space general effectiveness",
+    "CP2 authorization",
+    "real-family evidence publicly available",
+    "current product implementation is already a generic MingOS or Foundation standard"
+  ],
+  "evidence_gate": {
+    "source": "GOV-0114 and GOV-0115 current evidence",
+    "real_family_evidence": "unknown at Foundation level; Family-Space CURRENT_PROJECT_STATUS.md is the product fact source",
+    "conformance": false
+  }
+}

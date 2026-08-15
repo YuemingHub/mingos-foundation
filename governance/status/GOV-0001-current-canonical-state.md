@@ -198,8 +198,13 @@ related:
 - GOV-TPL-0028
 status: Accepted
 title: Current Canonical State
-updated: 2026-08-06
-version: 1.0.0-alpha.18
+updated: 2026-08-15
+version: 1.0.0-alpha.19
+related:
+  - ADR-0029
+  - GOV-0114
+  - GOV-0115
+  - REF-0052
 ---
 
 # GOV-0001 — Current Canonical State
@@ -225,8 +230,8 @@ The following facts are accepted:
 - **Historical repository path:**
   `https://github.com/YuemingHub/Ming-Foundation` (retained for provenance; not the current canonical identifier)
 - **Repository visibility:** public
-- **Current repository stage:** Foundation 1.0 / Day 18 — Restricted Role Nomination and CP2 Pre-Authorization
-- **Current repository version:** `1.0.0-alpha.18`
+- **Current repository stage:** Foundation 1.0 / Reality Rebase — Evidence-Led Evolution
+- **Current repository version:** `1.0.0-alpha.19`
 
 `mingos.cn` is the official public interface of MingOS. It communicates
 the project to users, contributors, researchers, partners, and the wider
@@ -334,6 +339,11 @@ MUST use `YuemingHub/mingos-foundation`.
 - Day 18 gate retaining CP2 and CP3 at Blocked.
 - Day 18 and Kernel parallel-workstream integration repair with central document-ID reservation and one combined validation chain.
 - 2026-08-06 human source-review decision accepting `YuemingHub/mingos-foundation` as the current Foundation repository while preserving `YuemingHub/Ming-Foundation` as historical provenance.
+- 2026-08-15 three-repository reality rebase: `GOV-0114` drift audit,
+  `ADR-0029` three-class authority model and canonical bridge rule,
+  `GOV-0115` current Family-Space re-audit (Issue #17), and the authority
+  manifest. The Foundation operating model is now evidence-led; CP2
+  remains an inactive retained capability, not the default next queue.
 
 ### In progress
 
@@ -448,26 +458,40 @@ Any update to this document MUST:
 
 ## 9. Next canonical work
 
-Before any further merge, parallel workstreams MUST use GOV-0113 and the central document-ID reservation registry. Only one workstream may be merge-ready at a time.
+### Current driving direction — Evidence-led
 
-After Day 18, the next canonical work is Restricted Nomination Execution and CP2 Activation Evidence:
+After the 2026-08-15 reality rebase (`GOV-0114`, `ADR-0029`), the
+Foundation's next work is no longer a horizontal Foundation-first queue.
+The current direction is:
 
-1. run `python scripts/validate_all.py`;
-2. initialize the Git-ignored restricted nomination workspace;
-3. nominate real people only after voluntary consent to assessment;
-4. obtain acceptance, qualification, conflict, independence, scope, expiry,
-   recusal, and replacement decisions;
-5. staff Slots A, B, and C with three distinct people;
-6. obtain valid operating-context and professional review for Slot D;
-7. approve the six CP2-applicable or adapted human-use protocols;
-8. deploy and independently verify the eight CP2 minimum controls;
-9. execute a staff-only dry run that contains no participant or case evidence;
-10. record a separate effective CP2 activation decision only when every gate passes;
-11. keep CP3, affected-person recruitment, participant sessions, participant
-    evidence, live product effects, and public conformance claims blocked;
-12. keep all real identity and verification records outside the public repository;
-13. retain all RFC and Profile statuses;
-14. retain both Charters and their paired translations at current statuses;
-15. keep implementation conformance separately scoped and empty;
-16. stop and regenerate if `main` advances before application;
-17. do not enter another repository without explicit user instruction.
+1. keep Family-Space as the real construction front; the Foundation
+   observes, calibrates, and records evidence;
+2. maintain the authority manifest
+   (`governance/registries/AUTHORITY_MANIFEST.json`) and validate it on
+   every repository change;
+3. produce upstream (MingOS / Foundation) work only when current evidence
+   shows a genuine cross-space gap that existing semantics cannot express;
+4. treat "no change / no activation" as a legitimate outcome;
+5. keep `main` advancing through the existing serial governance workflow
+   (`GOV-0113`);
+6. do not enter another repository without explicit user instruction.
+
+### Retained capability (not a default queue)
+
+The Day 16–18 Restricted Nomination and CP2 Activation work is retained as
+historical infrastructure and may be resumed only if new real evidence
+requires it. It is NOT the current default execution queue:
+
+```text
+Restricted nomination infrastructure: ready (retained, inactive)
+Conditional CP2 pre-authorization:     recorded (retained, inactive)
+Pre-authorization effective:           no
+Real nominations:                      0
+CP2 authorized:                        no
+CP2 executed:                          no
+CP3 / affected-person recruitment:     blocked
+```
+
+Any future activation decision requires a separate, evidence-based
+governance decision; it does not happen by default when prior
+preparatory gates were passed.

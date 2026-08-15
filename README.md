@@ -13,7 +13,7 @@ question:
 
 ## Current status
 
-This repository is at **Foundation 1.0 / Day 18 — Restricted Role Nomination and CP2 Pre-Authorization**. Day 18 establishes a Git-ignored restricted nomination boundary, four CP2 nomination slots with a three-person minimum, protocol and evidence-environment prerequisites, and an inactive conditional CP2 pre-authorization while CP2 and CP3 remain blocked.
+This repository is at **Foundation 1.0 / Reality Rebase — Evidence-Led Evolution**. The three-repository reality rebase (`GOV-0114`) re-based the Foundation operating model: Family-Space is the real construction front, MingOS extracts proven cross-space capabilities, and Foundation remains the principle/calibration layer. Day 18's restricted-nomination and CP2 pre-authorization work is retained as historical infrastructure; CP2 remains `Blocked / NotExecuted` and is not the default next queue. See `ADR-0029` and the authority manifest for the three-class authority model (`hard_invariant | adaptive_default | product_owned_choice`).
 
 **Important:** “Ming Foundation” is currently the name of an open
 standards initiative and repository. It does not by itself claim to be a
@@ -306,7 +306,7 @@ See [`CONTRIBUTING.md`](CONTRIBUTING.md).
 
 ## Version
 
-Current repository foundation version: **1.0.0-alpha.18**
+Current repository foundation version: **1.0.0-alpha.19**
 
 ## License
 

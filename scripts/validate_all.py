@@ -30,6 +30,7 @@ SCRIPTS = [
     "validate_human_activation_readiness.py",
     "validate_restricted_nomination_infrastructure.py",
     "validate_cp2_preauthorization.py",
+    "validate_authority_manifest.py",
 ]
 
 
