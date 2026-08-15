@@ -6,9 +6,11 @@ Create a coherent, implementable, and governable foundation for Living Intellige
 
 ## Current driving model — Evidence-led Evolution
 
-Adopted by `ADR-0029` and re-based by the three-repository reality rebase
-audit (`GOV-0114`). The previous Foundation-first phase plan (below) is
-preserved as historical provenance. It is no longer the driving model.
+This roadmap change is the operating-model proposal carried by PR #20. `ADR-0029`
+documents the proposed three-class authority model; it remains `Proposed` until an
+explicit review/decision promotes it. The previous Foundation-first phase plan
+(below) is preserved as historical provenance and is not the intended driving
+sequence if this roadmap change is accepted and merged.
 
 ```text
 North Star / Hard Invariants
@@ -39,8 +41,9 @@ Guiding rules:
    never be violated, not how products must be built.
 4. No product field automatically becomes a MingOS object or a Foundation
    rule.
-5. "No change / no activation" is a legitimate result. CP2 remains a
-   blocked, inactive retained capability.
+5. "No change / no activation" is a legitimate result. CP2 remains governed
+   by the current canonical state; this roadmap does not independently
+   authorize or activate it.
 6. Every new Foundation structure must answer: which real, reproducible
    current problem cannot be solved without it? If none, do not add it.
 
@@ -48,7 +51,8 @@ Guiding rules:
 
 The following phase plan described the original horizontal build-out
 sequence. It remains valid history and individual items may still inform
-future work, but it does not define the current execution order.
+future work, but it does not define the current execution order if this
+roadmap change is accepted.
 
 ### Phase A — Repository Foundation
 
@@ -108,20 +112,22 @@ No standard becomes Stable merely because it is well written. Stable status requ
 4. compatibility review;
 5. evidence that users can correct or reject system interpretations.
 
-## Current active canonical entry surface
+## Current active entry surface
 
-To know what is current, a new contributor should read these first (thin
-entry, not the full history):
+To understand the branch under review, read these first:
 
-1. `README.md` — why we exist and current stage;
-2. `governance/status/GOV-0001-current-canonical-state.md` — what is
-   currently accepted;
+1. `README.md` — project identity and branch-proposed stage;
+2. `governance/status/GOV-0001-current-canonical-state.md` — canonical-state
+   record that becomes authoritative only when merged to the default branch;
 3. `governance/decisions/ADR-0029-three-class-authority-model-and-canonical-bridge.md`
-   — how authority is divided;
-4. `governance/registries/AUTHORITY_MANIFEST.json` — machine-readable
-   authority model;
+   — **Proposed** authority model; not self-promoted by this PR;
+4. `governance/registries/AUTHORITY_MANIFEST.json` — **Proposed**
+   machine-readable adoption contract governed by ADR-0029;
 5. `governance/audits/GOV-0114-three-repository-reality-rebase-drift-audit.md`
-   — what is current / stale / historical;
-6. `ROADMAP.md` (this file) — the evidence-led driving model.
+   — review evidence for current/stale/historical distinctions;
+6. `ROADMAP.md` (this file) — operating-model proposal.
 
-Everything else is history, proposals, or retained capability.
+The operational `THREE_REPO_COMPASS_V1` companion is introduced by Foundation
+PR #19 and is a navigation/agent first-read surface, not a second formal source
+of governance authority. Shared semantic changes must remain aligned with that
+contract or explicitly record temporary divergence.
