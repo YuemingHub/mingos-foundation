@@ -84,7 +84,6 @@ def check_req_table(
 def main() -> int:
     errors: list[str] = []
 
-    # Round08 + Round09 document metadata
     docs = {
         "KERNEL-0000": ("KERNEL-0000-specification-family-index.md", "0.5.0-draft.5"),
         "KERNEL-0001": ("KERNEL-0001-core-operational-contract.md", "0.2.3-draft.5"),
@@ -102,7 +101,6 @@ def main() -> int:
         if metadata.get("id") != doc_id or metadata.get("status") != "Draft" or metadata.get("version") != version:
             errors.append(doc_id + " metadata")
 
-    # Round09 conformance / test schema and tables
     conformance_model_path = ROOT / "reference/kernel/mingos-kernel-conformance-model.json"
     test_specifications_path = ROOT / "reference/kernel/mingos-kernel-test-specifications.json"
     core_requirements_path = ROOT / "reference/kernel/mingos-kernel-core-requirements.json"
@@ -176,7 +174,6 @@ def main() -> int:
     if tests["execution_summary"]["executed_count"] != 0 or tests["execution_summary"]["pass_count"] != 0:
         errors.append("execution summary")
 
-    # Round08 object / lifecycle structure
     pairs = [
         (
             ROOT / "standards/kernel/KERNEL-0002-canonical-object-data-model.md",
@@ -233,7 +230,6 @@ def main() -> int:
         if flow["transitions"] != expected:
             errors.append(flow["id"] + " flow")
 
-    # Family / claim boundaries
     if [x["id"] for x in core["family"]["documents"]] != [
         "KERNEL-0000",
         "KERNEL-0001",
@@ -248,19 +244,22 @@ def main() -> int:
     if core["conformance"]["current_claim"] != "NoCurrentKernelConformanceClaim":
         errors.append("claim")
 
+    # Repository stage/version consistency is source-driven. This validator must
+    # not become a second authority by hard-coding today's stage or version.
     state_text = (ROOT / "governance/status/GOV-0001-current-canonical-state.md").read_text(encoding="utf-8-sig")
     stage_match = re.search(r"^- \*\*Current repository stage:\*\* (.+)$", state_text, re.MULTILINE)
     version_match = re.search(r"^- \*\*Current repository version:\*\* `([^`]+)`$", state_text, re.MULTILINE)
     readme = (ROOT / "README.md").read_text(encoding="utf-8-sig")
-    if not stage_match or not version_match:
-        errors.append("canonical state metadata")
+    version_doc = (ROOT / "VERSION.md").read_text(encoding="utf-8-sig")
+    version_doc_match = re.search(r"^\*\*Ming Foundation Repository:\*\* `([^`]+)`$", version_doc, re.MULTILINE)
+    if not stage_match or not version_match or not version_doc_match:
+        errors.append("canonical state/version metadata")
     else:
-        stage = stage_match.group(1)
-        version = version_match.group(1)
-        if "Reality Rebase" not in stage or "Evidence-Led" not in stage:
-            errors.append("reality-rebase stage boundary")
-        if version not in {"1.0.0-alpha.19"}:
-            errors.append("version boundary")
+        stage = stage_match.group(1).strip()
+        version = version_match.group(1).strip()
+        version_doc_value = version_doc_match.group(1).strip()
+        if version != version_doc_value:
+            errors.append("GOV-0001/VERSION mismatch")
         if stage not in readme or version not in readme:
             errors.append("README/canonical-state mismatch")
 
@@ -273,7 +272,8 @@ def main() -> int:
     print(
         "Kernel family validation passed: KERNEL-0000 through KERNEL-0005 remain Draft; "
         "35 objects, 36 KDO, 34 KLS, 17 object state machines, 9 process flows; "
-        "42 KCF, 32 KTG, 106 NotExecuted tests, 24 scenarios, exact source blobs, zero claims."
+        "42 KCF, 32 KTG, 106 NotExecuted tests, 24 scenarios, exact source blobs, zero claims; "
+        "repository stage/version consistency derived from GOV-0001, README, and VERSION."
     )
     return 0
 
