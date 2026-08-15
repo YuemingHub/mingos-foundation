@@ -1,7 +1,7 @@
 ---
 id: GOV-0114
 title: Three-Repository Reality Rebase Drift Audit
-status: Review
+status: Accepted
 version: 1.0.0
 layer: Layer 5 — Community & Governance
 owner: Ming Foundation Architecture
@@ -24,10 +24,10 @@ depends_on:
 
 # GOV-0114 — Three-Repository Reality Rebase Drift Audit
 
-> Review evidence for PR #20. This document does not self-promote its
-> conclusions into Accepted authority. It records the checked 2026-08-15
-> reality so the repository owner can decide whether to update the canonical
-> operating model.
+> Accepted as a point-in-time audit/evidence record for the checked
+> 2026-08-15 baselines. `Accepted` here accepts the audit record and its
+> provenance; it does **not** promote `ADR-0029`, the authority manifest, a
+> Charter, a Kernel Draft, or any downstream product to Accepted authority.
 
 ## 1. Audit method and time boundary
 
@@ -162,8 +162,9 @@ activation records, not this audit.
 
 ## 4. Non-claims
 
-This Review document does not claim:
+Acceptance of this audit record does not claim:
 
+- acceptance/promotion of `ADR-0029` or the authority manifest;
 - Charter acceptance or promotion;
 - product/Foundation conformance;
 - Family-Space general effectiveness;
@@ -177,9 +178,9 @@ PR #20 also carries:
 
 - `ADR-0029` — Proposed three-class authority model;
 - `AUTHORITY_MANIFEST.json` — Proposed machine-readable adoption contract;
-- `GOV-0115` — Review addendum to the historical Family OS audit;
+- `GOV-0115` — current Family-Space audit addendum/evidence record;
 - proposed updates to `ROADMAP.md` and `GOV-0001`;
 - structural validation for the proposed manifest.
 
-These outputs remain subject to owner review and the repository's existing
-decision process.
+Normative promotion remains subject to the repository's existing decision
+process.
