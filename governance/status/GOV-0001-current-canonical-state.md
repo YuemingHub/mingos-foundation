@@ -196,15 +196,14 @@ related:
 - GOV-TPL-0026
 - GOV-TPL-0027
 - GOV-TPL-0028
+- ADR-0029
+- GOV-0114
+- GOV-0115
+- REF-0052
 status: Accepted
 title: Current Canonical State
 updated: 2026-08-15
 version: 1.0.0-alpha.19
-related:
-  - ADR-0029
-  - GOV-0114
-  - GOV-0115
-  - REF-0052
 ---
 
 # GOV-0001 — Current Canonical State
