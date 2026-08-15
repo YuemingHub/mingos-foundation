@@ -1,109 +1,190 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "manifest_id": "MING-AUTHORITY-MANIFEST-0001",
+  "shared_compass_contract": "THREE_REPO_COMPASS_V1",
   "title": "Ming Foundation Authority Manifest",
-  "status": "Accepted operational registry",
+  "status": "Proposed operational registry",
   "canonical_repository": "YuemingHub/mingos-foundation",
   "governing_record": "ADR-0029",
-  "audit_evidence": "GOV-0114",
+  "audit_evidence": ["GOV-0114", "GOV-0115"],
   "reviewed_against_commit": "7eb33ffc806db1da2fde488a617860ca34b76c0e",
-  "purpose": "Machine-readable three-class authority model and canonical bridge rule. Semantics for cross-repository compatibility; not a conformance or certification claim.",
+  "purpose": "Machine-readable proposal for the three-class authority model and Foundation-to-MingOS adoption bridge. It is consumable evidence, not a conformance, certification, or self-executing acceptance claim.",
   "canonical_bridge": {
     "foundation": "defines what must never be violated",
     "mingos": "defines how authority, evidence, memory, context and correction travel across spaces",
     "products": "decide how to help within those boundaries"
   },
-  "forbidden_upgrade": "a product field -> a MingOS object -> a Foundation rule",
-  "no_action_is_legal": true,
-  "cp2_authorization_state": "Blocked",
-  "cp2_execution_state": "NotExecuted",
-  "cp2_default_queue": false,
-  "classes": {
-    "hard_invariant": {
+  "forbidden_upgrade": "a product field -> a MingOS object -> a Foundation rule without independent cross-space evidence and an explicit governance decision",
+  "authority_classes": [
+    "hard_invariant",
+    "adaptive_default",
+    "product_owned_choice"
+  ],
+  "authority_items": [
+    {
+      "key": "HI-LIFE-SAFETY",
+      "class": "hard_invariant",
       "owner": "Foundation",
-      "binding": "only when trigger/evidence is present",
-      "non_negotiable": true,
-      "items": [
-        "life_safety_and_violence_abuse_protection",
-        "consent",
-        "privacy",
-        "coercion_boundary",
-        "correction",
-        "contestability",
-        "reversibility",
-        "evidence_provenance_not_silently_upgraded",
-        "unsupported_inference_not_presented_as_fact",
-        "professional_authority_boundary",
-        "ai_does_not_acquire_final_authority_over_identity_meaning_life_direction",
-        "legacy_model_category_cannot_prescribe_or_prohibit_by_itself",
-        "protective_guard_requires_current_independent_evidence_owner"
-      ],
-      "note": "An ordinary product preference must not be dressed up as a hard invariant."
+      "applicability": "trigger_gated",
+      "trigger_evidence": "current evidence of credible life-safety, serious violence, abuse, or serious-harm risk",
+      "permitted_downstream_effect": "activate proportionate minimum-necessary protective handling and Safety-owned action",
+      "forbidden_authority_upgrade": "ordinary distress, a legacy category, or model confidence alone must not activate this guard",
+      "test_expectation": "Safety tests must preserve source/provenance, mixed-source cases, and false-positive/false-negative boundaries"
     },
-    "adaptive_default": {
+    {
+      "key": "HI-CONSENT-PRIVACY-COERCION",
+      "class": "hard_invariant",
+      "owner": "Foundation",
+      "applicability": "always_applicable_boundary",
+      "trigger_evidence": "any collection, use, disclosure, inference, action, or retention involving a person or third party",
+      "permitted_downstream_effect": "require scoped consent/authorization, minimization, privacy protection, and non-coercive handling appropriate to the operation",
+      "forbidden_authority_upgrade": "product convenience, engagement, family membership, or prior participation must not imply unlimited consent",
+      "test_expectation": "verify authorization scope, minimization, refusal/exit paths, and third-party handling where applicable"
+    },
+    {
+      "key": "HI-CORRECTION-CONTESTABILITY-REVERSIBILITY",
+      "class": "hard_invariant",
+      "owner": "Foundation",
+      "applicability": "always_applicable_boundary",
+      "trigger_evidence": "any stored or used interpretation, memory, profile, decision, or action that can materially affect a person",
+      "permitted_downstream_effect": "preserve inspect/correct/reject/revise/revoke or equivalent meaningful contestability and traceable supersession",
+      "forbidden_authority_upgrade": "a prior system interpretation must not become irreversible identity or unchallengeable truth",
+      "test_expectation": "verify correction propagation, stale-context invalidation, revision history, and refusal/revocation where feasible"
+    },
+    {
+      "key": "HI-EVIDENCE-INTEGRITY",
+      "class": "hard_invariant",
+      "owner": "Foundation",
+      "applicability": "always_applicable_boundary",
+      "trigger_evidence": "any claim, inference, memory, recommendation, safety transition, or authority decision",
+      "permitted_downstream_effect": "preserve source, knowledge status, uncertainty, and provenance at the level materially required for review",
+      "forbidden_authority_upgrade": "REPORT/INTERPRETATION/INFERENCE/UNKNOWN must not be silently upgraded to FACT or certainty",
+      "test_expectation": "verify knowledge-status separation, provenance retention, uncertainty preservation, and no fabricated certainty"
+    },
+    {
+      "key": "HI-HUMAN-AUTHORITY-LIMIT",
+      "class": "hard_invariant",
+      "owner": "Foundation",
+      "applicability": "always_applicable_boundary",
+      "trigger_evidence": "any system output that could determine identity, meaning, life direction, professional judgment, or consequential choice",
+      "permitted_downstream_effect": "support understanding and bounded options while preserving accountable human authority",
+      "forbidden_authority_upgrade": "AI/model/system output must not silently become final authority over identity, conscience, diagnosis, or life direction",
+      "test_expectation": "verify explicit uncertainty/limits and that consequential human or professional decisions remain contestable and accountable"
+    },
+    {
+      "key": "HI-NO-CATEGORY-PRESCRIPTION",
+      "class": "hard_invariant",
+      "owner": "Foundation",
+      "applicability": "always_applicable_boundary",
+      "trigger_evidence": "any legacy/model/stage/layer/profile/classifier output consumed by runtime",
+      "permitted_downstream_effect": "use the output as hypothesis, organization, or evidence candidate only within its declared authority",
+      "forbidden_authority_upgrade": "category/confidence alone must not prescribe, prohibit, refer, write identity memory, or activate a protective guard",
+      "test_expectation": "inspect the actual consumer chain and verify independent evidence ownership for any consequential effect"
+    },
+    {
+      "key": "AD-UNDERSTANDING-BEFORE-ADVICE",
+      "class": "adaptive_default",
       "owner": "MingOS",
-      "binding": "guides ordinary cross-space interaction; does not prescribe a product outcome",
-      "non_negotiable": false,
-      "items": [
-        "understanding_before_advice",
-        "observation_evidence_before_interpretation",
-        "fact_report_feeling_interpretation_inference_unknown_correction_separation",
-        "preserve_uncertainty",
-        "new_evidence_or_correction_can_retire_older_interpretation",
-        "ordinary_interaction_may_end_with_no_action",
-        "action_remains_optional_and_rejectable_in_ordinary_scenes",
-        "pacing_adapts_to_current_evidence_and_intent"
-      ],
-      "note": "Foundation acknowledges this layer but must not promote every adaptive default into a permanent Foundation rule."
+      "applicability": "ordinary_interaction_default",
+      "trigger_evidence": "ordinary interaction without a higher-priority hard-invariant trigger",
+      "permitted_downstream_effect": "organize evidence and understanding before proposing advice or action",
+      "forbidden_authority_upgrade": "must not become a mandatory response template or fixed wording",
+      "test_expectation": "MingOS-side scenarios should cover insufficient information, clarification, and product-owned response variation"
     },
-    "product_owned_choice": {
+    {
+      "key": "AD-KNOWLEDGE-STATUS-SEPARATION",
+      "class": "adaptive_default",
+      "owner": "MingOS",
+      "applicability": "ordinary_interaction_default",
+      "trigger_evidence": "interaction contains facts, reports, feelings, interpretations, inferences, unknowns, or corrections",
+      "permitted_downstream_effect": "carry distinct knowledge-status semantics across context, memory, and handoff",
+      "forbidden_authority_upgrade": "must not force a product-specific ledger schema, UI, or module name",
+      "test_expectation": "MingOS-side scenarios should preserve FACT/REPORT/FEELING/INTERPRETATION/INFERENCE/UNKNOWN/CORRECTION distinctions"
+    },
+    {
+      "key": "AD-REVISION-BY-NEW-EVIDENCE",
+      "class": "adaptive_default",
+      "owner": "MingOS",
+      "applicability": "ordinary_interaction_default",
+      "trigger_evidence": "new evidence, correction, changed circumstances, or a later real-life return conflicts with prior understanding",
+      "permitted_downstream_effect": "retire, supersede, or reduce reliance on older interpretations while retaining traceability",
+      "forbidden_authority_upgrade": "must not require a universal product memory implementation",
+      "test_expectation": "MingOS-side scenarios should cover correction, changed reality, supersession, and continuity"
+    },
+    {
+      "key": "AD-NO-ACTION-IS-VALID",
+      "class": "adaptive_default",
+      "owner": "MingOS",
+      "applicability": "ordinary_interaction_default",
+      "trigger_evidence": "ordinary interaction where no independent authority requires action",
+      "permitted_downstream_effect": "allow a valid outcome of continuing, clarifying, reflecting, pausing, or doing nothing yet",
+      "forbidden_authority_upgrade": "must not be converted into an opposite universal rule that action is forbidden; products may offer optional action when warranted",
+      "test_expectation": "MingOS-side scenarios must include ordinary no-action and explicit-help-request cases"
+    },
+    {
+      "key": "AD-OPTIONAL-ACTION",
+      "class": "adaptive_default",
+      "owner": "MingOS",
+      "applicability": "ordinary_interaction_default",
+      "trigger_evidence": "the person asks for help/action, explicitly chooses a direction, or the product has current evidence supporting an optional candidate",
+      "permitted_downstream_effect": "offer a rejectable product-owned action candidate",
+      "forbidden_authority_upgrade": "an internally optional candidate must not become a mandatory user-visible command or durable action memory without explicit choice",
+      "test_expectation": "MingOS-side scenarios must verify rejectability, explicit choice, and the independent Safety exception"
+    },
+    {
+      "key": "AD-PACING-BY-CURRENT-EVIDENCE-AND-INTENT",
+      "class": "adaptive_default",
+      "owner": "MingOS",
+      "applicability": "ordinary_interaction_default",
+      "trigger_evidence": "current evidence and expressed intent are available",
+      "permitted_downstream_effect": "allow response depth, clarification, explanation, or support dose to adapt to the current interaction",
+      "forbidden_authority_upgrade": "historical stage/layer/category must not silently own pacing or response mode",
+      "test_expectation": "MingOS-side scenarios should vary intent and evidence without requiring a universal product script"
+    },
+    {
+      "key": "PO-RESPONSE-EXPERIENCE",
+      "class": "product_owned_choice",
       "owner": "downstream product",
-      "binding": "product decision authority",
-      "non_negotiable": false,
-      "items": [
-        "exact_wording",
-        "tone",
-        "ui",
-        "response_length",
-        "ask_reflect_explain_pause_action",
-        "action_cadence",
-        "model_provider",
-        "prompt_topology",
-        "agent_topology",
-        "family_profile",
-        "navigation",
-        "family_specific_read_model",
-        "today_wojia_huixiang_mine_concrete_implementation"
-      ],
-      "note": "These do not automatically become MingOS Core primitives or Foundation rules because the current implementation works."
+      "applicability": "product_decision",
+      "trigger_evidence": "product context and current user/product evidence",
+      "permitted_downstream_effect": "choose wording, tone, length, ask/reflect/explain/pause/action rhythm, navigation, and presentation",
+      "forbidden_authority_upgrade": "a successful product pattern must not become a MingOS or Foundation requirement merely because it works locally",
+      "test_expectation": "product validates its own user value while preserving inherited hard boundaries and adopted runtime semantics"
+    },
+    {
+      "key": "PO-IMPLEMENTATION-TOPOLOGY",
+      "class": "product_owned_choice",
+      "owner": "downstream product",
+      "applicability": "product_decision",
+      "trigger_evidence": "product engineering need",
+      "permitted_downstream_effect": "choose model/provider, prompt, agent, router, orchestration, profile, read-model, and rollout topology",
+      "forbidden_authority_upgrade": "module names, fields, environment flags, and implementation topology must not be promoted upstream without independent cross-space evidence",
+      "test_expectation": "product tests implementation behavior; upstream tests only the reusable semantic boundary"
     }
-  },
+  ],
   "semantic_compatibility_contract": {
-    "foundation": [
-      "hard_invariant_version"
-    ],
-    "mingos": [
-      "adopted_foundation_version",
-      "runtime_semantics_version"
-    ],
-    "product": [
-      "compatible_foundation_version",
-      "compatible_mingos_semantics",
-      "product_policy_version"
-    ],
-    "rule": "Upstream work is triggered only when a semantic boundary changes, not by implementation churn.",
+    "foundation": ["hard_invariant_version"],
+    "mingos": ["adopted_foundation_version", "runtime_semantics_version"],
+    "product": ["compatible_foundation_version", "compatible_mingos_semantics", "product_policy_version"],
+    "rule": "Upstream work is triggered by semantic-boundary change and evidence, not ordinary implementation churn.",
     "no_shared_sha_requirement": true
+  },
+  "current_state_reference": {
+    "document": "governance/status/GOV-0001-current-canonical-state.md",
+    "purpose": "Current stage, version, pilot authorization, and execution state live in the canonical-state record; this manifest does not duplicate them as policy constants."
   },
   "non_claims": [
     "Foundation conformance",
     "Family-Space general effectiveness",
     "CP2 authorization",
     "real-family evidence publicly available",
-    "current product implementation is already a generic MingOS or Foundation standard"
+    "current product implementation is already a generic MingOS or Foundation standard",
+    "ADR-0029 is Accepted before an explicit review/decision"
   ],
   "evidence_gate": {
-    "source": "GOV-0114 and GOV-0115 current evidence",
-    "real_family_evidence": "unknown at Foundation level; Family-Space CURRENT_PROJECT_STATUS.md is the product fact source",
-    "conformance": false
+    "source": "GOV-0114 and GOV-0115 review evidence",
+    "real_family_evidence": "unknown at Foundation level beyond the product fact source",
+    "conformance": false,
+    "promotion_requires_explicit_decision": true
   }
 }
