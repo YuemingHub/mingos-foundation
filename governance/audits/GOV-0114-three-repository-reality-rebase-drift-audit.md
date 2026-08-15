@@ -1,7 +1,7 @@
 ---
 id: GOV-0114
 title: Three-Repository Reality Rebase Drift Audit
-status: Accepted
+status: Review
 version: 1.0.0
 layer: Layer 5 — Community & Governance
 owner: Ming Foundation Architecture
@@ -24,151 +24,162 @@ depends_on:
 
 # GOV-0114 — Three-Repository Reality Rebase Drift Audit
 
-> This audit re-reads the current remote reality of `mingos-foundation`,
-> `MingOS`, and `Family-Space` and classifies every checked item as
-> `current`, `stale`, `historical`, or `unknown`. It does not rewrite any
-> historical document in place. Where current state has drifted from a
-> historical record, this audit records the drift, the exact evidence, and
-> whether Foundation action is required.
+> Review evidence for PR #20. This document does not self-promote its
+> conclusions into Accepted authority. It records the checked 2026-08-15
+> reality so the repository owner can decide whether to update the canonical
+> operating model.
 
-## 1. Audit method
+## 1. Audit method and time boundary
 
-Each item below is tagged with:
+Each finding distinguishes:
 
-- **source**: the document, issue, PR, or commit being assessed;
-- **exact SHA / issue / PR**: the precise evidence reference;
-- **authority status**: the current governance status of the source
-  (Accepted / Draft / Proposed / open issue / merged PR / open PR);
-- **classification**: `current` (accurate today) / `stale` (accurate then,
-  superseded by current reality) / `historical` (a preserved record, not a
-  current instruction) / `unknown`;
-- **Foundation change required**: `yes` / `no` / `advisory` and why.
+- source and point-in-time evidence;
+- source authority status;
+- `current`, `stale`, `historical`, or `unknown` classification;
+- whether Foundation action is required.
 
-Evidence was read on 2026-08-15 from the following checked baselines:
+Checked baselines:
 
-| Repository | Checked baseline |
+| Repository | Point-in-time evidence |
 |---|---|
-| `mingos-foundation` | `main` at `7eb33ffc806db1da2fde488a617860ca34b76c0e` |
-| `MingOS` | `main` at `c355f2b1fdbe067eb66fbd622dec372b5b12b27d` |
-| `Family-Space` | `production` at `3aec7ea47230c2c8b447178ea8238947ccbd748e` |
+| `mingos-foundation` | `main@7eb33ffc806db1da2fde488a617860ca34b76c0e` |
+| `MingOS` | `main@c355f2b1fdbe067eb66fbd622dec372b5b12b27d` |
+| `Family-Space` | `production@3aec7ea47230c2c8b447178ea8238947ccbd748e` |
 
-Open issues and PRs were read from the GitHub API on 2026-08-15.
+Open issues/PRs were checked on 2026-08-15 only as audit evidence. Their
+numbers are not long-lived authority and may become stale immediately after
+this audit.
 
 ## 2. Findings
 
-### 2.1 Foundation permanent principles remain correct
+### 2.1 Foundation root principles remain aligned
 
-| Item | Evidence | Classification | Foundation change |
-|---|---|---|---|
-| Life Charter `MF-0004` articles (life before system, truth before theory, agency, safety without domination, fact/interpretation separation, correction, contestability, uncertainty, no anxiety conversion, no dependency retention) | `MF-0004` Candidate, `MF-0006` paired translation | **current** | no — the articles remain the correct root. Confirmed against the current product contract and MingOS END_STATE which both express the same commitments. |
-| MingOS Charter `PROJECT-MINGOS-0002` commitments MC01–MC14 | Candidate; referenced by MingOS `END_STATE.md` and Family-Space product contract | **current** | no |
-| First Principles `MF-0003` P01–P12 | Draft; consistent with MingOS END_STATE decision rule | **current** | no |
-| `ADR-0005` three-root-texts boundary (Charter / MingOS Charter / Kernel) | Accepted | **current** | no — the three-layer boundary is still the right architecture. |
+The checked Charter/first-principle surfaces continue to support:
 
-**Verdict:** no Charter article is contradicted by current remote reality.
-The Foundation root must be preserved, not rewritten for currency.
+- life before system;
+- truth/evidence before theory or certainty;
+- agency, correction, contestability, and consent;
+- safety without unnecessary domination;
+- fact/interpretation separation;
+- no anxiety-based conversion or dependency-based retention;
+- AI as a bounded, replaceable component rather than final human authority.
 
-### 2.2 Foundation current state and roadmap lag behind reality
+**Classification:** current within the checked scope.  
+**Foundation action:** do not rewrite the Charter root merely for currency.
 
-| Item | Evidence | Classification | Foundation change |
-|---|---|---|---|
-| `GOV-0001` declares stage "Foundation 1.0 / Day 18 — Restricted Role Nomination and CP2 Pre-Authorization" | `GOV-0001` frontmatter and section 2; `README.md` | **stale as an execution instruction** — accurate as history, but Family-Space is already in real production use and Foundation is not the active construction front | yes — the operating model must be re-based to evidence-led, with CP2 retained as inactive history |
-| `ROADMAP.md` Phase A→E (Foundation → Canonical Models → Protocols → Core → Applications) | `ROADMAP.md` | **stale as the driving sequence** — the family-first vertical construction is already the real main line; the horizontal phase plan is not how the three repositories actually advance | yes — supersede as the driving model; keep as provenance |
-| `GOV-0001` section 9 "Next canonical work" defaults to Restricted Nomination Execution and CP2 Activation | `GOV-0001` | **stale as a default queue** — no current evidence requires CP2 activation; Family-Space is the active construction front | yes — demote to "retained capability, not default queue" |
-| `VERSION.md` `1.0.0-alpha.1` vs repository version `1.0.0-alpha.18` | `VERSION.md` vs `README.md` | **stale metadata** | advisory — align version metadata during this rebase |
+### 2.2 The previous operating queue is stale as a default execution model
 
-### 2.3 MingOS end-state expression is consistent with Foundation
+At the checked Foundation baseline, `GOV-0001` and `ROADMAP.md` still point
+to the Day 18 / CP2 preparation sequence as the next default work. Current
+three-repository reality no longer supports treating that historical queue
+as automatic next work.
 
-| Item | Evidence | Classification | Foundation change |
-|---|---|---|---|
-| MingOS `END_STATE.md` "the stronger the system, the freer the person must be" | `MingOS` main | **current** — matches Foundation C04/C10 and MC09 | no |
-| MingOS `END_STATE.md` three-repository relationship and "Family Space is the first vertical instance, not the final boundary" | `MingOS` main | **current** | no |
-| MingOS `CROSS_REPOSITORY_COORDINATION.md` coordination contract | `MingOS` main | **current** | no — it already implements the evidence-first, authority-subtraction direction this rebase codifies |
+**Classification:** historically valid, stale as a default execution queue.  
+**Foundation action proposed in PR #20:** preserve the records and controls,
+but move to evidence-led activation. CP2 remains governed by the current
+canonical state and requires a separate decision before any activation.
 
-### 2.4 MingOS current-state and coordination facts already stale in places
+### 2.3 MingOS end-state direction is compatible; moving coordination facts can stale
 
-| Item | Evidence | Classification | Foundation change |
-|---|---|---|---|
-| `CROSS_REPOSITORY_COORDINATION.md` Family-Space baseline `production@2d6d0aeb948b96e178668fa12496d41b6c1a2935` | MingOS coordination contract | **stale** — Family-Space `production` is now `3aec7ea47230c2c8b447178ea8238947ccbd748e` | advisory — MingOS-side refresh, not a Foundation rule |
-| Coordination candidate list references source PRs #204/#205 etc. as merge-authoritative | MingOS Issue #33 states these have been absorbed into the #246 → #250 release stack | **stale** — closed/superseded PRs must not remain current merge-authoritative markers | advisory — MingOS Issue #33 already tracks this refresh |
-| `FOUNDATION_DEPENDENCY.md` baseline `7eb33ff...` | MingOS | **current** (matches current Foundation main) | no |
+MingOS's end-state direction is compatible with the Foundation root:
+Foundation constrains, MingOS carries reusable cross-space semantics, and
+Family-Space is the first vertical instance rather than the definition of all
+future Life Spaces.
 
-### 2.5 What Family-Space is actually validating now
+Some MingOS coordination documents contain point-in-time Family-Space SHAs or
+construction candidates. Those are useful audit evidence but must not become
+permanent cross-repository semantics.
 
-| Evidence | What it demonstrates |
-|---|---|
-| Family-Space `CURRENT_PROJECT_STATUS.md`: S0 — second-family preparation; real parent = product owner; production authorized 2026-08-11; E0/E1/E2/E3 evidence tiers | The live construction front is a real vertical: first-entry → first response → first three turns → second return → real-life feedback → revised understanding. This is the evidence-led loop Foundation should now serve. |
-| Family-Space product contract: FACT/REPORT/FEELING/INTERPRETATION/INFERENCE/UNKNOWN/CORRECTION separation; no-action as a legitimate outcome; product-owned wording/UI/pace | Family-Space is validating Foundation C09 and the "ordinary interaction needs no action" semantics — the exact content of the future `adaptive_default` class |
-| Family-Space PR #271 (simplification phase 1, draft) and PR #270 (Response Core VNext, draft): reducing Runtime Decision Depth, removing legacy committee authority (nine-layer / family-stage / loop escalation / V2 recommendation / mandatory action), `RESPONSE_CORE_MODE=off` default | Family-Space is actively subtracting legacy authority — the same direction this rebase codifies for Foundation's relationship to products |
-| Family-Space safety boundary, correction chains, provenance-backed memory, stale-context invalidation | Family-Space is implementing Foundation rights/safety commitments as product behavior |
+**Classification:** end-state semantics current; moving construction facts
+may be stale.  
+**Foundation action:** none on downstream construction details. Keep the
+semantic boundary; let MingOS refresh its own current-state evidence.
 
-**Verdict:** Family-Space is now the only real construction front and is
-validating, in production use, the semantics that this rebase classifies
-as `adaptive_default`. This is evidence, not conformance.
+### 2.4 What Family-Space is testing at this audit point
 
-### 2.6 Family-Space product implementation must NOT become Foundation rules
+At `production@3aec7ea47230c2c8b447178ea8238947ccbd748e`, with the active
+simplification work inspected separately, Family-Space is testing a real
+vertical loop centered on:
 
-| Product detail | Why it must not become a Foundation rule |
-|---|---|
-| Exact wording, tone, UI, response length, ask/reflect/explain/pause/action cadence | `product_owned_choice` — Foundation must not prescribe these |
-| Model/provider selection, prompt topology, agent topology | `product_owned_choice` |
-| Family profile, Today / 我家 / 回望 / 我的 navigation, family-specific read model | `product_owned_choice` — do not promote to MingOS Core primitives or Foundation rules merely because they work |
-| Context Ledger, Life Translator, Response Posture, Writer/Hard Critic module names | product implementation vocabulary — reusable boundary semantics are in MingOS; the module names stay in Family-Space |
-| `RESPONSE_CORE_MODE` flags, allowlists, rollout env vars | product release mechanics — not Foundation semantics |
+- first entry and first response;
+- first three turns and repair;
+- second return / continuity;
+- evidence-status separation and correction;
+- real-life feedback changing prior understanding;
+- action optionality in ordinary interaction;
+- bounded Safety;
+- removal of legacy hidden runtime authority.
 
-The forbidden upgrade pattern is:
+Active PR numbers are evidence locators only. The durable finding is the
+semantic problem being tested: **ordinary product behavior should not be
+silently controlled by stale category authority, and new reality must be
+able to correct prior understanding.**
+
+**Classification:** current point-in-time product evidence, not conformance.
+
+### 2.5 Product implementation must not auto-promote upstream
+
+The following remain product-owned unless independent cross-space evidence
+proves a reusable semantic need:
+
+- exact wording, tone, response length, and UI;
+- action cadence and navigation;
+- model/provider and prompt/agent/router topology;
+- family-specific profiles/read models;
+- module names such as Context Ledger, Life Translator, Response Posture, or
+  Writer/Critic;
+- rollout flags, allowlists, and deployment mechanics.
+
+Forbidden shortcut:
 
 ```text
-a Family-Space field → a MingOS object → a Foundation rule
+Family-Space implementation detail
+→ MingOS primitive
+→ Foundation rule
 ```
 
-This audit rejects that path explicitly. See ADR-0029 and the authority manifest.
+without independent cross-space evidence and an explicit governance decision.
 
-### 2.7 Older Foundation work that is provenance, not current execution
+### 2.6 Day 16–18 work remains provenance / retained capability
 
-| Work | Status | Foundation action |
-|---|---|---|
-| Day 16 CP0/CP1 synthetic pilot, 12 passes | historical evidence | keep as provenance; no current execution dependency |
-| Day 16 controlled-pilot classification `GOV-0087`, `ADR-0023` | historical | retain as retained capability |
-| Day 17 role nomination / named accountability `GOV-0094`–`GOV-0098` | historical infrastructure | retain; do not resume as default queue |
-| Day 18 restricted nomination and conditional CP2 pre-authorization `GOV-0104`–`GOV-0110`, `ADR-0027`, `ADR-0028` | historical decision records; `CP2 = Blocked / NotExecuted` | **no activation**. No current evidence requires resuming this queue. Retain as provenance and retained capability. |
-| Round 07–09 Kernel Draft collections (KERNEL-0000..0005, REF-0045..0051) | Draft, no conformance claim | keep Draft; not a current construction dependency |
-| `GOV-0009` Family OS implementation mapping (2026-07-09 snapshot) | historical audit record | preserve in place; Issue #17 current re-audit is delivered as GOV-0115 addendum, not by rewriting GOV-0009 |
+CP0/CP1 synthetic evidence, role/accountability work, restricted nomination
+preparation, and conditional CP2 pre-authorization remain preserved historical
+records. Their existence does not by itself activate the next stage.
 
-## 3. Summary verdict
+**Classification:** retained capability / provenance.  
+**Current activation authority:** `GOV-0001` and the applicable Accepted
+activation records, not this audit.
 
-1. **Foundation permanent principles: correct.** Preserve the Charter root.
-2. **Foundation operating model: stale.** The Foundation-first, CP2-next
-   default queue no longer matches the real world. It must be re-based to
-   evidence-led with CP2 as an inactive retained capability.
-3. **MingOS end-state: consistent.** No drift requiring Foundation change.
-4. **MingOS coordination facts: partially stale.** Family-Space baseline
-   SHA and the candidate PR list are stale; MingOS Issue #33 already tracks
-   the refresh. This is advisory for Foundation, not a Foundation rule.
-5. **Family-Space: the real construction front.** It is validating the
-   semantics that this rebase classifies as `adaptive_default`.
-6. **Family-Space implementation must not be promoted.** Product choices
-   stay product-owned.
-7. **Day 16–18 work is provenance / retained capability.** CP2 remains
-   blocked and is not the default next queue.
+## 3. Summary verdict for owner review
 
-## 4. What this audit does not claim
+1. Foundation root: preserve.
+2. Foundation-first / CP2-next default queue: stale as the default driving model.
+3. MingOS end-state semantics: aligned; downstream moving facts remain downstream.
+4. Family-Space: current real-world validation surface, not a universal template.
+5. Product implementation: evidence only; no automatic upstream promotion.
+6. Evidence-led evolution: supported as the proposed operating-model change.
+7. Unknown / no-change / no-activation remain legitimate outcomes.
 
-- No Charter article has been rewritten.
-- No product test result is treated as Foundation conformance.
-- No real-family evidence is claimed beyond what Family-Space
-  `CURRENT_PROJECT_STATUS.md` itself states (product owner as first real
-  parent).
-- No CP2 activation is authorized.
-- No Kernel Draft is promoted.
+## 4. Non-claims
 
-## 5. Required follow-up from this audit
+This Review document does not claim:
 
-Delivered in this rebase:
+- Charter acceptance or promotion;
+- product/Foundation conformance;
+- Family-Space general effectiveness;
+- CP2 authorization or activation;
+- public availability of real-family evidence;
+- that current product mechanisms are already MingOS/Foundation standards.
 
-- `ADR-0029` — three-class authority model and canonical bridge rule;
-- authority manifest (`governance/registries/AUTHORITY_MANIFEST.json`);
-- `GOV-0115` — current Family-Space re-audit (Issue #17 addendum);
-- `ROADMAP.md` re-based to evidence-led with provenance preserved;
-- `GOV-0001` current-canonical-state updated to reflect this operating-model change;
-- repository validator extended with authority-manifest validation.
+## 5. Related proposed outputs
+
+PR #20 also carries:
+
+- `ADR-0029` — Proposed three-class authority model;
+- `AUTHORITY_MANIFEST.json` — Proposed machine-readable adoption contract;
+- `GOV-0115` — Review addendum to the historical Family OS audit;
+- proposed updates to `ROADMAP.md` and `GOV-0001`;
+- structural validation for the proposed manifest.
+
+These outputs remain subject to owner review and the repository's existing
+decision process.
