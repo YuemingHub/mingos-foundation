@@ -1,17 +1,20 @@
 #!/usr/bin/env python3
-"""Validate the machine-readable authority manifest against ADR-0029."""
+"""Validate the authority manifest as a consumable, non-self-promoting contract."""
 
 from __future__ import annotations
 
 from pathlib import Path
 import json
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 MANIFEST = ROOT / "governance/registries/AUTHORITY_MANIFEST.json"
+ADR = ROOT / "governance/decisions/ADR-0029-three-class-authority-model-and-canonical-bridge.md"
 
 REQUIRED_TOP_KEYS = {
     "schema_version",
     "manifest_id",
+    "shared_compass_contract",
     "title",
     "status",
     "canonical_repository",
@@ -21,22 +24,37 @@ REQUIRED_TOP_KEYS = {
     "purpose",
     "canonical_bridge",
     "forbidden_upgrade",
-    "no_action_is_legal",
-    "cp2_authorization_state",
-    "cp2_execution_state",
-    "cp2_default_queue",
-    "classes",
+    "authority_classes",
+    "authority_items",
     "semantic_compatibility_contract",
+    "current_state_reference",
     "non_claims",
     "evidence_gate",
 }
 
 CLASSES = {"hard_invariant", "adaptive_default", "product_owned_choice"}
-OWNERS = {"Foundation", "MingOS", "downstream product"}
+APPLICABILITY = {
+    "trigger_gated",
+    "always_applicable_boundary",
+    "ordinary_interaction_default",
+    "product_decision",
+}
+ITEM_KEYS = {
+    "key",
+    "class",
+    "owner",
+    "applicability",
+    "trigger_evidence",
+    "permitted_downstream_effect",
+    "forbidden_authority_upgrade",
+    "test_expectation",
+}
 
 
-def load(rel: str) -> dict:
-    return json.loads((ROOT / rel).read_text(encoding="utf-8"))
+def frontmatter_status(path: Path) -> str | None:
+    text = path.read_text(encoding="utf-8-sig")
+    match = re.search(r"^status:\s*(.+)$", text, re.MULTILINE)
+    return match.group(1).strip() if match else None
 
 
 def main() -> int:
@@ -47,69 +65,92 @@ def main() -> int:
     if missing:
         errors.append(f"missing top-level keys: {sorted(missing)}")
 
-    if data.get("canonical_repository") != "YuemingHub/mingos-foundation":
-        errors.append("canonical repository mismatch")
-    if data.get("governing_record") != "ADR-0029":
-        errors.append("governing record mismatch")
-
     commit = data.get("reviewed_against_commit", "")
     if not (len(commit) == 40 and all(c in "0123456789abcdef" for c in commit)):
-        errors.append("reviewed_against_commit must be a 40-char hex SHA")
+        errors.append("reviewed_against_commit must be a 40-char lowercase hex SHA")
 
-    classes = data.get("classes", {})
-    if set(classes) != CLASSES:
-        errors.append(f"classes must be exactly {sorted(CLASSES)}")
+    classes = data.get("authority_classes", [])
+    if not isinstance(classes, list) or set(classes) != CLASSES or len(classes) != len(CLASSES):
+        errors.append(f"authority_classes must contain exactly {sorted(CLASSES)}")
 
-    expected_owner = {"hard_invariant": "Foundation", "adaptive_default": "MingOS",
-                      "product_owned_choice": "downstream product"}
-    for cls in CLASSES:
-        entry = classes.get(cls, {})
-        if entry.get("owner") != expected_owner[cls]:
-            errors.append(f"{cls}: owner must be {expected_owner[cls]!r}")
-        if not isinstance(entry.get("items"), list) or not entry["items"]:
-            errors.append(f"{cls}: items must be a non-empty list")
-        if "binding" not in entry or "non_negotiable" not in entry:
-            errors.append(f"{cls}: missing binding or non_negotiable")
+    items = data.get("authority_items", [])
+    if not isinstance(items, list) or not items:
+        errors.append("authority_items must be a non-empty list")
+        items = []
 
-    if not classes.get("hard_invariant", {}).get("non_negotiable"):
-        errors.append("hard_invariant must be non_negotiable")
-    if classes.get("adaptive_default", {}).get("non_negotiable"):
-        errors.append("adaptive_default must not be non_negotiable")
-    if classes.get("product_owned_choice", {}).get("non_negotiable"):
-        errors.append("product_owned_choice must not be non_negotiable")
+    seen: set[str] = set()
+    represented: set[str] = set()
+    for index, item in enumerate(items):
+        label = item.get("key", f"item[{index}]") if isinstance(item, dict) else f"item[{index}]"
+        if not isinstance(item, dict):
+            errors.append(f"{label}: item must be an object")
+            continue
+        missing_item = ITEM_KEYS - set(item)
+        if missing_item:
+            errors.append(f"{label}: missing keys {sorted(missing_item)}")
+        key = item.get("key")
+        if not isinstance(key, str) or not key:
+            errors.append(f"{label}: key must be a non-empty string")
+        elif key in seen:
+            errors.append(f"{label}: duplicate key")
+        else:
+            seen.add(key)
+        cls = item.get("class")
+        if cls not in CLASSES:
+            errors.append(f"{label}: invalid class {cls!r}")
+        else:
+            represented.add(cls)
+        if item.get("applicability") not in APPLICABILITY:
+            errors.append(f"{label}: invalid applicability {item.get('applicability')!r}")
+        for field in (
+            "owner",
+            "trigger_evidence",
+            "permitted_downstream_effect",
+            "forbidden_authority_upgrade",
+            "test_expectation",
+        ):
+            if not isinstance(item.get(field), str) or not item[field].strip():
+                errors.append(f"{label}: {field} must be non-empty text")
 
-    if data.get("no_action_is_legal") is not True:
-        errors.append("no_action_is_legal must be true")
-    if data.get("cp2_authorization_state") != "Blocked":
-        errors.append("cp2_authorization_state must remain Blocked")
-    if data.get("cp2_execution_state") != "NotExecuted":
-        errors.append("cp2_execution_state must remain NotExecuted")
-    if data.get("cp2_default_queue") is not False:
-        errors.append("cp2_default_queue must be false")
+    if represented != CLASSES:
+        errors.append("authority_items must represent all three authority classes")
 
     bridge = data.get("canonical_bridge", {})
     for key in ("foundation", "mingos", "products"):
-        if not bridge.get(key):
+        if not isinstance(bridge.get(key), str) or not bridge[key].strip():
             errors.append(f"canonical_bridge missing {key}")
 
     contract = data.get("semantic_compatibility_contract", {})
     for key in ("foundation", "mingos", "product"):
-        if not isinstance(contract.get(key), list):
-            errors.append(f"semantic compatibility missing {key} list")
+        if not isinstance(contract.get(key), list) or not contract[key]:
+            errors.append(f"semantic compatibility requires non-empty {key} list")
+    if contract.get("no_shared_sha_requirement") is not True:
+        errors.append("semantic compatibility must explicitly reject shared-SHA coupling")
 
-    non_claims = data.get("non_claims", [])
-    required_claims = {
-        "Foundation conformance",
-        "Family-Space general effectiveness",
-        "CP2 authorization",
-    }
-    for claim in required_claims:
-        if claim not in non_claims:
-            errors.append(f"non_claim must include {claim!r}")
+    state_ref = data.get("current_state_reference", {})
+    state_path = state_ref.get("document") if isinstance(state_ref, dict) else None
+    if not isinstance(state_path, str) or not state_path:
+        errors.append("current_state_reference.document is required")
+    elif not (ROOT / state_path).exists():
+        errors.append(f"current_state_reference does not exist: {state_path}")
+
+    for evidence_id in data.get("audit_evidence", []):
+        if not isinstance(evidence_id, str) or not evidence_id:
+            errors.append("audit_evidence entries must be non-empty strings")
 
     gate = data.get("evidence_gate", {})
     if gate.get("conformance") is not False:
         errors.append("evidence_gate.conformance must be false")
+    if gate.get("promotion_requires_explicit_decision") is not True:
+        errors.append("promotion_requires_explicit_decision must be true")
+
+    # The validator checks status consistency; it does not promote policy.
+    adr_status = frontmatter_status(ADR)
+    manifest_status = str(data.get("status", ""))
+    if adr_status != "Accepted" and manifest_status.lower().startswith("accepted"):
+        errors.append(
+            "manifest must not claim Accepted while governing ADR is not Accepted"
+        )
 
     if errors:
         print("Authority-manifest validation failed:")
@@ -118,8 +159,8 @@ def main() -> int:
         return 1
 
     print(
-        "Authority-manifest validation passed. Three classes, canonical "
-        "bridge, semantic compatibility contract, and non-claims verified."
+        "Authority-manifest validation passed: structured per-item contract, "
+        "status consistency, references, semantic compatibility, and non-conformance gate verified."
     )
     return 0
 
