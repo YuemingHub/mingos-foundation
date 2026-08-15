@@ -98,12 +98,10 @@ def main() -> int:
     registry_review = data.get("reviewed_against_commit")
     if not valid_commit(registry_review):
         errors.append("registry review commit invalid")
+    elif not is_ancestor(registry_review):
+        errors.append("registry review commit is not an ancestor of the checked tree")
+
     current_main = current_main_commit()
-    if current_main and registry_review != current_main:
-        errors.append(
-            f"registry review commit mismatch: expected current main {current_main}, "
-            f"found {registry_review}"
-        )
 
     occupied: dict[str, str] = {}
     duplicates: list[str] = []
@@ -151,8 +149,30 @@ def main() -> int:
         reservation_review = reservation.get("reviewed_against_commit")
         if not valid_commit(reservation_review):
             errors.append(f"{name} reviewed-against commit invalid")
-        elif registry_review and reservation_review != registry_review:
-            errors.append(f"{name} reviewed-against commit differs from registry baseline")
+        elif not is_ancestor(reservation_review):
+            errors.append(f"{name} reviewed-against commit is not an ancestor of the checked tree")
+
+        expires_on_main_change = reservation.get("expires_on_main_change")
+        if not isinstance(expires_on_main_change, bool):
+            errors.append(f"{name} expires_on_main_change must be boolean")
+        elif state in {"Integrated", "Released"} and expires_on_main_change:
+            errors.append(f"{name} integrated/released reservation cannot expire on future main changes")
+        elif (
+            current_main
+            and valid_commit(reservation_review)
+            and state in OPEN_STATES
+            and expires_on_main_change
+            and reservation_review != current_main
+            and state != "ExpiredOnMainChange"
+        ):
+            errors.append(
+                f"{name} must be ExpiredOnMainChange because main advanced from "
+                f"{reservation_review} to {current_main}"
+            )
+        elif state == "ExpiredOnMainChange" and (
+            not expires_on_main_change or reservation_review == current_main
+        ):
+            errors.append(f"{name} ExpiredOnMainChange state has no matching main-change condition")
 
         source = reservation.get("source", {})
         if (
@@ -171,7 +191,7 @@ def main() -> int:
             if state in OPEN_STATES:
                 if branch == "main" and doc_id in occupied:
                     errors.append(f"open reservation {doc_id} already occupied on main")
-                elif branch != "main" and expected_path and occupied.get(doc_id) != expected_path:
+                elif branch != "main" and state != "ExpiredOnMainChange" and expected_path and occupied.get(doc_id) != expected_path:
                     errors.append(f"open reservation {doc_id} missing or misplaced on {branch}")
             if state == "Integrated":
                 if doc_id not in occupied:
@@ -225,7 +245,7 @@ def main() -> int:
             errors.append("PR #12 branch name mismatch")
         if pr12.get("state") == "ReadyForSerialIntegration":
             evidence = pr12.get("integration_evidence") or {}
-            if evidence.get("base_commit") != registry_review:
+            if evidence.get("base_commit") != pr12.get("reviewed_against_commit"):
                 errors.append("PR #12 readiness evidence base mismatch")
             if evidence.get("reviewed_head") != reviewed_head:
                 errors.append("PR #12 readiness evidence head mismatch")
@@ -304,8 +324,8 @@ def main() -> int:
         f"{expected_summary['active_reservations']} active reservations, "
         f"{expected_summary['reserved_ids']} reserved IDs, "
         f"{expected_summary['integrated_by_this_registry']} integrated IDs, "
-        "current-main review baseline, reviewed-head ancestry, occupied paths, "
-        "and non-binding next-ID hints verified."
+        "review-baseline ancestry, open-reservation expiry semantics, reviewed-head ancestry, "
+        "occupied paths, and non-binding next-ID hints verified."
     )
     return 0
 
