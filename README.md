@@ -1,3 +1,15 @@
+> ⚠️ **ABSORPTION STATUS · 2026-09-25**
+>
+> Ming Foundation's durable principles remain valid as a semantic authority, but the **separate repository/control-plane lifecycle is being retired**.
+>
+> Repo Reduction Pass 2 plans to harvest only current durable principles / ethics / authority boundaries / minimal provenance into `YuemingHub/MingOS/foundation`, then preserve this repository as history.
+>
+> Do not start new governance/platform work here. Issue #14 and Draft PR #22 are closed as superseded/historical.
+>
+> Until the file-level harvest is reviewed and completed, this repository remains the source for existing Foundation documents.
+
+---
+
 # Ming Foundation
 
 > Building the standards, infrastructure, and ecosystem for Living
